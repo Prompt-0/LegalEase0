@@ -1,0 +1,1840 @@
+{
+  "police_stations": [
+    {
+      "name": "Ambedkar Nagar Police Station",
+      "phones": [
+        "+911129052304",
+        "+911129051917"
+      ],
+      "address": "Police Station Road, Block 2, Sector 6, Dakshinpuri, New Delhi, Delhi, 110062",
+      "pincode": "110062",
+      "district": "South Delhi",
+      "district_court": "Saket"
+    },
+    {
+      "name": "Fetehpur Beri Police Station",
+      "phones": [
+        "+911126659511"
+      ],
+      "address": "Jaunapur Village, New Delhi, Delhi, 110047",
+      "pincode": "110047",
+      "district": "South Delhi",
+      "district_court": "Saket"
+    },
+    {
+      "name": "Hauz Khas Police Station",
+      "phones": [
+        "011 2686 7878"
+      ],
+      "address": "A/58, Police Station Colony, Block A, Mayfair Gardens, Hauz Khas, New Delhi, Delhi 110016",
+      "pincode": "110016",
+      "district": "South Delhi",
+      "district_court": "Saket"
+    },
+    {
+      "name": "INA Metro Police Station",
+      "phones": [],
+      "address": "Laxmi Bai Nagar, New Delhi, Delhi 110023",
+      "pincode": "110023",
+      "district": "South Delhi",
+      "district_court": "Saket"
+    },
+    {
+      "name": "Malviya Nagar Police Station",
+      "phones": [
+        "011 2669 1861"
+      ],
+      "address": "Main Road, Near Aurobind College, Malviya Nagar, New Delhi, Delhi, India – 110017",
+      "pincode": "110017",
+      "district": "South Delhi",
+      "district_court": "Saket"
+    },
+    {
+      "name": "Mehrauli Police Station",
+      "phones": [
+        "+911126643200"
+      ],
+      "address": "Kalu Ram Chowk, Mehrauli Village, Mehrauli, New Delhi, Delhi, 110030",
+      "pincode": "110030",
+      "district": "South Delhi",
+      "district_court": "Saket"
+    },
+    {
+      "name": "Neb Sarai Police Station",
+      "phones": [
+        "+911129551597"
+      ],
+      "address": "Neb Sarai, Sangam Vihar, New Delhi, Delhi, 110062",
+      "pincode": "110062",
+      "district": "South Delhi",
+      "district_court": "Saket"
+    },
+    {
+      "name": "Qutab Minar Metro Police Station",
+      "phones": [],
+      "address": "845, Mehrauli-Gurgaon Rd, Gadaipur, DLF Farms, New Delhi, Delhi 110030",
+      "pincode": "110030",
+      "district": "South Delhi",
+      "district_court": "Saket"
+    },
+    {
+      "name": "Safdarjung Enclave Police Station",
+      "phones": [
+        "+911124106345"
+      ],
+      "address": "Shri Vinayak Mandir Marg, Sarojini Nagar, New Delhi, Delhi, 110023",
+      "pincode": "110023",
+      "district": "South Delhi",
+      "district_court": "Saket"
+    },
+    {
+      "name": "Saket Police Station",
+      "phones": [
+        "+911129561300"
+      ],
+      "address": "Court Chowk Road, Saket District Centre, New Delhi, Delhi, 110017",
+      "pincode": "110017",
+      "district": "South Delhi",
+      "district_court": "Saket"
+    },
+    {
+      "name": "Sangam Vihar Police Station",
+      "phones": [
+        "+911126044188",
+        "+911126044540"
+      ],
+      "address": "Mangal Bazar Road, Block D, Sangam Vihar, New Delhi, Delhi, 110062",
+      "pincode": "110062",
+      "district": "South Delhi",
+      "district_court": "Saket"
+    },
+    {
+      "name": "Amar Colony Police Station",
+      "phones": [
+        "+911126474748"
+      ],
+      "address": "Kalka Devi Marg, Opposite Indian Oil Petrol Pump, Amar Colony, New Delhi, Delhi, 110024",
+      "pincode": "110024",
+      "district": "South-East Delhi",
+      "district_court": "Saket"
+    },
+    {
+      "name": "Badar Pur Police Station",
+      "phones": [
+        "+911129891228",
+        "+911129894750",
+        "+911129894753"
+      ],
+      "address": "NH 2, Main Mathura Road, Near Toll Tax, Tajpur Road, Sharma Building, Near Axis Bank ATM, New Delhi, Delhi, 110044",
+      "pincode": "110044",
+      "district": "South-East Delhi",
+      "district_court": "Saket"
+    },
+    {
+      "name": "Chitranjan Park Police Station",
+      "phones": [
+        "011 2627 1374"
+      ],
+      "address": "A69, CR Park Main Rd, Block I, Chittaranjan Park, New Delhi, Delhi 110019",
+      "pincode": "110019",
+      "district": "South-East Delhi",
+      "district_court": "Saket"
+    },
+    {
+      "name": "Defence Colony Police Station",
+      "phones": [
+        "011 2625 3402"
+      ],
+      "address": "Defence Colony, 874, Lala Lajpat Rai Rd, Andrews Ganj, New Delhi, Delhi 110049",
+      "pincode": "110049",
+      "district": "South-East Delhi",
+      "district_court": "Saket"
+    },
+    {
+      "name": "Govind Puri Police Station",
+      "phones": [
+        "011 2998 0049"
+      ],
+      "address": "Baba Fatehsingh Marg, Kalkaji Extension, Block A 14, Govindpuri, New Delhi, Delhi 110019",
+      "pincode": "110019",
+      "district": "South-East Delhi",
+      "district_court": "Saket"
+    },
+    {
+      "name": "Greater Kailash Police Station",
+      "phones": [
+        "+911126415815"
+      ],
+      "address": "B Block, Nandi Vithi Marg, GK, New Delhi, Delhi, 110048",
+      "pincode": "110048",
+      "district": "South-East Delhi",
+      "district_court": "Saket"
+    },
+    {
+      "name": "Hazrat Nizamuddin Police Station",
+      "phones": [
+        "011 2435 9989"
+      ],
+      "address": "Lodhi Rd, Near Sabz Burj, Nizamuddin, Nizamuddin West, New Delhi, Delhi 110013",
+      "pincode": "110013",
+      "district": "South-East Delhi",
+      "district_court": "Saket"
+    },
+    {
+      "name": "Jaitpur Police Station",
+      "phones": [
+        "+918750870961"
+      ],
+      "address": "Jaitpur Road, Hari Nagar Extension, New Delhi, Delhi, 110044",
+      "pincode": "110044",
+      "district": "South-East Delhi",
+      "district_court": "Saket"
+    },
+    {
+      "name": "Jamia Nagar Police Station",
+      "phones": [
+        "011 2694 5563"
+      ],
+      "address": "Kalindi Kunj Rd, near Okhla Head Road, near Metro Station, Jamia Nagar, Okhla, New Delhi, Delhi 110025",
+      "pincode": "110025",
+      "district": "South-East Delhi",
+      "district_court": "Saket"
+    },
+    {
+      "name": "Kalkaji Metro Police Station",
+      "phones": [
+        "011 2643 0607"
+      ],
+      "address": "Block 1, Kalkaji Extension, Kalkaji, New Delhi, Delhi 110019",
+      "pincode": "110019",
+      "district": "South-East Delhi",
+      "district_court": "Saket"
+    },
+    {
+      "name": "Kalkaji Police Station",
+      "phones": [
+        "011 2643 0607"
+      ],
+      "address": "Block 1, Kalkaji Extension, Kalkaji, New Delhi, Delhi 110019",
+      "pincode": "110019",
+      "district": "South-East Delhi",
+      "district_court": "Saket"
+    },
+    {
+      "name": "Kotla Mubarak Pur Police Station",
+      "phones": [
+        "+911124624825"
+      ],
+      "address": "Shri Shri Krishan Sharma Marg, Sewa Nagar, New Delhi, Delhi, 110003",
+      "pincode": "110003",
+      "district": "South-East Delhi",
+      "district_court": "Saket"
+    },
+    {
+      "name": "Lajpat Nagar Metro Police Station",
+      "phones": [
+        "011 2983 2456"
+      ],
+      "address": "15, Feroze Gandhi Rd, Block I, Lajpat Nagar III, Lajpat Nagar, New Delhi, Delhi 110024",
+      "pincode": "110024",
+      "district": "South-East Delhi",
+      "district_court": "Saket"
+    },
+    {
+      "name": "Lajpat Nagar Police Station",
+      "phones": [],
+      "address": "15, Feroze Gandhi Rd, Block I, Lajpat Nagar III, Lajpat Nagar, New Delhi, Delhi 110024",
+      "pincode": "110024",
+      "district": "South-East Delhi",
+      "district_court": "Saket"
+    },
+    {
+      "name": "Lodhi Colony Police Station",
+      "phones": [
+        "011 2462 0283"
+      ],
+      "address": "Data Ram Bhutani Marg, Block G, Police Colony, BK Dutt Colony, New Delhi, Delhi 110003",
+      "pincode": "110003",
+      "district": "South-East Delhi",
+      "district_court": "Saket"
+    },
+    {
+      "name": "New Friends Colony Police Station",
+      "phones": [
+        "+911126834563"
+      ],
+      "address": "Ground Floor, Community Center, NFC Market, New Delhi, Delhi, 110025",
+      "pincode": "110025",
+      "district": "South-East Delhi",
+      "district_court": "Saket"
+    },
+    {
+      "name": "Okhla Industrial Area Police Station",
+      "phones": [
+        "011 2681 6677"
+      ],
+      "address": "Ma Anandmayee Marg, Pocket A, Okhla Phase I, Okhla Industrial Estate, New Delhi, Delhi 110020",
+      "pincode": "110020",
+      "district": "South-East Delhi",
+      "district_court": "Saket"
+    },
+    {
+      "name": "Pul Prahlad Pur Police Station",
+      "phones": [
+        "+911126366800"
+      ],
+      "address": "Mehrauli – Badarpur Rd, Tughlaqabad Extension, Block A, Pul Pehlad Pur, New Delhi, Delhi 110044",
+      "pincode": "110044",
+      "district": "South-East Delhi",
+      "district_court": "Saket"
+    },
+    {
+      "name": "Sarita Vihar Police Station",
+      "phones": [
+        "+911126825553"
+      ],
+      "address": "Okhla Industrial Estate Phase 2, New Delhi, Delhi, 110025",
+      "pincode": "110025",
+      "district": "South-East Delhi",
+      "district_court": "Saket"
+    },
+    {
+      "name": "Bara Hindu Rao Police Station",
+      "phones": [
+        "011 2352 8060"
+      ],
+      "address": "Central, Naya Mohalla, Nawabganj, Tis Hazari, New Delhi, Delhi, 110006",
+      "pincode": "110006",
+      "district": "Central Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Burari Police Station",
+      "phones": [
+        "011 2761 6845"
+      ],
+      "address": "403-404, Sant Nagar Marg, Sant Nagar Extension, West Sant Nagar, Burari, New Delhi, Delhi, 110084",
+      "pincode": "110084",
+      "district": "Central Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Chandni Mahal Police Station",
+      "phones": [
+        "011 2327 1751"
+      ],
+      "address": "Asaf Ali Rd, near Delight Cinema, Bazar Chitli Qabar, Rakab Ganj, Chandni Mahal, Daryaganj, New Delhi, Delhi, 110006",
+      "pincode": "110006",
+      "district": "Central Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Civil Lines Police Station",
+      "phones": [],
+      "address": "No 33, Rajpur Road, Civil Lines, New Delhi, Delhi, 110054",
+      "pincode": "110054",
+      "district": "Central Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Darya Ganj Police Station",
+      "phones": [
+        "011 2326 3240"
+      ],
+      "address": "First floor, 3490, Netaji Subhash Marg, Kucha Lal Man, Daryaganj, New Delhi, Delhi, 110002",
+      "pincode": "110002",
+      "district": "Central Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "DBG Road Police Station",
+      "phones": [],
+      "address": "Desh Bandhu Gupta Road, Market, Karol Bagh, New Delhi, Delhi, 110005",
+      "pincode": "110005",
+      "district": "Central Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Delhi Cantt. Railway Police Station",
+      "phones": [
+        "011 2569 4444"
+      ],
+      "address": "I,Delhi Cantonment, Sardar Patel Marg, Dhaula Kuan Enclave I, Dhaula Kuan, New Delhi, Delhi 110010",
+      "pincode": "110010",
+      "district": "Central Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Gulabi Bagh Police Station",
+      "phones": [
+        "+911123651692"
+      ],
+      "address": "Choudhary Nand Lal Marg, Government Residential Complex, Gulabi Bagh, New Delhi, Delhi, 110007",
+      "pincode": "110007",
+      "district": "Central Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Hauz Qazi Police Station",
+      "phones": [
+        "011 2321 2482"
+      ],
+      "address": "Hauz Qazi Chowk, Bazar Sirkiwalan, Kaccha Pandit Main Bazar, Lal Kuan Bazar, Chandni Chowk, New Delhi, Delhi, 110006",
+      "pincode": "110006",
+      "district": "Central Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Hazrat Nizamuddin Railway Police Station",
+      "phones": [
+        "011 2435 8593"
+      ],
+      "address": "Platform No.1,Hazrath Nizamuddin Railway Station, Mathura Road, New Delhi, Delhi 110013",
+      "pincode": "110013",
+      "district": "Central Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "I.P. Estate Police Station",
+      "phones": [
+        "+911123378474"
+      ],
+      "address": "Indraprastha Estate Police Station, Ring Road, Indraprastha Estate, New Delhi, Delhi, 110002",
+      "pincode": "110002",
+      "district": "Central Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Jama Masjid Police Station",
+      "phones": [
+        "011 2326 9777"
+      ],
+      "address": "Gate – 3, 1424, Patel Gali Rd, Opposite, Dariba Kalan Rd, before, Jama Masjid, Old Delhi, New Delhi, Delhi 110006",
+      "pincode": "110006",
+      "district": "Central Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Kamla Market Police Station",
+      "phones": [
+        "911123230623"
+      ],
+      "address": "Thana Kamla Market, Jawaharlal Nehru Marg, Kamla Market, Ajmeri Gate, New Delhi, Delhi, 110002",
+      "pincode": "110002",
+      "district": "Central Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Karol Bagh Police Station",
+      "phones": [],
+      "address": "2682/1, Ajmal Khan Rd, Block 46, Beadonpura, Karol Bagh, New Delhi, Delhi, 110005",
+      "pincode": "110005",
+      "district": "Central Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Kashmere Gate Metro Police Station",
+      "phones": [
+        "+911123923015"
+      ],
+      "address": "Zorawar Singh Marg, Inter State Bus Terminal, Kashmere Gate, Delhi, 110006",
+      "pincode": "110006",
+      "district": "Central Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Kashmere Gate Police Station",
+      "phones": [
+        "+911123923015"
+      ],
+      "address": "Zorawar Singh Marg, Inter State Bus Terminal, Kashmere Gate, Delhi, 110006",
+      "pincode": "110006",
+      "district": "Central Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Kotwali Police Station",
+      "phones": [
+        "011 2395 3442"
+      ],
+      "address": "HC Sen Marg, Kaccha Bagh Area, Chandni Chowk, New Delhi, Delhi, 110006",
+      "pincode": "110006",
+      "district": "Central Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Lahori Gate Police Station",
+      "phones": [
+        "011 2395 3776"
+      ],
+      "address": "Shradhanand Marg, Shardhanand Market, Farash Khana, Chandni Chowk, New Delhi, Delhi, 110006",
+      "pincode": "110006",
+      "district": "Central Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Maurice Nagar Police Station",
+      "phones": [
+        "+911127666332"
+      ],
+      "address": "Shreya Mishra Marg, Reids Line Staff Flats, University Area North Campus, New Delhi, Delhi, 110007",
+      "pincode": "110007",
+      "district": "Central Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Nabi Karim Police Station",
+      "phones": [
+        "+911123521399"
+      ],
+      "address": "Qutab Road, Aram Nagar, Paharganj, New Delhi, Delhi, 110055",
+      "pincode": "110055",
+      "district": "Central Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "New Delhi Railway Station (NDLS)",
+      "phones": [],
+      "address": "",
+      "pincode": "",
+      "district": "Central Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Old Delhi Railway Station (Railway Main Delhi)",
+      "phones": [],
+      "address": "",
+      "pincode": "",
+      "district": "Central Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Pahar Ganj Police Station",
+      "phones": [
+        "011 2352 4746"
+      ],
+      "address": "2155, Desh Bandhu Gupta Rd, Type 1, Aram Bagh, Paharganj, New Delhi, Delhi 110055",
+      "pincode": "110055",
+      "district": "Central Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Prasad Nagar Police Station",
+      "phones": [
+        "011 2575 1048"
+      ],
+      "address": "30, Tank Rd, Prasad Nagar, Karol Bagh, New Delhi, Delhi, 110005",
+      "pincode": "110005",
+      "district": "Central Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Railway Protection Force (RPF)",
+      "phones": [],
+      "address": "M639+GG3, Central, Shardhanand Market, Farash Khana, Sadar Bazaar, New Delhi, Delhi, 110006",
+      "pincode": "110006",
+      "district": "Central Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Rajinder Nagar Police Station",
+      "phones": [
+        "011 2874 4012"
+      ],
+      "address": "Site No. 7, Plot No. 6, Green Estate Block B Road, New Rajinder Nagar, New Delhi, Delhi 110060",
+      "pincode": "110060",
+      "district": "Central Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Roop Nagar Police Station",
+      "phones": [
+        "011 2384 4632"
+      ],
+      "address": "Bunglow Rd, near Fire Station, Block 6, Roop Nagar, New Delhi, Delhi, 110007",
+      "pincode": "110007",
+      "district": "Central Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Sadar Bazar Police Station",
+      "phones": [
+        "+911122529792"
+      ],
+      "address": "Dungarmal Surana Marg, Basti Harphool Singh, Sadar Bazar Area, New Delhi, Delhi, 110006",
+      "pincode": "110006",
+      "district": "Central Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Sarai Rohilla Police Station",
+      "phones": [
+        "011 2369 1106"
+      ],
+      "address": "Near Shastri Nagar Metro Station, East Moti Bagh, Sarai Rohilla, New Delhi, Delhi, 110007",
+      "pincode": "110007",
+      "district": "Central Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Sarai Rohilla Railway Police Station",
+      "phones": [],
+      "address": "Near Shastri Nagar Metro Station, East Moti Bagh, Sarai Rohilla, New Delhi, Delhi, 110007",
+      "pincode": "110007",
+      "district": "Central Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Subzi Mandi Police Station",
+      "phones": [],
+      "address": "A Connaught Place Office, Baraf Khana Chowk, Near Ghanta Ghar, Subji Mandi, New Delhi, Delhi, 110007",
+      "pincode": "110007",
+      "district": "Central Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Subzi Mandi Railway Police Station",
+      "phones": [],
+      "address": "Railway Colony, Sabzi Mandi, New Delhi, Delhi, 110007",
+      "pincode": "110007",
+      "district": "Central Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Anand Parbat Police Station",
+      "phones": [
+        "011 2876 2468"
+      ],
+      "address": "Gali No. 10, KT Colony, Anand Parbat Industrial Area, Anand Parbat, New Delhi, Delhi, 110005",
+      "pincode": "110005",
+      "district": "West Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Hari Nagar Police Station",
+      "phones": [
+        "+911128122153"
+      ],
+      "address": "Near Clock Tower, Hari Nagar, New Delhi, Delhi, 110064",
+      "pincode": "110064",
+      "district": "West Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Janak Puri Metro Police Station",
+      "phones": [
+        "011 2555 3166"
+      ],
+      "address": "8, 8, Kirti Shikar, District Centre, Janakpuri, New Delhi, Delhi, 110058",
+      "pincode": "110058",
+      "district": "West Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Khyala Police Station",
+      "phones": [
+        "+911128335686"
+      ],
+      "address": "BUS S, Keshopur Rd, NEAR 830, J. J. Colony, Khayala, Vishnu Garden, New Delhi, Delhi, 110027",
+      "pincode": "110027",
+      "district": "West Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Kirti Nagar Police Station",
+      "phones": [
+        "011 2543 8719"
+      ],
+      "address": "N-56, Kirti Nagar Main Rd, Block F, Kirti Nagar Main Rd, Block A, Block F, Mansarover Garden, New Delhi, Delhi, 110015",
+      "pincode": "110015",
+      "district": "West Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Maya Puri Police Station",
+      "phones": [
+        "011 2811 7644"
+      ],
+      "address": "B-88-5, 86-5, Satguru Ram Singh Rd, Block B, Mayapuri Industrial Area Phase I, Mayapuri, New Delhi, Delhi, 110064",
+      "pincode": "110064",
+      "district": "West Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Mianwali Nagar Police Station",
+      "phones": [],
+      "address": "Unnamed Road, Block, A 2, Mianwali Nagar, Paschim Vihar, Delhi, 110087",
+      "pincode": "110087",
+      "district": "West Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Moti Nagar Police Station",
+      "phones": [
+        "011 2593 8880"
+      ],
+      "address": "near Hindustan Petroleum Corporation Limited, Phase 3, Block P, New Moti Nagar, Moti Nagar, New Delhi, Delhi, 110015",
+      "pincode": "110015",
+      "district": "West Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Mundka Police Station",
+      "phones": [
+        "011 2835 2011"
+      ],
+      "address": "New, PVC Markat Rd, New PVC Market, Tikri Kalan, New Delhi, Delhi 110041",
+      "pincode": "110041",
+      "district": "West Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Nangloi Police Station",
+      "phones": [
+        "+911125947224"
+      ],
+      "address": "Rohtak Road, Block 4 ABC, Nangloi Extension, New Delhi, Delhi, 110041",
+      "pincode": "110041",
+      "district": "West Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Nihal Vihar Police Station",
+      "phones": [
+        "+911125946700"
+      ],
+      "address": "Gali Number 11, Block G, Nihal Vihar, Nangloi, New Delhi, Delhi, 110041",
+      "pincode": "110041",
+      "district": "West Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Paschim Vihar Police Station",
+      "phones": [],
+      "address": "Block A 2, AB-1/7, Block B, Mianwali Nagar, Paschim Vihar, New Delhi, Delhi 110087",
+      "pincode": "110087",
+      "district": "West Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Patel Nagar Police Station",
+      "phones": [
+        "011 2587 4034"
+      ],
+      "address": "Main Patel Rd, Block B, West Patel Nagar, Patel Nagar, New Delhi, Delhi, 110008",
+      "pincode": "110008",
+      "district": "West Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Punjabi Bagh Police Station",
+      "phones": [
+        "+911125224162"
+      ],
+      "address": "Rohtak Road, West Punjabi Bagh Road, No 35, New Delhi, Delhi, 110026",
+      "pincode": "110026",
+      "district": "West Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Raja Garden Metro Police Station",
+      "phones": [],
+      "address": "418, Vishal Cinema Rd, Shivaji Place, Block A, Rajouri Garden, New Delhi, Delhi, 110027",
+      "pincode": "110027",
+      "district": "West Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Rajouri Garden Police Station",
+      "phones": [],
+      "address": "418, Vishal Cinema Rd, Shivaji Place, Block A, Rajouri Garden, New Delhi, Delhi, 110027",
+      "pincode": "110027",
+      "district": "West Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Ranhola Police Station",
+      "phones": [
+        "+911128363001"
+      ],
+      "address": "Najafgarh Road, Ranhola Village, Nangloi, New Delhi, Delhi, 110041",
+      "pincode": "110041",
+      "district": "West Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Ranjeet Nagar Police Station",
+      "phones": [
+        "011 2570 4008"
+      ],
+      "address": "New Ranjit Colony, Block B, New Ranjeet Nagar, Ranjeet Nagar, New Delhi, Delhi, 110008",
+      "pincode": "110008",
+      "district": "West Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Tilak Nagar Police Station",
+      "phones": [
+        "011 2540 9290"
+      ],
+      "address": "Najafgarh Rd, Meenakshi Garden, Ashok Nagar, New Delhi, Delhi, 110027",
+      "pincode": "110027",
+      "district": "West Delhi",
+      "district_court": "Tis Hazari"
+    },
+    {
+      "name": "Barakhamba Road Police Station",
+      "phones": [
+        "011 2341 3800"
+      ],
+      "address": "Akash Deep Building, 2 Barakhamba lane, Cannought Place, New Barakhamba Rd, Fire Brigade Lane, Barakhamba, New Delhi, Delhi 110001",
+      "pincode": "110001",
+      "district": "New Delhi",
+      "district_court": "Patiala House"
+    },
+    {
+      "name": "Central Secretariat Metro Police Station",
+      "phones": [],
+      "address": "Rafi Ahmed Kidwai Marg, Kartavya Path, Central Secretariat, New Delhi, Delhi 110001",
+      "pincode": "110001",
+      "district": "New Delhi",
+      "district_court": "Patiala House"
+    },
+    {
+      "name": "Chanakya Puri Police Station",
+      "phones": [
+        "011 2301 2003"
+      ],
+      "address": "Police Station Chanakyapuri Police Station, Teen Murti Marg, Diplomatic Enclave, Chanakyapuri, New Delhi, Delhi 110021",
+      "pincode": "110021",
+      "district": "New Delhi",
+      "district_court": "Patiala House"
+    },
+    {
+      "name": "Connaught Place Police Station",
+      "phones": [
+        "011 2374 7100"
+      ],
+      "address": "20 A, Baba Kharak Singh Rd, Hanuman Mandir, Hanuman Road Area, Connaught Place, New Delhi, Delhi 110001",
+      "pincode": "110001",
+      "district": "New Delhi",
+      "district_court": "Patiala House"
+    },
+    {
+      "name": "Delhi Cantt. Police Station",
+      "phones": [
+        "+911125694444"
+      ],
+      "address": "Sadar Bazar Road, Sadar Bazar, Delhi Cantt Residential Township, New Delhi, Delhi, 110010",
+      "pincode": "110010",
+      "district": "New Delhi",
+      "district_court": "Patiala House"
+    },
+    {
+      "name": "IGI Airport Police Station",
+      "phones": [
+        "+911125652325"
+      ],
+      "address": "T3 Arrival Road, IGI Airport Area, New Delhi, Delhi, 110037",
+      "pincode": "110037",
+      "district": "New Delhi",
+      "district_court": "Patiala House"
+    },
+    {
+      "name": "IGI Metro Police Station",
+      "phones": [],
+      "address": "Indira Gandhi International Airport, New Delhi, Delhi, 110037",
+      "pincode": "110037",
+      "district": "New Delhi",
+      "district_court": "Patiala House"
+    },
+    {
+      "name": "Inder Puri Police Station",
+      "phones": [
+        "011 2583 2202"
+      ],
+      "address": "Dev Prakash Shastri Marg Opp. Pusa, Inder Puri, New Delhi, Delhi 110012",
+      "pincode": "110012",
+      "district": "New Delhi",
+      "district_court": "Patiala House"
+    },
+    {
+      "name": "Mandi House Metro Police Station",
+      "phones": [],
+      "address": "",
+      "pincode": "",
+      "district": "New Delhi",
+      "district_court": "Patiala House"
+    },
+    {
+      "name": "Mandir Marg Police Station",
+      "phones": [
+        "+911123364139"
+      ],
+      "address": "Mandir Marg, Near Hanuman Mandir, Connaught Place, New Delhi, Delhi, 110001",
+      "pincode": "110001",
+      "district": "New Delhi",
+      "district_court": "Patiala House"
+    },
+    {
+      "name": "Naraina Police Station",
+      "phones": [
+        "011 2589 1181"
+      ],
+      "address": "B-218, Munshi Ram Gupta Marg, Industrial Area Phase I, Block B, Naraina Industrial Area Phase 1, Naraina, New Delhi, Delhi 110028",
+      "pincode": "110028",
+      "district": "New Delhi",
+      "district_court": "Patiala House"
+    },
+    {
+      "name": "North Avenue Police Station",
+      "phones": [
+        "011 2589 1181"
+      ],
+      "address": "B-218, Munshi Ram Gupta Marg, Industrial Area Phase I, Block B, Naraina Industrial Area Phase 1, Naraina, New Delhi, Delhi 110028",
+      "pincode": "110028",
+      "district": "New Delhi",
+      "district_court": "Patiala House"
+    },
+    {
+      "name": "Parliament Street Police Station",
+      "phones": [
+        "+911123747777"
+      ],
+      "address": "16, Sansad Marg, Police Colony, Connaught Place, New Delhi, Delhi, 110001",
+      "pincode": "110001",
+      "district": "New Delhi",
+      "district_court": "Patiala House"
+    },
+    {
+      "name": "R.K. Puram Police Station",
+      "phones": [
+        "011 2618 5222"
+      ],
+      "address": "Police Station Rama Krishna Puram, 872, Kaifi Azmi Marg, K Block, Police Colony, Sector 12, Rama Krishna Puram, New Delhi, Delhi 110022",
+      "pincode": "110022",
+      "district": "New Delhi",
+      "district_court": "Patiala House"
+    },
+    {
+      "name": "Sagar Pur Police Station",
+      "phones": [
+        "911125522719"
+      ],
+      "address": "62, Pankha Road, D Block, Sagarpur, New Delhi, Delhi, 110058",
+      "pincode": "110058",
+      "district": "New Delhi",
+      "district_court": "Patiala House"
+    },
+    {
+      "name": "Sarojini Nagar Police Station",
+      "phones": [
+        "+911124671281"
+      ],
+      "address": "Shri Vinayak Mandir Marg, Sarojini Nagar, New Delhi, Delhi, 110023",
+      "pincode": "110023",
+      "district": "New Delhi",
+      "district_court": "Patiala House"
+    },
+    {
+      "name": "South Avenue Police Station",
+      "phones": [
+        "011 2301 3336"
+      ],
+      "address": "72, South Avenue, Road, Teen Murti Marg Area, New Delhi, Delhi 110011",
+      "pincode": "110011",
+      "district": "New Delhi",
+      "district_court": "Patiala House"
+    },
+    {
+      "name": "South Campus Police Station",
+      "phones": [],
+      "address": "K Block, Police Colony, Sector 12, Rama Krishna Puram, New Delhi, Delhi 110022",
+      "pincode": "110022",
+      "district": "New Delhi",
+      "district_court": "Patiala House"
+    },
+    {
+      "name": "Special Cell Police Station",
+      "phones": [],
+      "address": "Lodhi Rd, Meharchand Market, Lodi Colony, New Delhi, Delhi 110003",
+      "pincode": "110003",
+      "district": "New Delhi",
+      "district_court": "Patiala House"
+    },
+    {
+      "name": "Tilak Marg Police Station",
+      "phones": [
+        "011 2338 2100"
+      ],
+      "address": "Tilak Marg, Near, India Gate, New Delhi, Delhi 110001",
+      "pincode": "110001",
+      "district": "New Delhi",
+      "district_court": "Patiala House"
+    },
+    {
+      "name": "Tuglak Road Police Station",
+      "phones": [
+        "+911123012100"
+      ],
+      "address": "Tughlak Road Area, New Delhi, Delhi, 110011",
+      "pincode": "110011",
+      "district": "New Delhi",
+      "district_court": "Patiala House"
+    },
+    {
+      "name": "Vasant Kunj North Police Station",
+      "phones": [
+        "011 2689 2530"
+      ],
+      "address": "Nelson Mandela Marg, Pocket 4, Sector C, Vasant Kunj, New Delhi, Delhi 110070",
+      "pincode": "110070",
+      "district": "New Delhi",
+      "district_court": "Patiala House"
+    },
+    {
+      "name": "Vasant Kunj South Police Station",
+      "phones": [
+        "+911126892530"
+      ],
+      "address": "23, Vasant Kunj Rd, Pocket 4, Sector C, Vasant Kunj, New Delhi, Delhi 110070",
+      "pincode": "110070",
+      "district": "New Delhi",
+      "district_court": "Patiala House"
+    },
+    {
+      "name": "Vasant Vihar Police Station",
+      "phones": [
+        "011 2615 2577"
+      ],
+      "address": "Nelson Mandela Marg, Basant Lok, Vasant Vihar, New Delhi, Delhi 110045",
+      "pincode": "110045",
+      "district": "New Delhi",
+      "district_court": "Patiala House"
+    },
+    {
+      "name": "Gandhi Nagar Police Station",
+      "phones": [
+        "+911122072761"
+      ],
+      "address": "Police Stn, Kailash Nagar, New Delhi, Delhi, 110031",
+      "pincode": "110031",
+      "district": "East Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Gazi Pur Police Station",
+      "phones": [
+        "0548 222 0567"
+      ],
+      "address": "Integrated Freight Complex, Mayur Vihar Phase III, Gharoli, Delhi, 110096",
+      "pincode": "110096",
+      "district": "East Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Geeta Colony Police Station",
+      "phones": [
+        "011 2250 8164"
+      ],
+      "address": "Geeta Colony Rd, Block 12, Geeta Colony, New Delhi, Delhi, 110031",
+      "pincode": "110031",
+      "district": "East Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Kalyan Puri Police Station",
+      "phones": [
+        "+911122772251"
+      ],
+      "address": "Kalyanpuri, Mayur Vihar, Phase 1, Near Chand Cinema, New Delhi, Delhi, 110091",
+      "pincode": "110091",
+      "district": "East Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Krishna Nagar Police Station",
+      "phones": [
+        "22093887"
+      ],
+      "address": "B-81, Gali No. 8, Kanti Nagar South, Seelampur, Shahdara, Delhi, 110031",
+      "pincode": "110031",
+      "district": "East Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Mandawali Police Station",
+      "phones": [
+        "+911122720808"
+      ],
+      "address": "Mother Dairy Marg, Vinod Nagar, New Delhi, Delhi, 110092",
+      "pincode": "110092",
+      "district": "East Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Mayur Vihar Police Station",
+      "phones": [
+        "+911122710335"
+      ],
+      "address": "Trilok Puri Road, Himmatpuri, Mayur Vihar Phase 1, New Delhi, Delhi, 110091",
+      "pincode": "110091",
+      "district": "East Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "New Ashok Nagar Police Station",
+      "phones": [
+        "+911122610954"
+      ],
+      "address": "Dallupura Marg, Vasundhara Enclave, New Delhi, Delhi, 110096",
+      "pincode": "110096",
+      "district": "East Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Pandav Nagar Police Station",
+      "phones": [
+        "011 2278 0100"
+      ],
+      "address": "Ram Kumar Gautam Marg, near Bimla Devi Hospital, Mayur Vihar Phase I, New Delhi, Delhi, 110091",
+      "pincode": "110091",
+      "district": "East Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Preet Vihar Police Station",
+      "phones": [
+        "011 2250 9966"
+      ],
+      "address": "Aditya Arcade, Acharya Nag Raj Marg, Nirman Vihar, C Block, Preet Vihar, Delhi, 110092",
+      "pincode": "110092",
+      "district": "East Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Shakar Pur Police Station",
+      "phones": [
+        "011 2254 2992"
+      ],
+      "address": "Gali No. 10, Block N, Ramesh Park, Laxmi Nagar, New Delhi, Delhi, 110092",
+      "pincode": "110092",
+      "district": "East Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Yamuna Bank Metro Police Station",
+      "phones": [
+        "+911122486281"
+      ],
+      "address": "Yamuna Bank, New Delhi, Delhi, 110092'",
+      "pincode": "110092",
+      "district": "East Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Bhajan Pura Police Station",
+      "phones": [
+        "+911122560741"
+      ],
+      "address": "Thana Road, Block C, Bhajanpura, New Delhi, Delhi, 110053",
+      "pincode": "110053",
+      "district": "North-East Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Gokul Puri Police Station",
+      "phones": [
+        "+911122562112"
+      ],
+      "address": "Gokalpur, New Delhi, Delhi, 110094",
+      "pincode": "110094",
+      "district": "North-East Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Karawal Nagar Police Station",
+      "phones": [
+        "+911122932231"
+      ],
+      "address": "Kamal Vihar Extension, Karawal Nagar, New Delhi, Delhi, 110094",
+      "pincode": "110094",
+      "district": "North-East Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Khajoori Khas Police Station",
+      "phones": [
+        "+911122962735"
+      ],
+      "address": "Sonia Vihar, New Delhi, Delhi, 110090",
+      "pincode": "110090",
+      "district": "North-East Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "New Usman Pur Police Station",
+      "phones": [
+        "011 2217 2410"
+      ],
+      "address": "Grand Trunk Rd, New Usmanpur, Shahdara, New Delhi, Delhi, 110053",
+      "pincode": "110053",
+      "district": "North-East Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Seelampur Police Station",
+      "phones": [
+        "+911122562989"
+      ],
+      "address": "Thana Road, Block G, Phase 2, New Seelampur, New Delhi, Delhi, 110053",
+      "pincode": "110053",
+      "district": "North-East Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Shastri Park Metro Police Station",
+      "phones": [],
+      "address": "शास्त्री पार्क, Station Approach Road, Metro Vihar, Shastri Park, Shahdara, Delhi, 110053",
+      "pincode": "110053",
+      "district": "North-East Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Sonia Vihar Police Station",
+      "phones": [
+        "+911124533174"
+      ],
+      "address": "Main Road, Sonia Vihar, New Delhi, Delhi, 110090",
+      "pincode": "110090",
+      "district": "North-East Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Anand Vihar Police Station",
+      "phones": [
+        "011 2214 0181"
+      ],
+      "address": "Maharaja Surajmal Marg, Road, opposite to BML Bhardwaj, Karkardooma, Shahdara, Delhi, 110032",
+      "pincode": "110032",
+      "district": "Shahdara Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Anand Vihar Railway Police Station",
+      "phones": [],
+      "address": "Isbt Anand Vihar, Anand Vihar, Delhi, 110092",
+      "pincode": "110092",
+      "district": "Shahdara Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Farash Bazar Police Station",
+      "phones": [
+        "+911121210833"
+      ],
+      "address": "Sunder Park, Shahdara, New Delhi, Delhi, 110032",
+      "pincode": "110032",
+      "district": "Shahdara Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "GTB Enclave Police Station",
+      "phones": [
+        "+911122580947"
+      ],
+      "address": "GTB Enclave, Shahdara, New Delhi, Delhi, 110095",
+      "pincode": "110095",
+      "district": "Shahdara Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Harsh Vihar Police Station",
+      "phones": [],
+      "address": "Main 33 Futa Rajiv Nagar Road, Block D, Harsh Vihar Extension, Mandoli, New Delhi, Delhi, 110093",
+      "pincode": "110093",
+      "district": "Shahdara Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Main 33 Futa Rajiv Nagar Road, Block D, Harsh Vihar Extension, Mandoli, New Delhi, Delhi, 110093",
+      "phones": [],
+      "address": "",
+      "pincode": "",
+      "district": "Shahdara Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Jagat Puri Police Station",
+      "phones": [
+        "+918750870623"
+      ],
+      "address": "538/A, East Laxmi Market, Block C, Brij Puri, Krishna Nagar, Delhi, 110051",
+      "pincode": "110051",
+      "district": "Shahdara Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Jyoti Nagar Police Station",
+      "phones": [
+        "011 2281 0524"
+      ],
+      "address": "C-324, Loni Rd, Kardam Puri Extension, Kardam Puri, Shahdara, Delhi, 110093",
+      "pincode": "110093",
+      "district": "Shahdara Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Madhu Vihar Police Station",
+      "phones": [
+        "011 2272 0808"
+      ],
+      "address": "Mother Dairy Marg, Vinod Nagar, I.P.Extension, Patparganj, New Delhi, Delhi 110092",
+      "pincode": "110092",
+      "district": "Shahdara Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Mansarover Park Police Station",
+      "phones": [
+        "+917065036029"
+      ],
+      "address": "Moti Ram Road, CSC DDA Market, Mansarovar Park, New Delhi, Delhi, 110032",
+      "pincode": "110032",
+      "district": "Shahdara Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Nand Nagri Police Station",
+      "phones": [
+        "011 2258 3307"
+      ],
+      "address": "Depot, Near, A Block, Nand Nagri, Mandoli, New Delhi, Delhi 110093",
+      "pincode": "110093",
+      "district": "Shahdara Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Seema Puri Police Station",
+      "phones": [
+        "011 2259 9394"
+      ],
+      "address": "Zulfe Bengal, Dilshad Garden, New Delhi, Delhi, 110095",
+      "pincode": "110095",
+      "district": "Shahdara Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Shahdara Police Station",
+      "phones": [],
+      "address": "Grand Trunk Rd, Navin Shahdara, Shahdara, Delhi, 110032",
+      "pincode": "110032",
+      "district": "Shahdara Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Vivek Vihar Police Station",
+      "phones": [
+        "+911122146040"
+      ],
+      "address": "LIG Flat Satyam Enclave, Vivek Vihar, New Delhi, Delhi, 110095",
+      "pincode": "110095",
+      "district": "Shahdara Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Welcome Police Station",
+      "phones": [
+        "+911122826808"
+      ],
+      "address": "Gorakh Park West, New Delhi, Delhi, 110032",
+      "pincode": "110032",
+      "district": "Shahdara Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Zafrabad Police Station",
+      "phones": [
+        "011 2256 0191"
+      ],
+      "address": "Maj, Asha Ram Tyagi Marg, Block C1, Jafrabad, Shahdara, Delhi, 110053",
+      "pincode": "110053",
+      "district": "Shahdara Delhi",
+      "district_court": "Karkardooma"
+    },
+    {
+      "name": "Aman Vihar Police Station",
+      "phones": [
+        "+911127581559"
+      ],
+      "address": "Pocket 3, Police Station Road, CH Bhim Singh Nambardar Marg, Sector 22, Rohini, Delhi, 110086",
+      "pincode": "110086",
+      "district": "North-West Delhi",
+      "district_court": "Rohini"
+    },
+    {
+      "name": "Ashok Vihar Police Station",
+      "phones": [
+        "011 2724 3066"
+      ],
+      "address": "POCKET B, B 3-4, Deep Cinema Rd, Ashok Vihar II, Wazirpur, Phase 2, Ashok Vihar, Delhi, 110052",
+      "pincode": "110052",
+      "district": "North-West Delhi",
+      "district_court": "Rohini"
+    },
+    {
+      "name": "Begum Pur Police Station",
+      "phones": [
+        "011 2757 9029"
+      ],
+      "address": "Dahiya Badshah Marg, Rohini Extension, Sector 23, Rohini, Delhi, 110086",
+      "pincode": "110086",
+      "district": "North-West Delhi",
+      "district_court": "Rohini"
+    },
+    {
+      "name": "Bharat Nagar Police Station",
+      "phones": [
+        "+911127301200"
+      ],
+      "address": "Near Deep Chand Bandhu Hospital, Kokiwala Bagh, Phase 4, Nimri Colony, Ashok Vihar, New Delhi, Delhi, 110052",
+      "pincode": "110052",
+      "district": "North-West Delhi",
+      "district_court": "Rohini"
+    },
+    {
+      "name": "Kanjhawala Police Station",
+      "phones": [
+        "011 2595 2485"
+      ],
+      "address": "676, MDR 138, Kanjhawala Industrial Area, Kanjhawala, Delhi, 110081",
+      "pincode": "110081",
+      "district": "North-West Delhi",
+      "district_court": "Rohini"
+    },
+    {
+      "name": "Keshav Puram Police Station",
+      "phones": [
+        "+911127181325"
+      ],
+      "address": "Dr Satpal Sachdeva Marg, Keshav Puram, New Delhi, Delhi, 110035",
+      "pincode": "110035",
+      "district": "North-West Delhi",
+      "district_court": "Rohini"
+    },
+    {
+      "name": "Mangol Puri Police Station",
+      "phones": [
+        "011 2595 3785"
+      ],
+      "address": "D-904, Maharishi Valmiki Marg, Block E, Mangolpuri, Delhi, 110083",
+      "pincode": "110083",
+      "district": "North-West Delhi",
+      "district_court": "Rohini"
+    },
+    {
+      "name": "Maurya Enclave Police Station",
+      "phones": [],
+      "address": "Maurya Enclave, Block FP, Poorvi Pitampura, New Delhi, Delhi, 110034",
+      "pincode": "110034",
+      "district": "North-West Delhi",
+      "district_court": "Rohini"
+    },
+    {
+      "name": "Maurya Enclave, Block FP, Poorvi Pitampura, New Delhi, Delhi, 110034",
+      "phones": [],
+      "address": "",
+      "pincode": "",
+      "district": "North-West Delhi",
+      "district_court": "Rohini"
+    },
+    {
+      "name": "Rani Bagh Police Station",
+      "phones": [
+        "+911127353014"
+      ],
+      "address": "A Block, Saraswati Vihar, Pritampura, New Delhi, Delhi, 110034",
+      "pincode": "110034",
+      "district": "North-West Delhi",
+      "district_court": "Rohini"
+    },
+    {
+      "name": "Rithala Metro Police Station",
+      "phones": [
+        "+911127058384"
+      ],
+      "address": "Bhagwan Mahavir Marg, Rohini Sector 5, New Delhi, Delhi, 110085",
+      "pincode": "110085",
+      "district": "North-West Delhi",
+      "district_court": "Rohini"
+    },
+    {
+      "name": "Rohini North Police Station",
+      "phones": [
+        "011 2704 8210"
+      ],
+      "address": "Shiva Rd, Sector 7, Rohini, Delhi, 110085",
+      "pincode": "110085",
+      "district": "North-West Delhi",
+      "district_court": "Rohini"
+    },
+    {
+      "name": "Rohini South Police Station",
+      "phones": [
+        "+911127512189"
+      ],
+      "address": "Sector 3, Rohini, New Delhi, Delhi, 110085",
+      "pincode": "110085",
+      "district": "North-West Delhi",
+      "district_court": "Rohini"
+    },
+    {
+      "name": "Shalimar Bagh Police Station",
+      "phones": [
+        "+911127495198"
+      ],
+      "address": "North West District Shalimar Bagh, New Delhi, Delhi, 110088",
+      "pincode": "110088",
+      "district": "North-West Delhi",
+      "district_court": "Rohini"
+    },
+    {
+      "name": "Subhash Palace Police Station",
+      "phones": [
+        "+911127353014"
+      ],
+      "address": "New Building Police Stn, Skrpur, New Delhi, Delhi, 110034",
+      "pincode": "110034",
+      "district": "North-West Delhi",
+      "district_court": "Rohini"
+    },
+    {
+      "name": "Sultan Puri Police Station",
+      "phones": [
+        "+911125472166"
+      ],
+      "address": "Block P, Thana Road, Sultanpuri, New Delhi, Delhi, 110086",
+      "pincode": "110086",
+      "district": "North-West Delhi",
+      "district_court": "Rohini"
+    },
+    {
+      "name": "Udyog Nagar Metro Police Station",
+      "phones": [],
+      "address": "",
+      "pincode": "",
+      "district": "North-West Delhi",
+      "district_court": "Rohini"
+    },
+    {
+      "name": "Vijay Vihar Police Station",
+      "phones": [
+        "+911127052772"
+      ],
+      "address": "Sector 5, Rohini, Vijay Vihar, New Delhi, Delhi, 110085",
+      "pincode": "110085",
+      "district": "North-West Delhi",
+      "district_court": "Rohini"
+    },
+    {
+      "name": "Adarsh Nagar Police Station",
+      "phones": [
+        "+911127672452"
+      ],
+      "address": "Mahatma Gandhi Road, Adarsh Nagar, Azadpur, New Delhi, Delhi, 110033",
+      "pincode": "110033",
+      "district": "North Delhi",
+      "district_court": "Rohini"
+    },
+    {
+      "name": "Ali Pur Police Station",
+      "phones": [],
+      "address": "Main GT Karnal Road, Alipur, New Delhi, Delhi, 110036",
+      "pincode": "110036",
+      "district": "North Delhi",
+      "district_court": "Rohini"
+    },
+    {
+      "name": "Bawana Police Station",
+      "phones": [
+        "091362 52645"
+      ],
+      "address": "D 236, Sector 3, Bawana, New Delhi, Delhi, 110039",
+      "pincode": "110039",
+      "district": "North Delhi",
+      "district_court": "Rohini"
+    },
+    {
+      "name": "Bhalswa Dairy Police Station",
+      "phones": [
+        "+911127811933"
+      ],
+      "address": "Rajeev Nagar Gurudwara Road, Bhalashwa Dairy, New Delhi, Delhi, 110042",
+      "pincode": "110042",
+      "district": "North Delhi",
+      "district_court": "Rohini"
+    },
+    {
+      "name": "Jahangir Puri Police Station",
+      "phones": [
+        "+911127631600"
+      ],
+      "address": "North West District Jahangir Puri, New Delhi, Delhi, 110033",
+      "pincode": "110033",
+      "district": "North Delhi",
+      "district_court": "Rohini"
+    },
+    {
+      "name": "K.N. Katju Marg Police Station",
+      "phones": [
+        "+911127571162"
+      ],
+      "address": "N-56, Kirti Nagar Main Rd, Block F, Kirti Nagar Main Road, Mansarover Garden, New Delhi, Delhi, 110085",
+      "pincode": "110085",
+      "district": "North Delhi",
+      "district_court": "Rohini"
+    },
+    {
+      "name": "Mahendra Park Police Station",
+      "phones": [
+        "+911127632501"
+      ],
+      "address": "Mahendra Park, Jahangirpuri, New Delhi, Delhi, 110033",
+      "pincode": "110033",
+      "district": "North Delhi",
+      "district_court": "Rohini"
+    },
+    {
+      "name": "Model Town Police Station",
+      "phones": [
+        "+911127459202"
+      ],
+      "address": "Model Town, North West District, New Delhi, Delhi, 110009",
+      "pincode": "110009",
+      "district": "North Delhi",
+      "district_court": "Rohini"
+    },
+    {
+      "name": "Mukherjee Nagar Police Station",
+      "phones": [
+        "+911127654675"
+      ],
+      "address": "No 22, Banda Bahadur Marg, Hakikat Nagar, New Delhi, Delhi, 110009",
+      "pincode": "110009",
+      "district": "North Delhi",
+      "district_court": "Rohini"
+    },
+    {
+      "name": "Narela Industrial Area Police Station",
+      "phones": [
+        "+911127787593"
+      ],
+      "address": "Block D, DSIDC Industrial Area Narela, New Delhi, Delhi, 110040",
+      "pincode": "110040",
+      "district": "North Delhi",
+      "district_court": "Rohini"
+    },
+    {
+      "name": "Prashant Vihar Police Station",
+      "phones": [
+        "+911127557184"
+      ],
+      "address": "Shaheed Colonel Guruveer Singh Sarna Marg, Rohini Sector 9, New Delhi, Delhi, 110085",
+      "pincode": "110085",
+      "district": "North Delhi",
+      "district_court": "Rohini"
+    },
+    {
+      "name": "Samai Pur Badli Police Station",
+      "phones": [],
+      "address": "Jail, Outer Ring Rd, Near Rohini, Block A, Sector 19, Rohini, Delhi, 110085",
+      "pincode": "110085",
+      "district": "North Delhi",
+      "district_court": "Rohini"
+    },
+    {
+      "name": "Shahabad Dairy Police Station",
+      "phones": [
+        "+911127821047"
+      ],
+      "address": "Pehladpur Road, Block B, Pehladpur Extension, New Delhi, Delhi, 110042",
+      "pincode": "110042",
+      "district": "North Delhi",
+      "district_court": "Rohini"
+    },
+    {
+      "name": "Swaroop Nagar Police Station",
+      "phones": [
+        "+911127811415"
+      ],
+      "address": "Shiv Mandir Road, Saroop Nagar, New Delhi, Delhi, 110042",
+      "pincode": "110042",
+      "district": "North Delhi",
+      "district_court": "Rohini"
+    },
+    {
+      "name": "Baba Haridas Nagar Police Station",
+      "phones": [
+        "+918750871028"
+      ],
+      "address": "Dwarka District, New Delhi, Delhi, 110072",
+      "pincode": "110072",
+      "district": "South-West Delhi",
+      "district_court": "Dwarka"
+    },
+    {
+      "name": "Binda Pur Police Station",
+      "phones": [
+        "+918750871025"
+      ],
+      "address": "40 Feet Road, Block K, Chanakya Place Part 2, New Delhi, Delhi, 110059",
+      "pincode": "110059",
+      "district": "South-West Delhi",
+      "district_court": "Dwarka"
+    },
+    {
+      "name": "Chhawla Police Station",
+      "phones": [
+        "011 2531 6300"
+      ],
+      "address": "Najafgarh Kapashera Rd, Deenpur, Gandhi Park, Najafgarh, Delhi, 110043",
+      "pincode": "110043",
+      "district": "South-West Delhi",
+      "district_court": "Dwarka"
+    },
+    {
+      "name": "Dabri Police Station",
+      "phones": [
+        "+918750871005",
+        "+918750871024"
+      ],
+      "address": "Shaheed Balwan Singh Solanki Marg, Block E, Part 1, Sitapuri, Dabri, New Delhi, Delhi, 110045",
+      "pincode": "110045",
+      "district": "South-West Delhi",
+      "district_court": "Dwarka"
+    },
+    {
+      "name": "Delhi Cantonment Board",
+      "phones": [
+        "011 2569 3837"
+      ],
+      "address": "Sadar Bazar Rd, Sadar Bazaar, Delhi Cantonment, New Delhi, Delhi 110010",
+      "pincode": "110010",
+      "district": "South-West Delhi",
+      "district_court": "Dwarka"
+    },
+    {
+      "name": "Dwarka North Police Station",
+      "phones": [
+        "+918750871022"
+      ],
+      "address": "Sector 17C, Dwarka, New Delhi, Delhi, 110078",
+      "pincode": "110078",
+      "district": "South-West Delhi",
+      "district_court": "Dwarka"
+    },
+    {
+      "name": "Dwarka Sector-23 Police Station",
+      "phones": [
+        "011 2805 1585"
+      ],
+      "address": "Sector 23, Dwarka, New Delhi, Delhi, 110077",
+      "pincode": "110077",
+      "district": "South-West Delhi",
+      "district_court": "Dwarka"
+    },
+    {
+      "name": "Dwarka South Police Station",
+      "phones": [
+        "+911125089326"
+      ],
+      "address": "South West District, Sector 9, Dwarka, New Delhi, Delhi, 110077",
+      "pincode": "110077",
+      "district": "South-West Delhi",
+      "district_court": "Dwarka"
+    },
+    {
+      "name": "Jaffarpur Kalan Police Station",
+      "phones": [
+        "+911125318500"
+      ],
+      "address": "Samazpur Khalsa, New Delhi, Delhi, 110073",
+      "pincode": "110073",
+      "district": "South-West Delhi",
+      "district_court": "Dwarka"
+    },
+    {
+      "name": "Janak Puri Police Station",
+      "phones": [
+        "+918750871129"
+      ],
+      "address": "8, Janakpuri District Center, Janakpuri, New Delhi, Delhi, 110058",
+      "pincode": "110058",
+      "district": "South-West Delhi",
+      "district_court": "Dwarka"
+    },
+    {
+      "name": "Kapashera Police Station",
+      "phones": [
+        "011 2506 6105"
+      ],
+      "address": "D, Block 324, Old Delhi Gurgaon Rd, D Block, Kapas Hera Extension, Kapas Hera Estate, New Delhi, Delhi 110097",
+      "pincode": "110097",
+      "district": "South-West Delhi",
+      "district_court": "Dwarka"
+    },
+    {
+      "name": "Najafgarh Police Station",
+      "phones": [
+        "011 2501 6200"
+      ],
+      "address": "Najafgarh Thana Rd, Najafgarh, Delhi, 110043",
+      "pincode": "110043",
+      "district": "South-West Delhi",
+      "district_court": "Dwarka"
+    },
+    {
+      "name": "Palam Domestic Airport Police Station",
+      "phones": [
+        "+911125652325"
+      ],
+      "address": "T3 Arrival Road, IGI Airport Area, New Delhi, Delhi, 110037",
+      "pincode": "110037",
+      "district": "South-West Delhi",
+      "district_court": "Dwarka"
+    },
+    {
+      "name": "Palam Village Police Station",
+      "phones": [
+        "011 2536 5980"
+      ],
+      "address": "Palam Village Rd, Puran Nagar, Raj Nagar I, Palam, New Delhi, Delhi, 110045",
+      "pincode": "110045",
+      "district": "South-West Delhi",
+      "district_court": "Dwarka"
+    },
+    {
+      "name": "Uttam Nagar Police Station",
+      "phones": [
+        "+911125561728"
+      ],
+      "address": "JJ Colony, Uttam Nagar, New Delhi, Delhi, 110059",
+      "pincode": "110059",
+      "district": "South-West Delhi",
+      "district_court": "Dwarka"
+    },
+    {
+      "name": "Vikas Puri Police Station",
+      "phones": [
+        "+918750871131"
+      ],
+      "address": "A-Block, Near Petrol Pump, Vikaspuri, New Delhi, Delhi, 110018",
+      "pincode": "110018",
+      "district": "South-West Delhi",
+      "district_court": "Dwarka"
+    }
+  ],
+  "source": "Compiled from Delhi Police website and manual entries",
+  "version": "1.0",
+  "last_updated": "2025-07-01"
+}

@@ -1,0 +1,245 @@
+{
+  "categories": [
+    {
+      "id": "emergency",
+      "title": "🚨 Emergency Services",
+      "helplines": [
+        {
+          "name": "National Emergency Number",
+          "number": "112",
+          "description": "Single emergency number for all emergency services"
+        },
+        {
+          "name": "Police",
+          "number": "100",
+          "description": "Police emergency and assistance"
+        },
+        {
+          "name": "Fire Brigade",
+          "number": "101",
+          "description": "Fire emergency services"
+        },
+        {
+          "name": "Ambulance",
+          "number": "102",
+          "description": "Medical emergency and ambulance services"
+        },
+        {
+          "name": "Disaster Management",
+          "number": "108",
+          "description": "Disaster management and emergency response"
+        }
+      ]
+    },
+    {
+      "id": "women-child",
+      "title": "👩‍👧‍👦 Women & Child Safety",
+      "helplines": [
+        {
+          "name": "Women Helpline",
+          "number": "1091",
+          "description": "24x7 helpline for women in distress"
+        },
+        {
+          "name": "Women Helpline (Domestic Violence)",
+          "number": "181",
+          "description": "Support for domestic violence cases"
+        },
+        {
+          "name": "Child Helpline",
+          "number": "1098",
+          "description": "24x7 helpline for children in need"
+        },
+        {
+          "name": "Missing Child Search",
+          "number": "1094",
+          "description": "Report and search for missing children"
+        }
+      ]
+    },
+    {
+      "id": "health",
+      "title": "🏥 Health & Mental Health",
+      "helplines": [
+        {
+          "name": "National Health Mission",
+          "number": "1075",
+          "description": "Health information and services"
+        },
+        {
+          "name": "Mental Health Helpline",
+          "number": "1800-599-0019",
+          "description": "Mental health support and counseling"
+        },
+        {
+          "name": "COVID-19 Helpline",
+          "number": "14416",
+          "description": "COVID-19 related queries and support"
+        },
+        {
+          "name": "AIDS Helpline",
+          "number": "1097",
+          "description": "HIV/AIDS information and support"
+        }
+      ]
+    },
+    {
+      "id": "identity",
+      "title": "🆔 Identity & Aadhaar",
+      "helplines": [
+        {
+          "name": "Aadhaar Helpline",
+          "number": "1947",
+          "description": "Aadhaar enrollment and update services"
+        },
+        {
+          "name": "Passport Seva",
+          "number": "1800-180-1947",
+          "description": "Passport related queries and services"
+        }
+      ]
+    },
+    {
+      "id": "consumer",
+      "title": "🛡️ Consumer & Citizens' Grievances",
+      "helplines": [
+        {
+          "name": "Consumer Helpline",
+          "number": "14404",
+          "description": "Consumer complaints and grievances"
+        },
+        {
+          "name": "Citizen Services",
+          "number": "1800-11-4000",
+          "description": "General citizen services and information"
+        },
+        {
+          "name": "Public Grievances",
+          "number": "1800-180-1124",
+          "description": "Public grievances and complaints"
+        }
+      ]
+    },
+    {
+      "id": "financial",
+      "title": "💰 Financial & Income Tax",
+      "helplines": [
+        {
+          "name": "Income Tax Helpline",
+          "number": "1800-180-1961",
+          "description": "Income tax queries and assistance"
+        },
+        {
+          "name": "Banking Ombudsman",
+          "number": "155260",
+          "description": "Banking complaints and grievances"
+        },
+        {
+          "name": "Insurance Ombudsman",
+          "number": "1800-180-1717",
+          "description": "Insurance related complaints"
+        }
+      ]
+    },
+    {
+      "id": "transport",
+      "title": "🚗 Transport & Highways",
+      "helplines": [
+        {
+          "name": "Highway Emergency",
+          "number": "1033",
+          "description": "Highway emergency and assistance"
+        },
+        {
+          "name": "Road Transport",
+          "number": "0120-2459169",
+          "description": "Road transport queries and complaints"
+        },
+        {
+          "name": "Railway Enquiry",
+          "number": "139",
+          "description": "Railway information and booking"
+        }
+      ]
+    },
+    {
+      "id": "cyber",
+      "title": "🔒 Cybercrime & Digital Fraud",
+      "helplines": [
+        {
+          "name": "Cyber Crime Helpline",
+          "number": "1930",
+          "description": "Report cybercrime and online fraud"
+        },
+        {
+          "name": "Digital Fraud Helpline",
+          "number": "155260",
+          "description": "Report digital payment fraud"
+        }
+      ]
+    },
+    {
+      "id": "legal",
+      "title": "⚖️ Legal & Social Services",
+      "helplines": [
+        {
+          "name": "Legal Aid",
+          "number": "15100",
+          "description": "Free legal aid and assistance"
+        },
+        {
+          "name": "Senior Citizens Helpline",
+          "number": "1800-111-0031",
+          "description": "Support for senior citizens"
+        },
+        {
+          "name": "Disability Helpline",
+          "number": "1800-180-1124",
+          "description": "Support for persons with disabilities"
+        }
+      ]
+    },
+    {
+      "id": "agriculture",
+      "title": "🌾 Agriculture & Farmers",
+      "helplines": [
+        {
+          "name": "Kisan Call Centre",
+          "number": "1800-180-1551",
+          "description": "Agricultural advice and support for farmers"
+        },
+        {
+          "name": "PM Kisan Helpline",
+          "number": "1800-115-5266",
+          "description": "PM Kisan scheme related queries"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "title": "📋 Other National Helplines",
+      "helplines": [
+        {
+          "name": "CAPF Recruitment",
+          "number": "1800-180-5666",
+          "description": "Central Armed Police Forces recruitment"
+        },
+        {
+          "name": "Stand-Up India",
+          "number": "1800-180-1111",
+          "description": "Stand-Up India scheme information"
+        },
+        {
+          "name": "Postal Services",
+          "number": "1711",
+          "description": "India Post services and complaints"
+        },
+        {
+          "name": "Gas Booking",
+          "number": "1906",
+          "description": "LPG gas cylinder booking"
+        }
+      ]
+    }
+  ]
+}

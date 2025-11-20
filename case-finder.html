@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legalese India - Similar Case Finder</title>
+    <link rel="stylesheet" href="css/finder.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+    <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-content">
+        <a href="index.html" class="logo">
+          <i class="fas fa-scale-balanced"></i>
+          <span>Legalese</span>
+        </a>
+        <div class="desktop-nav">
+          <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+          <a href="legalbot.html" class="nav-link"><i class="fas fa-comment-dots"></i> LegalBot</a>
+          <a href="documents.html" class="nav-link"><i class="fas fa-file-alt"></i> Documents</a>
+          <a href="police-stations.html" class="nav-link"><i class="fas fa-map-marker-alt"></i> Police Help</a>
+          <a href="contacts.html" class="nav-link"><i class="fas fa-phone"></i> Contacts</a>
+          <a href="legal-books.html" class="nav-link"><i class="fas fa-book"></i> Legal Books</a>
+        </div>
+        <button class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav">
+    <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+    <a href="legalbot.html" class="nav-link"><i class="fas fa-comment-dots"></i> LegalBot</a>
+    <a href="documents.html" class="nav-link"><i class="fas fa-file-alt"></i> Documents</a>
+    <a href="police-stations.html" class="nav-link"><i class="fas fa-map-marker-alt"></i> Police Help</a>
+    <a href="contacts.html" class="nav-link"><i class="fas fa-phone"></i> Contacts</a>
+    <a href="legal-books.html" class="nav-link"><i class="fas fa-book"></i> Legal Books</a>
+    <a href="lawyer-connect.html" class="nav-link"><i class="fas fa-scale-balanced"></i> Lawyers</a>
+    <a href="case-finder.html" class="nav-link"><i class="fas fa-search"></i> Case Finder</a>
+    <a href="anonymous-report.html" class="nav-link"><i class="fas fa-shield-alt"></i> Tips</a>
+  </div>
+    <header class="header">
+        <div class="container">
+            <div class="logo-section">
+                <h1 class="title">Legalese India – Similar Case Finder</h1>
+                <p class="subtitle">Find relevant Indian legal precedents with AI-powered search</p>
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="total-cases">Loading...</span>
+                    <span class="stat-label">Cases</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="categories-count">Loading...</span>
+                    <span class="stat-label">Categories</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <section class="search-section">
+                <div class="search-container">
+                    <label for="case-description" class="input-label">
+                        Describe your legal issue or case details:
+                    </label>
+                    <textarea 
+                        id="case-description" 
+                        class="case-input" 
+                        placeholder="Enter a brief description of your legal case, including key details, circumstances, or legal issues involved. E.g., 'Property dispute between neighbors', 'Employment termination without notice', 'Consumer complaint against service provider'..."
+                        rows="6"
+                    ></textarea>
+                    
+                    <div class="search-controls">
+                        <button id="search-btn" class="search-button">
+                            <span class="button-text">🔍 Find Similar Cases</span>
+                            <div class="loading-spinner" style="display: none;"></div>
+                        </button>
+                        <button id="clear-btn" class="clear-button">Clear</button>
+                    </div>
+
+                    <!-- Advanced Filters -->
+                    <div class="filters-section" id="filters-section" style="display: none;">
+                        <h3 class="filters-title">🔧 Advanced Filters</h3>
+                        <div class="filters-grid">
+                            <div class="filter-group">
+                                <label for="category-filter">Legal Category:</label>
+                                <select id="category-filter" class="filter-select">
+                                    <option value="">All Categories</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label for="year-filter">Year:</label>
+                                <select id="year-filter" class="filter-select">
+                                    <option value="">All Years</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label for="jurisdiction-filter">Court:</label>
+                                <select id="jurisdiction-filter" class="filter-select">
+                                    <option value="">All Courts</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label for="outcome-filter">Outcome:</label>
+                                <select id="outcome-filter" class="filter-select">
+                                    <option value="">All Outcomes</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button id="apply-filters-btn" class="apply-filters-btn">Apply Filters</button>
+                    </div>
+
+                    <button id="toggle-filters" class="toggle-filters-btn">
+                        <span id="filter-toggle-text">Show Advanced Filters</span>
+                        <span class="filter-arrow">▼</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Quick Search Suggestions -->
+            <section class="suggestions-section">
+                <h3 class="suggestions-title">💡 Quick Search Examples</h3>
+                <div class="suggestions-container">
+                    <button class="suggestion-chip" data-query="property dispute boundary wall">Property Dispute</button>
+                    <button class="suggestion-chip" data-query="employment termination wrongful dismissal">Employment Law</button>
+                    <button class="suggestion-chip" data-query="consumer complaint defective product">Consumer Rights</button>
+                    <button class="suggestion-chip" data-query="matrimonial divorce maintenance">Family Law</button>
+                    <button class="suggestion-chip" data-query="criminal defamation social media">Criminal Law</button>
+                    <button class="suggestion-chip" data-query="constitutional fundamental rights">Constitutional Law</button>
+                    <button class="suggestion-chip" data-query="tax evasion income tax">Tax Law</button>
+                    <button class="suggestion-chip" data-query="motor accident compensation">Motor Accident</button>
+                </div>
+            </section>
+
+            <!-- Results Summary -->
+            <section id="results-summary" class="results-summary" style="display: none;">
+                <div class="summary-content">
+                    <h3 id="results-count">0 Similar Cases Found</h3>
+                    <div class="summary-stats">
+                        <div class="summary-stat">
+                            <span class="summary-label">Avg. Relevance:</span>
+                            <span id="avg-relevance" class="summary-value">0%</span>
+                        </div>
+                        <div class="summary-stat">
+                            <span class="summary-label">Most Common Category:</span>
+                            <span id="common-category" class="summary-value">-</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sort-controls">
+                    <label for="sort-select">Sort by:</label>
+                    <select id="sort-select" class="sort-select">
+                        <option value="relevance">Relevance</option>
+                        <option value="year">Year (Newest)</option>
+                        <option value="year-old">Year (Oldest)</option>
+                        <option value="title">Title (A-Z)</option>
+                    </select>
+                </div>
+            </section>
+
+            <section id="results-section" class="results-section" style="display: none;">
+                <div id="results-container" class="results-container">
+                    <!-- Results will be populated here -->
+                </div>
+            </section>
+
+            <section id="no-results" class="no-results" style="display: none;">
+                <div class="no-results-content">
+                    <div class="no-results-icon">🔍</div>
+                    <h3>No Similar Cases Found</h3>
+                    <p>Try adjusting your search terms or using our suggested examples above.</p>
+                    <div class="no-results-suggestions">
+                        <h4>Search Tips for Indian Legal Cases:</h4>
+                        <ul>
+                            <li>Use specific Indian legal terms and provisions</li>
+                            <li>Include relevant Acts (e.g., IPC, CrPC, CPC, Consumer Protection Act)</li>
+                            <li>Mention court jurisdiction (Supreme Court, High Court, District Court)</li>
+                            <li>Include case type (Civil, Criminal, Constitutional, Commercial)</li>
+                            <li>Try broader terms if your search is too specific</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="js/main.js"></script>
+    <script src="js/finder.js"></script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+/* Additional styles for legal books page */
+
+.search-filters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-group label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.filter-group select {
+  padding: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.search-results {
+  margin-bottom: 2rem;
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.results-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.search-result-item {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.search-result-item:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-color);
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.result-act-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.result-act {
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 0.875rem;
+}
+
+.result-chapter {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.result-match-type {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.result-section h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.result-content {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.result-match {
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.match-text {
+  color: var(--primary-color);
+}
+
+.match-text mark {
+  background-color: #fef3c7;
+  color: #92400e;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.result-keywords {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.section-keywords {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.section-item.highlighted {
+  background-color: #fef3c7;
+  border-left-color: #f59e0b;
+  animation: highlight-fade 3s ease-out;
+}
+
+@keyframes highlight-fade {
+  0% {
+    background-color: #fef3c7;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+}
+
+.loading-spinner {
+  text-align: center;
+}
+
+.loading-spinner i {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.loading-spinner p {
+  color: var(--text-muted);
+}
+
+.error {
+  text-align: center;
+  color: var(--red-color);
+  padding: 2rem;
+}
+
+.quick-reference-item {
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.quick-reference-item:hover {
+  background-color: var(--bg-color);
+  border-color: var(--primary-color);
+}
+
+.quick-reference-item li {
+  cursor: pointer;
+  padding: 0.125rem 0;
+  border-radius: 0.25rem;
+  transition: var(--transition);
+}
+
+.quick-reference-item li:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  padding-left: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .search-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .results-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .result-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

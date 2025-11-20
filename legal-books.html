@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Legal Books & Acts - Legalese</title>
+  <link rel="stylesheet" href="css/styles.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-content">
+        <a href="index.html" class="logo">
+          <i class="fas fa-scale-balanced"></i>
+          <span>Legalese</span>
+        </a>
+        <div class="desktop-nav">
+          <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+          <a href="legalbot.html" class="nav-link"><i class="fas fa-comment-dots"></i> LegalBot</a>
+          <a href="documents.html" class="nav-link"><i class="fas fa-file-alt"></i> Documents</a>
+          <a href="police-stations.html" class="nav-link"><i class="fas fa-map-marker-alt"></i> Police Help</a>
+          <a href="contacts.html" class="nav-link"><i class="fas fa-phone"></i> Contacts</a>
+          <a href="legal-books.html" class="nav-link active"><i class="fas fa-book"></i> Legal Books</a>
+        </div>
+        <button class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav">
+    <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+    <a href="legalbot.html" class="nav-link"><i class="fas fa-comment-dots"></i> LegalBot</a>
+    <a href="documents.html" class="nav-link"><i class="fas fa-file-alt"></i> Documents</a>
+    <a href="police-stations.html" class="nav-link"><i class="fas fa-map-marker-alt"></i> Police Help</a>
+    <a href="contacts.html" class="nav-link"><i class="fas fa-phone"></i> Contacts</a>
+    <a href="legal-books.html" class="nav-link active"><i class="fas fa-book"></i> Legal Books</a>
+    <a href="lawyer-connect.html" class="nav-link"><i class="fas fa-scale-balanced"></i> Lawyers</a>
+    <a href="case-finder.html" class="nav-link"><i class="fas fa-search"></i> Case Finder</a>
+    <a href="anonymous-report.html" class="nav-link"><i class="fas fa-shield-alt"></i> Tips</a>
+  </div>
+
+  <div class="container page-container">
+    <div class="page-header">
+      <h1>Legal Books & Acts</h1>
+      <p>Browse and search through Indian legal acts and their provisions</p>
+    </div>
+
+    <!-- Search Section -->
+    <div class="card mb-4">
+      <div class="card-header">
+        <div class="header-with-icon">
+          <i class="fas fa-search"></i>
+          <h2>Search Legal Provisions</h2>
+        </div>
+        <p>Search across all acts, chapters, and sections</p>
+      </div>
+      <div class="card-body">
+        <div class="search-form">
+          <div class="search-input-group">
+            <input type="text" id="legal-search" placeholder="Search for sections, titles, or content...">
+            <button class="btn btn-primary" id="search-btn">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+          <div class="search-filters">
+            <div class="filter-group">
+              <label for="act-filter">Filter by Act:</label>
+              <select id="act-filter">
+                <option value="all">All Acts</option>
+                <option value="bns">BNS 2023</option>
+                <option value="bnss">BNSS 2023</option>
+                <option value="bsa">BSA 2023</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label for="search-type">Search Type:</label>
+              <select id="search-type">
+                <option value="all">All Content</option>
+                <option value="section">Section Number</option>
+                <option value="title">Section Title</option>
+                <option value="content">Section Content</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Search Results -->
+    <div id="search-results" class="search-results hidden">
+      <div class="results-header">
+        <h3 id="results-count">Search Results (0 found)</h3>
+        <button id="clear-search" class="btn btn-outline btn-sm">
+          <i class="fas fa-times"></i> Clear Search
+        </button>
+      </div>
+      <div id="results-list" class="results-list">
+        <!-- Search results will be populated here -->
+      </div>
+    </div>
+
+    <!-- Tabs for Acts -->
+    <div class="tabs" id="acts-tabs">
+      <div class="tabs-header">
+        <button class="tab-btn active" data-tab="bns">
+          <i class="fas fa-book"></i> BNS 2023
+        </button>
+        <button class="tab-btn" data-tab="bnss">
+          <i class="fas fa-file-alt"></i> BNSS 2023
+        </button>
+        <button class="tab-btn" data-tab="bsa">
+          <i class="fas fa-file-alt"></i> BSA 2023
+        </button>
+      </div>
+      <div id="tab-contents">
+        <!-- Content will be loaded here -->
+      </div>
+    </div>
+
+    <!-- Quick Reference Section -->
+    <div class="card mt-4">
+      <div class="card-header">
+        <h2>Quick Reference</h2>
+        <p>Important sections and commonly referenced provisions</p>
+      </div>
+      <div class="card-body">
+        <div id="quick-reference-grid" class="quick-reference-grid">
+          <!-- Quick reference will be populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Loading indicator -->
+    <div id="loading" class="loading hidden">
+      <div class="loading-spinner">
+        <i class="fas fa-spinner fa-spin"></i>
+        <p>Loading legal acts...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/legal-books.js"></script>
+</body>
+</html>

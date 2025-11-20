@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lawyer Connect - Legalese</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-content">
+        <a href="index.html" class="logo">
+          <i class="fas fa-scale-balanced"></i>
+          <span>Legalese</span>
+        </a>
+        <div class="desktop-nav">
+          <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+          <a href="legalbot.html" class="nav-link"><i class="fas fa-comment-dots"></i> LegalBot</a>
+          <a href="documents.html" class="nav-link"><i class="fas fa-file-alt"></i> Documents</a>
+          <a href="police-stations.html" class="nav-link"><i class="fas fa-map-marker-alt"></i> Police Help</a>
+          <a href="contacts.html" class="nav-link"><i class="fas fa-phone"></i> Contacts</a>
+          <a href="legal-books.html" class="nav-link"><i class="fas fa-book"></i> Legal Books</a>
+        </div>
+        <button class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav">
+    <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+    <a href="legalbot.html" class="nav-link"><i class="fas fa-comment-dots"></i> LegalBot</a>
+    <a href="documents.html" class="nav-link"><i class="fas fa-file-alt"></i> Documents</a>
+    <a href="police-stations.html" class="nav-link"><i class="fas fa-map-marker-alt"></i> Police Help</a>
+    <a href="contacts.html" class="nav-link"><i class="fas fa-phone"></i> Contacts</a>
+    <a href="legal-books.html" class="nav-link"><i class="fas fa-book"></i> Legal Books</a>
+    <a href="lawyer-connect.html" class="nav-link active"><i class="fas fa-scale-balanced"></i> Lawyers</a>
+    <a href="case-finder.html" class="nav-link"><i class="fas fa-search"></i> Case Finder</a>
+    <a href="anonymous-report.html" class="nav-link"><i class="fas fa-shield-alt"></i> Tips</a>
+  </div>
+
+  <div class="container page-container">
+    <div class="page-header">
+      <h1>Find Qualified Lawyers</h1>
+      <p>Connect with experienced legal professionals in your area</p>
+    </div>
+
+    <div class="card mb-4">
+      <div class="card-header">
+        <div class="header-with-icon">
+          <i class="fas fa-scale-balanced"></i>
+          <h2>Search Lawyers</h2>
+        </div>
+        <p>Find lawyers by name, specialization, or location</p>
+      </div>
+      <div class="card-body">
+        <div class="search-form">
+          <div class="search-grid">
+            <div class="form-group">
+              <label for="search">Search</label>
+              <input type="text" id="search" placeholder="Lawyer name or specialization">
+            </div>
+            <div class="form-group">
+              <label for="specialization">Specialization</label>
+              <select id="specialization">
+                <option value="all">All Specializations</option>
+                <option value="Criminal Law">Criminal Law</option>
+                <option value="Civil Law">Civil Law</option>
+                <option value="Family Law">Family Law</option>
+                <option value="Corporate Law">Corporate Law</option>
+                <option value="Property Law">Property Law</option>
+                <option value="Labor Law">Labor Law</option>
+                <option value="Tax Law">Tax Law</option>
+                <option value="Constitutional Law">Constitutional Law</option>
+                <option value="Consumer Law">Consumer Law</option>
+                <option value="Women Rights">Women Rights</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="location">Location</label>
+              <select id="location">
+                <option value="all">All Locations</option>
+                <option value="Supreme Court">Supreme Court</option>
+                <option value="Delhi High Court">Delhi High Court</option>
+                <option value="District Court">District Court</option>
+                <option value="Family Court">Family Court</option>
+                <option value="Consumer Court">Consumer Court</option>
+                <option value="Labor Court">Labor Court</option>
+              </select>
+            </div>
+            <div class="form-group search-btn-container">
+              <button id="search-lawyers-btn" class="btn btn-primary btn-block">
+                <i class="fas fa-search"></i> Search
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="lawyers-results" class="hidden">
+      <div class="results-header">
+        <h2 id="lawyers-count">Available Lawyers (0 found)</h2>
+        <button class="btn btn-outline btn-sm">
+          <i class="fas fa-filter"></i> More Filters
+        </button>
+      </div>
+
+      <div id="lawyers-grid" class="lawyers-grid">
+        <!-- Lawyers will be added here by JavaScript -->
+      </div>
+    </div>
+
+    <div id="no-lawyers-found" class="card text-center py-12 hidden">
+      <div class="card-body">
+        <i class="fas fa-scale-balanced text-gray icon-xl"></i>
+        <h3>No lawyers found</h3>
+        <p>Try adjusting your search criteria or browse all lawyers</p>
+        <button id="show-all-lawyers-btn" class="btn btn-primary">Show All Lawyers</button>
+      </div>
+    </div>
+
+    <div class="card legal-aid-card">
+      <div class="card-header">
+        <h2 class="text-blue">Need Legal Aid?</h2>
+        <p class="text-blue">If you cannot afford legal representation, you may be eligible for free legal aid</p>
+      </div>
+      <div class="card-body">
+        <div class="legal-aid-info">
+          <p><strong>National Legal Services Authority (NALSA)</strong></p>
+          <p>Toll-free: 15100 | Website: nalsa.gov.in</p>
+          <button class="btn btn-primary btn-sm mt-2" onclick="window.open('tel:15100')">
+            Call NALSA Helpline
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/lawyers.js"></script>
+</body>
+</html>

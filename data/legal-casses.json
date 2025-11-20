@@ -1,0 +1,412 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "lastUpdated": "2024-01-15",
+    "totalCases": 18,
+    "description": "Comprehensive database of Indian legal cases across various practice areas",
+    "disclaimer": "This information is for educational purposes only and does not constitute legal advice"
+  },
+  "cases": [
+    {
+      "id": 1,
+      "title": "Sharma v. Gupta - Property Boundary Dispute",
+      "year": 2023,
+      "summary": "Civil suit regarding boundary wall construction between adjacent properties. Delhi High Court ruled in favor of plaintiff, ordering defendant to demolish unauthorized construction and pay damages of ₹5 lakhs.",
+      "keywords": [
+        "property dispute",
+        "boundary wall",
+        "civil suit",
+        "unauthorized construction",
+        "damages",
+        "neighbors",
+        "real estate"
+      ],
+      "category": "Property Law",
+      "jurisdiction": "Delhi High Court",
+      "outcome": "Plaintiff Victory",
+      "legalProvisions": ["Transfer of Property Act, 1882", "Specific Relief Act, 1963"],
+      "caseNumber": "CS(OS) 234/2023",
+      "judge": "Justice Rajesh Kumar"
+    },
+    {
+      "id": 2,
+      "title": "Rajesh Kumar v. XYZ Technologies Ltd. - Wrongful Termination",
+      "year": 2023,
+      "summary": "Employment dispute where employee was terminated without proper notice period. Labour Court awarded compensation of ₹8 lakhs and ordered reinstatement with back wages under Industrial Disputes Act.",
+      "keywords": [
+        "wrongful termination",
+        "employment law",
+        "industrial disputes act",
+        "notice period",
+        "compensation",
+        "reinstatement",
+        "labour court"
+      ],
+      "category": "Employment Law",
+      "jurisdiction": "Labour Court",
+      "outcome": "Employee Victory",
+      "legalProvisions": ["Industrial Disputes Act, 1947", "Contract Labour Act, 1970"],
+      "caseNumber": "LC 456/2023",
+      "judge": "Presiding Officer Sunita Sharma"
+    },
+    {
+      "id": 3,
+      "title": "State of Maharashtra v. Anil Deshmukh - Corruption Charges",
+      "year": 2022,
+      "summary": "Criminal case under Prevention of Corruption Act involving bribery charges against public official. Bombay High Court convicted defendant, sentenced to 3 years imprisonment and fine of ₹10 lakhs.",
+      "keywords": [
+        "corruption",
+        "bribery",
+        "prevention of corruption act",
+        "public official",
+        "criminal law",
+        "imprisonment",
+        "fine"
+      ],
+      "category": "Criminal Law",
+      "jurisdiction": "Bombay High Court",
+      "outcome": "Conviction",
+      "legalProvisions": ["Prevention of Corruption Act, 1988", "Indian Penal Code, 1860"],
+      "caseNumber": "Crl. Appeal 789/2022",
+      "judge": "Justice Priya Mehta"
+    },
+    {
+      "id": 4,
+      "title": "Priya Mehta v. ABC Bank - Consumer Complaint",
+      "year": 2023,
+      "summary": "Consumer complaint against bank for unauthorized debit and poor service. National Consumer Disputes Redressal Commission ordered bank to refund ₹2 lakhs with interest and pay compensation.",
+      "keywords": [
+        "consumer complaint",
+        "banking",
+        "unauthorized debit",
+        "poor service",
+        "consumer protection act",
+        "refund",
+        "compensation"
+      ],
+      "category": "Consumer Law",
+      "jurisdiction": "National Consumer Commission",
+      "outcome": "Consumer Victory",
+      "legalProvisions": ["Consumer Protection Act, 2019", "Banking Regulation Act, 1949"],
+      "caseNumber": "NCDRC 123/2023",
+      "judge": "President Dr. Kavita Singh"
+    },
+    {
+      "id": 5,
+      "title": "Sunita Devi v. Ramesh Devi - Matrimonial Dispute",
+      "year": 2022,
+      "summary": "Divorce petition with maintenance claim under Hindu Marriage Act. Family Court granted divorce and ordered monthly maintenance of ₹25,000 for wife and ₹15,000 for child custody.",
+      "keywords": [
+        "divorce",
+        "maintenance",
+        "hindu marriage act",
+        "family court",
+        "child custody",
+        "matrimonial dispute",
+        "alimony"
+      ],
+      "category": "Family Law",
+      "jurisdiction": "Family Court",
+      "outcome": "Divorce Granted",
+      "legalProvisions": ["Hindu Marriage Act, 1955", "Hindu Adoption and Maintenance Act, 1956"],
+      "caseNumber": "HMA 567/2022",
+      "judge": "Judge Anita Sharma"
+    },
+    {
+      "id": 6,
+      "title": "Citizens for Clean Air v. State of Delhi - Environmental Petition",
+      "year": 2023,
+      "summary": "Public Interest Litigation regarding air pollution control measures. Supreme Court directed Delhi government to implement stricter emission norms and establish more monitoring stations.",
+      "keywords": [
+        "environmental law",
+        "air pollution",
+        "public interest litigation",
+        "emission norms",
+        "monitoring stations",
+        "environmental protection"
+      ],
+      "category": "Environmental Law",
+      "jurisdiction": "Supreme Court of India",
+      "outcome": "PIL Allowed",
+      "legalProvisions": ["Environment Protection Act, 1986", "Air (Prevention and Control of Pollution) Act, 1981"],
+      "caseNumber": "PIL 890/2023",
+      "judge": "Chief Justice D.Y. Chandrachud"
+    },
+    {
+      "id": 7,
+      "title": "Income Tax Department v. Reliance Industries - Tax Evasion",
+      "year": 2022,
+      "summary": "Tax evasion case involving transfer pricing disputes. Income Tax Appellate Tribunal ruled partially in favor of assessee, reducing tax demand from ₹500 crores to ₹200 crores.",
+      "keywords": [
+        "tax evasion",
+        "transfer pricing",
+        "income tax",
+        "appellate tribunal",
+        "tax demand",
+        "corporate tax"
+      ],
+      "category": "Tax Law",
+      "jurisdiction": "Income Tax Appellate Tribunal",
+      "outcome": "Partial Relief",
+      "legalProvisions": ["Income Tax Act, 1961", "Transfer Pricing Regulations"],
+      "caseNumber": "ITA 234/2022",
+      "judge": "Judicial Member Justice R.K. Agarwal"
+    },
+    {
+      "id": 8,
+      "title": "Ravi Shankar v. State Transport Corporation - Motor Accident Claim",
+      "year": 2023,
+      "summary": "Motor accident compensation claim under Motor Vehicles Act. Motor Accident Claims Tribunal awarded ₹15 lakhs compensation for permanent disability caused by bus accident.",
+      "keywords": [
+        "motor accident",
+        "compensation",
+        "motor vehicles act",
+        "permanent disability",
+        "bus accident",
+        "claims tribunal"
+      ],
+      "category": "Motor Accident Law",
+      "jurisdiction": "Motor Accident Claims Tribunal",
+      "outcome": "Compensation Awarded",
+      "legalProvisions": ["Motor Vehicles Act, 1988", "Fatal Accidents Act, 1855"],
+      "caseNumber": "MACT 345/2023",
+      "judge": "Presiding Officer Amit Kumar"
+    },
+    {
+      "id": 9,
+      "title": "Dr. Kavita Sharma v. Medical Council of India - Professional Misconduct",
+      "year": 2022,
+      "summary": "Professional misconduct case against medical practitioner for negligence. Medical Council suspended license for 2 years and imposed fine under Indian Medical Council Act.",
+      "keywords": [
+        "medical negligence",
+        "professional misconduct",
+        "medical council",
+        "license suspension",
+        "indian medical council act"
+      ],
+      "category": "Medical Law",
+      "jurisdiction": "Medical Council",
+      "outcome": "License Suspended",
+      "legalProvisions": ["Indian Medical Council Act, 1956", "Consumer Protection Act, 2019"],
+      "caseNumber": "MCI 678/2022",
+      "judge": "Ethics Committee Chairman Dr. Rajesh Gupta"
+    },
+    {
+      "id": 10,
+      "title": "Farmers Union v. State Government - Land Acquisition",
+      "year": 2023,
+      "summary": "Challenge to land acquisition for industrial project under Land Acquisition Act. High Court quashed acquisition citing inadequate compensation and lack of proper consultation.",
+      "keywords": [
+        "land acquisition",
+        "farmers rights",
+        "industrial project",
+        "compensation",
+        "land acquisition act",
+        "consultation"
+      ],
+      "category": "Land Law",
+      "jurisdiction": "State High Court",
+      "outcome": "Acquisition Quashed",
+      "legalProvisions": ["Right to Fair Compensation and Transparency in Land Acquisition Act, 2013"],
+      "caseNumber": "WP 901/2023",
+      "judge": "Justice Manoj Kumar"
+    },
+    {
+      "id": 11,
+      "title": "Tech Solutions Pvt. Ltd. v. Former Employee - Non-Compete Violation",
+      "year": 2023,
+      "summary": "Breach of non-compete agreement and trade secrets violation. Delhi High Court granted injunction restraining employee from working with competitor for 1 year.",
+      "keywords": [
+        "non-compete agreement",
+        "trade secrets",
+        "breach of contract",
+        "injunction",
+        "employment contract",
+        "confidentiality"
+      ],
+      "category": "Contract Law",
+      "jurisdiction": "Delhi High Court",
+      "outcome": "Injunction Granted",
+      "legalProvisions": ["Indian Contract Act, 1872", "Specific Relief Act, 1963"],
+      "caseNumber": "CS(COMM) 112/2023",
+      "judge": "Justice Neena Bansal Krishna"
+    },
+    {
+      "id": 12,
+      "title": "Minority Rights Forum v. State of Gujarat - Fundamental Rights",
+      "year": 2022,
+      "summary": "Constitutional petition challenging discriminatory government policy. Supreme Court struck down policy as violative of Articles 14 and 21 of the Constitution.",
+      "keywords": [
+        "fundamental rights",
+        "discrimination",
+        "constitutional law",
+        "article 14",
+        "article 21",
+        "minority rights",
+        "government policy"
+      ],
+      "category": "Constitutional Law",
+      "jurisdiction": "Supreme Court of India",
+      "outcome": "Policy Struck Down",
+      "legalProvisions": ["Constitution of India - Articles 14, 21, 25"],
+      "caseNumber": "WP(C) 445/2022",
+      "judge": "Justice S.A. Nazeer"
+    },
+    {
+      "id": 13,
+      "title": "Builders Association v. Municipal Corporation - Building Permits",
+      "year": 2023,
+      "summary": "Challenge to new building regulations and permit procedures. High Court upheld regulations but directed corporation to streamline approval process within 60 days.",
+      "keywords": [
+        "building permits",
+        "municipal corporation",
+        "building regulations",
+        "approval process",
+        "construction law"
+      ],
+      "category": "Municipal Law",
+      "jurisdiction": "State High Court",
+      "outcome": "Regulations Upheld",
+      "legalProvisions": ["Municipal Corporation Act", "Building and Other Construction Workers Act, 1996"],
+      "caseNumber": "WP 556/2023",
+      "judge": "Justice Rekha Palli"
+    },
+    {
+      "id": 14,
+      "title": "Software Engineers Union v. IT Company - Overtime Compensation",
+      "year": 2023,
+      "summary": "Collective dispute regarding overtime payment and working hours in IT sector. Labour Court ordered company to pay pending overtime dues of ₹2 crores to employees.",
+      "keywords": [
+        "overtime compensation",
+        "working hours",
+        "IT sector",
+        "collective dispute",
+        "labour law",
+        "software engineers"
+      ],
+      "category": "Labour Law",
+      "jurisdiction": "Labour Court",
+      "outcome": "Union Victory",
+      "legalProvisions": ["Factories Act, 1948", "Payment of Wages Act, 1936"],
+      "caseNumber": "ID 667/2023",
+      "judge": "Labour Court Judge Pradeep Singh"
+    },
+    {
+      "id": 15,
+      "title": "Intellectual Property Rights Society v. Piracy Network - Copyright Infringement",
+      "year": 2022,
+      "summary": "Copyright infringement case against online piracy network. Delhi High Court ordered blocking of websites and awarded damages of ₹50 lakhs to copyright holders.",
+      "keywords": [
+        "copyright infringement",
+        "online piracy",
+        "intellectual property",
+        "website blocking",
+        "damages",
+        "digital rights"
+      ],
+      "category": "Intellectual Property Law",
+      "jurisdiction": "Delhi High Court",
+      "outcome": "Copyright Holders Victory",
+      "legalProvisions": ["Copyright Act, 1957", "Information Technology Act, 2000"],
+      "caseNumber": "CS(COMM) 778/2022",
+      "judge": "Justice Asha Menon"
+    },
+    {
+      "id": 16,
+      "title": "Pension Fund Regulatory Authority v. Insurance Company - Regulatory Violation",
+      "year": 2023,
+      "summary": "Regulatory violation case for non-compliance with pension fund investment norms. Securities Appellate Tribunal imposed penalty of ₹5 crores and directed compliance within 90 days.",
+      "keywords": [
+        "regulatory violation",
+        "pension fund",
+        "investment norms",
+        "securities law",
+        "penalty",
+        "compliance"
+      ],
+      "category": "Securities Law",
+      "jurisdiction": "Securities Appellate Tribunal",
+      "outcome": "Penalty Imposed",
+      "legalProvisions": [
+        "Securities and Exchange Board of India Act, 1992",
+        "Pension Fund Regulatory and Development Authority Act, 2013"
+      ],
+      "caseNumber": "SAT 889/2023",
+      "judge": "Presiding Officer Justice Tarun Agarwala"
+    },
+    {
+      "id": 17,
+      "title": "Telecom Operators Association v. Department of Telecommunications - Spectrum Allocation",
+      "year": 2022,
+      "summary": "Challenge to spectrum allocation policy and pricing. Telecom Disputes Settlement Appellate Tribunal modified policy and reduced spectrum prices by 20%.",
+      "keywords": [
+        "spectrum allocation",
+        "telecom policy",
+        "pricing",
+        "telecommunications",
+        "regulatory dispute",
+        "spectrum prices"
+      ],
+      "category": "Telecommunications Law",
+      "jurisdiction": "Telecom Disputes Tribunal",
+      "outcome": "Policy Modified",
+      "legalProvisions": ["Telecom Regulatory Authority of India Act, 1997", "Indian Telegraph Act, 1885"],
+      "caseNumber": "TDSAT 990/2022",
+      "judge": "Chairperson Justice Shiva Kirti Singh"
+    },
+    {
+      "id": 18,
+      "title": "Women's Rights Collective v. State Police - Gender Discrimination",
+      "year": 2023,
+      "summary": "Public Interest Litigation challenging gender-based discrimination in police recruitment. Supreme Court directed implementation of 33% reservation for women in police force.",
+      "keywords": [
+        "gender discrimination",
+        "police recruitment",
+        "women's rights",
+        "reservation",
+        "public interest litigation",
+        "equality"
+      ],
+      "category": "Gender Rights Law",
+      "jurisdiction": "Supreme Court of India",
+      "outcome": "Reservation Directed",
+      "legalProvisions": ["Constitution of India - Articles 14, 15, 16", "Equal Remuneration Act, 1976"],
+      "caseNumber": "PIL 101/2023",
+      "judge": "Justice B.V. Nagarathna"
+    }
+  ],
+  "categories": [
+    "Property Law",
+    "Employment Law",
+    "Criminal Law",
+    "Consumer Law",
+    "Family Law",
+    "Environmental Law",
+    "Tax Law",
+    "Motor Accident Law",
+    "Medical Law",
+    "Land Law",
+    "Contract Law",
+    "Constitutional Law",
+    "Municipal Law",
+    "Labour Law",
+    "Intellectual Property Law",
+    "Securities Law",
+    "Telecommunications Law",
+    "Gender Rights Law"
+  ],
+  "jurisdictions": [
+    "Supreme Court of India",
+    "Delhi High Court",
+    "Bombay High Court",
+    "State High Court",
+    "Labour Court",
+    "Family Court",
+    "National Consumer Commission",
+    "Income Tax Appellate Tribunal",
+    "Motor Accident Claims Tribunal",
+    "Medical Council",
+    "Securities Appellate Tribunal",
+    "Telecom Disputes Tribunal"
+  ]
+}

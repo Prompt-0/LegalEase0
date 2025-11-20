@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LegalBot - Legalese</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/legal_bot.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-content">
+        <a href="index.html" class="logo">
+          <i class="fas fa-scale-balanced"></i>
+          <span>Legalese</span>
+        </a>
+        <div class="desktop-nav">
+          <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+          <a href="legalbot.html" class="nav-link active"><i class="fas fa-comment-dots"></i> LegalBot</a>
+          <a href="documents.html" class="nav-link"><i class="fas fa-file-alt"></i> Documents</a>
+          <a href="police-stations.html" class="nav-link"><i class="fas fa-map-marker-alt"></i> Police Help</a>
+          <a href="contacts.html" class="nav-link"><i class="fas fa-phone"></i> Contacts</a>
+          <a href="legal-books.html" class="nav-link"><i class="fas fa-book"></i> Legal Books</a>
+        </div>
+        <button class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav">
+    <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+    <a href="legalbot.html" class="nav-link active"><i class="fas fa-comment-dots"></i> LegalBot</a>
+    <a href="documents.html" class="nav-link"><i class="fas fa-file-alt"></i> Documents</a>
+    <a href="police-stations.html" class="nav-link"><i class="fas fa-map-marker-alt"></i> Police Help</a>
+    <a href="contacts.html" class="nav-link"><i class="fas fa-phone"></i> Contacts</a>
+    <a href="legal-books.html" class="nav-link"><i class="fas fa-book"></i> Legal Books</a>
+    <a href="lawyer-connect.html" class="nav-link"><i class="fas fa-scale-balanced"></i> Lawyers</a>
+    <a href="case-finder.html" class="nav-link"><i class="fas fa-search"></i> Case Finder</a>
+    <a href="anonymous-report.html" class="nav-link"><i class="fas fa-shield-alt"></i> Tips</a>
+  </div>
+
+  <div class="container page-container">
+    <div class="page-header">
+      <h1>LegalBot - AI Legal Assistant</h1>
+      <p>Get instant legal guidance in multiple languages</p>
+    </div>
+
+    <div class="card chat-card">
+      <div class="card-header">
+        <div class="chat-header-left">
+          <i class="fas fa-robot"></i>
+          <h2>LegalBot - AI Legal Assistant</h2>
+        </div>
+        <div class="chat-header-right">
+          <i class="fas fa-globe"></i>
+          <select id="language-selector">
+            <option value="english">English</option>
+            <option value="hindi">हिंदी</option>
+            <option value="bengali">বাংলা</option>
+          </select>
+        </div>
+      </div>
+      <!--here div and i frame has the same size-->
+      <div class="chatbase"><iframe 
+        src="https://www.chatbase.co/chatbot-iframe/v7J8xuJ2duPY7ScvZ2NvO"
+        width="100%"
+        style="height:100%;"
+        frameborder="0"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+  <div id="quick-questions" class="quick-questions">
+        <p>Quick questions to get started:</p>
+        <div class="quick-questions-grid">
+          <button class="quick-question-btn">How to file an FIR?</button>
+          <button class="quick-question-btn">RTI application process</button>
+          <button class="quick-question-btn">Rights of Woman</button>
+          <button class="quick-question-btn">Property dispute help</button>
+          <button class="quick-question-btn">Consumer rights</button>
+          <button class="quick-question-btn">Domestic violence support</button>
+        </div>
+  </div>
+
+
+  <script src="js/main.js"></script>
+  <!-- <script src="js/legalbot.js"></script> -->
+</body>
+</html>

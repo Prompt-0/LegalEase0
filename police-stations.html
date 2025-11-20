@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Police Stations - Legalese</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/police_station.css">
+
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-content">
+        <a href="index.html" class="logo">
+          <i class="fas fa-scale-balanced"></i>
+          <span>Legalese</span>
+        </a>
+        <div class="desktop-nav">
+          <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+          <a href="legalbot.html" class="nav-link"><i class="fas fa-comment-dots"></i> LegalBot</a>
+          <a href="documents.html" class="nav-link"><i class="fas fa-file-alt"></i> Documents</a>
+          <a href="police-stations.html" class="nav-link active"><i class="fas fa-map-marker-alt"></i> Police Help</a>
+          <a href="contacts.html" class="nav-link"><i class="fas fa-phone"></i> Contacts</a>
+          <a href="legal-books.html" class="nav-link"><i class="fas fa-book"></i> Legal Books</a>
+        </div>
+        <button class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav">
+    <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+    <a href="legalbot.html" class="nav-link"><i class="fas fa-comment-dots"></i> LegalBot</a>
+    <a href="documents.html" class="nav-link"><i class="fas fa-file-alt"></i> Documents</a>
+    <a href="police-stations.html" class="nav-link active"><i class="fas fa-map-marker-alt"></i> Police Help</a>
+    <a href="contacts.html" class="nav-link"><i class="fas fa-phone"></i> Contacts</a>
+    <a href="legal-books.html" class="nav-link"><i class="fas fa-book"></i> Legal Books</a>
+    <a href="lawyer-connect.html" class="nav-link"><i class="fas fa-scale-balanced"></i> Lawyers</a>
+    <a href="case-finder.html" class="nav-link"><i class="fas fa-search"></i> Case Finder</a>
+    <a href="anonymous-report.html" class="nav-link"><i class="fas fa-shield-alt"></i> Tips</a>
+  </div>
+
+  <div class="container page-container">
+    <div class="page-header">
+      <h1>Locate Police Stations</h1>
+      <p>Find nearby police stations and their contact information</p>
+    </div>
+
+    <div class="card mb-4">
+      <div class="card-header">
+        <h2>Find Police Stations Near You</h2>
+                <p>Note : Currently this site has information of all 192 Police Stations in Delhi.</p>
+        <p>Enter your location or use current location to find nearby police stations</p>
+
+      </div>
+      <div class="card-body">
+        <div class="form-group">
+          <label for="location">Your Location</label>
+          <div class="location-input">
+            <input type="text" id="location" placeholder="Enter your address, district, city, or PIN code">
+            <button id="current-location-btn" class="btn btn-outline">
+              <i class="fas fa-location-arrow"></i> Current Location
+            </button>
+          </div>
+        </div>
+        <button id="find-stations-btn" class="btn btn-primary">
+          <i class="fas fa-search"></i> Find Police Stations
+        </button>
+      </div>
+    </div>
+
+    <div id="stations-results" class="hidden">
+      <h2 id="stations-count">Police Stations Near You (0 found)</h2>
+
+      <div id="stations-grid" class="stations-grid">
+        <!-- Police stations will be added here by JavaScript -->
+      </div>
+    </div>
+
+    <div class="card emergency-card">
+      <div class="card-header">
+        <h2 class="text-red">Emergency Contacts</h2>
+        <p class="text-red">For immediate emergency assistance, use these numbers</p>
+      </div>
+      <div class="card-body">
+        <div class="emergency-grid">
+          <div class="emergency-contact">
+            <h3>Police Emergency</h3>
+            <p class="emergency-number">100</p>
+            <button class="btn btn-red btn-sm" onclick="window.open('tel:100')">Call Now</button>
+          </div>
+          <div class="emergency-contact">
+            <h3>Women Helpline</h3>
+            <p class="emergency-number">1091</p>
+            <button class="btn btn-red btn-sm" onclick="window.open('tel:1091')">Call Now</button>
+          </div>
+          <div class="emergency-contact">
+            <h3>Child Helpline</h3>
+            <p class="emergency-number">1098</p>
+            <button class="btn btn-red btn-sm" onclick="window.open('tel:1098')">Call Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/police-stations.js"></script>
+</body>
+</html>

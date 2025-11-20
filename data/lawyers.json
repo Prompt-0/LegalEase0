@@ -1,0 +1,37 @@
+    [
+    {
+        "name": "Adv. Priya Sharma",
+        "specialization": "Family Law",
+        "location": "Family Court",
+        "experience": "8 years",
+        "phone": "+91-9876543210"
+    },
+    {
+        "name": "Adv. Rajesh Gupta",
+        "specialization": "Criminal Law",
+        "location": "Delhi High Court",
+        "experience": "12 years",
+        "phone": "+91-9988776655"
+    },
+    {
+        "name": "Adv. Sneha Verma",
+        "specialization": "Corporate Law",
+        "location": "Supreme Court",
+        "experience": "10 years",
+        "phone": "+91-9123456780"
+    },
+    {
+        "name": "Adv. Amit Patel",
+        "specialization": "Property Law",
+        "location": "District Court",
+        "experience": "7 years",
+        "phone": "+91-9911223344"
+    },
+    {
+        "name": "Adv. Kavita Reddy",
+        "specialization": "Women Rights",
+        "location": "Supreme Court",
+        "experience": "5 years",
+        "phone": "+91-9090909090"
+    }
+    ]

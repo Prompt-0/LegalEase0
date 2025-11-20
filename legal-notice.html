@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Notice Generator - For Indian Advocates</title>
+    <link rel="stylesheet" href="css/documents.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-content">
+        <a href="index.html" class="logo">
+          <i class="fas fa-scale-balanced"></i>
+          <span>Legalese</span>
+        </a>
+        <div class="desktop-nav">
+          <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+          <a href="legalbot.html" class="nav-link"><i class="fas fa-comment-dots"></i> LegalBot</a>
+          <a href="documents.html" class="nav-link active"><i class="fas fa-file-alt"></i> Documents</a>
+          <a href="police-stations.html" class="nav-link"><i class="fas fa-map-marker-alt"></i> Police Help</a>
+          <a href="contacts.html" class="nav-link"><i class="fas fa-phone"></i> Contacts</a>
+          <a href="legal-books.html" class="nav-link"><i class="fas fa-book"></i> Legal Books</a>
+        </div>
+        <button class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav">
+    <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+    <a href="legalbot.html" class="nav-link"><i class="fas fa-comment-dots"></i> LegalBot</a>
+    <a href="documents.html" class="nav-link active"><i class="fas fa-file-alt"></i> Documents</a>
+    <a href="police-stations.html" class="nav-link"><i class="fas fa-map-marker-alt"></i> Police Help</a>
+    <a href="contacts.html" class="nav-link"><i class="fas fa-phone"></i> Contacts</a>
+    <a href="legal-books.html" class="nav-link"><i class="fas fa-book"></i> Legal Books</a>
+    <a href="lawyer-connect.html" class="nav-link"><i class="fas fa-scale-balanced"></i> Lawyers</a>
+    <a href="case-finder.html" class="nav-link"><i class="fas fa-search"></i> Case Finder</a>
+    <a href="anonymous-report.html" class="nav-link"><i class="fas fa-shield-alt"></i> Tips</a>
+  </div>
+
+    <div class="container1">
+        <header class="header">
+            <h1>Legal Notice Generator</h1>
+            <p>For Indian Advocates - Draft legally valid notices in minutes</p>
+        </header>
+
+        <div class="main-content">
+            <div class="form-section">
+                <h2>Notice Details</h2>
+                <form id="noticeForm">
+                    <div class="form-group">
+                        <label for="advocateName">Advocate's Name *</label>
+                        <input type="text" id="advocateName" name="advocateName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="enrollmentNumber">Advocate's Enrollment Number *</label>
+                        <input type="text" id="enrollmentNumber" name="enrollmentNumber" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="advocateAddress">Advocate's Address</label>
+                        <textarea id="advocateAddress" name="advocateAddress" rows="3" placeholder="Enter your office address"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="clientName">Client's Name *</label>
+                        <input type="text" id="clientName" name="clientName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="clientAddress">Client's Address</label>
+                        <textarea id="clientAddress" name="clientAddress" rows="3" placeholder="Enter client's address"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="opponentName">Opponent's Name *</label>
+                        <input type="text" id="opponentName" name="opponentName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="opponentAddress">Opponent's Address</label>
+                        <textarea id="opponentAddress" name="opponentAddress" rows="3" placeholder="Enter opponent's address"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="noticeSubject">Subject of Notice *</label>
+                        <input type="text" id="noticeSubject" name="noticeSubject" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="noticeBody">Detailed Notice Body *</label>
+                        <textarea id="noticeBody" name="noticeBody" rows="8" placeholder="Enter the detailed content of the legal notice, including facts, legal grounds, demands, and consequences..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="demandAmount">Demand Amount (if applicable)</label>
+                        <input type="number" id="demandAmount" name="demandAmount" placeholder="Enter amount in INR">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="compliancePeriod">Compliance Period (days)</label>
+                        <select id="compliancePeriod" name="compliancePeriod">
+                            <option value="15">15 days</option>
+                            <option value="30" selected>30 days</option>
+                            <option value="60">60 days</option>
+                            <option value="90">90 days</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="noticeDate">Date of Notice *</label>
+                        <input type="date" id="noticeDate" name="noticeDate" required>
+                    </div>
+
+                    <button type="submit" class="btn">Generate Notice</button>
+                </form>
+
+                <div class="storage-info">
+                    <strong>Auto-Save:</strong> Your notice data is automatically saved locally and will be restored when you revisit this page.
+                </div>
+            </div>
+
+            <div class="preview-section" id="previewSection">
+                <h2>Generated Legal Notice</h2>
+                <div class="notice-content" id="noticeContent">
+                    <!-- Generated notice will appear here -->
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-secondary" id="downloadBtn">Download as PDF</button>
+                    <button class="btn btn-tertiary" id="printBtn">Print Notice</button>
+                    <button class="btn btn-edit" id="editPdfBtn">Edit PDF Content</button>
+                </div>
+            </div>
+
+            <div class="pdf-editor-modal" id="pdfEditorModal">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h2>Edit PDF Content</h2>
+                  <button class="close-btn" id="closePdfEditor">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <div class="editor-toolbar">
+                    <button class="editor-btn" data-action="bold"><strong>B</strong></button>
+                    <button class="editor-btn" data-action="italic"><em>I</em></button>
+                    <button class="editor-btn" data-action="underline"><u>U</u></button>
+                    <button class="editor-btn" data-action="fontSize">Font Size</button>
+                    <select id="fontSizeSelect">
+                      <option value="10">10pt</option>
+                      <option value="11" selected>11pt</option>
+                      <option value="12">12pt</option>
+                      <option value="14">14pt</option>
+                      <option value="16">16pt</option>
+                    </select>
+                  </div>
+                  <div class="editor-content" id="editableContent" contenteditable="true">
+                    <!-- Editable content will be populated here -->
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-secondary" id="saveEdits">Save Changes</button>
+                  <button class="btn btn-tertiary" id="downloadEditedPDF">Download Edited PDF</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add real-time preview toggle -->
+            <div class="preview-controls">
+              <label class="toggle-switch">
+                <input type="checkbox" id="realTimePreview" checked>
+                <span class="slider"></span>
+                <span class="toggle-label">Real-time Preview</span>
+              </label>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/documents.js"></script>
+</body>
+</html>

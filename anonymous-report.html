@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anonymous Report - Legalese</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-content">
+        <a href="index.html" class="logo">
+          <i class="fas fa-scale-balanced"></i>
+          <span>Legalese</span>
+        </a>
+        <div class="desktop-nav">
+          <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+          <a href="legalbot.html" class="nav-link"><i class="fas fa-comment-dots"></i> LegalBot</a>
+          <a href="documents.html" class="nav-link"><i class="fas fa-file-alt"></i> Documents</a>
+          <a href="police-stations.html" class="nav-link"><i class="fas fa-map-marker-alt"></i> Police Help</a>
+          <a href="contacts.html" class="nav-link"><i class="fas fa-phone"></i> Contacts</a>
+          <a href="legal-books.html" class="nav-link"><i class="fas fa-book"></i> Legal Books</a>
+        </div>
+        <button class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav">
+    <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+    <a href="legalbot.html" class="nav-link"><i class="fas fa-comment-dots"></i> LegalBot</a>
+    <a href="documents.html" class="nav-link"><i class="fas fa-file-alt"></i> Documents</a>
+    <a href="police-stations.html" class="nav-link"><i class="fas fa-map-marker-alt"></i> Police Help</a>
+    <a href="contacts.html" class="nav-link"><i class="fas fa-phone"></i> Contacts</a>
+    <a href="legal-books.html" class="nav-link"><i class="fas fa-book"></i> Legal Books</a>
+    <a href="lawyer-connect.html" class="nav-link"><i class="fas fa-scale-balanced"></i> Lawyers</a>
+    <a href="case-finder.html" class="nav-link"><i class="fas fa-search"></i> Case Finder</a>
+    <a href="anonymous-report.html" class="nav-link active"><i class="fas fa-shield-alt"></i> Tips</a>
+  </div>
+
+  <div class="container page-container">
+    <div class="page-header">
+      <h1>Anonymous Report System</h1>
+      <p>Report suspicious activities anonymously and securely to state authorities.</p>
+    </div>
+
+    <div id="security-notice" class="alert alert-warning">
+      <div class="alert-content">
+        <i class="fas fa-exclamation-triangle"></i>
+        <div>
+          <strong>Security Notice:</strong> This system works optimally with deepfake-prevention technology. Your anonymity is protected through advanced encryption and no tracking mechanisms.
+        </div>
+      </div>
+      <button id="close-alert" class="btn-close">
+        <i class="fas fa-eye-slash"></i>
+      </button>
+    </div>
+
+    <div id="tip-form-container">
+      <div class="tip-form-grid">
+        <div class="tip-form-main">
+          <div class="card">
+            <div class="card-header">
+              <div class="header-with-icon">
+                <i class="fas fa-shield-alt text-blue"></i>
+                <h2>Submit Anonymous Report</h2>
+              </div>
+              <p>All information is encrypted and submitted anonymously</p>
+            </div>
+            <div class="card-body">
+              <form id="tip-form" class="tip-form">
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label for="category">Category *</label>
+                    <select id="category" required>
+                      <option value="">Select category</option>
+                      <option value="Corruption">Corruption</option>
+                      <option value="Criminal Activity">Criminal Activity</option>
+                      <option value="Drug Related">Drug Related</option>
+                      <option value="Fraud">Fraud</option>
+                      <option value="Violence/Threats">Violence/Threats</option>
+                      <option value="Cybercrime">Cybercrime</option>
+                      <option value="Environmental Crime">Environmental Crime</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="urgency">Urgency Level *</label>
+                    <select id="urgency" required>
+                      <option value="">Select urgency</option>
+                      <option value="low">Low - General Information</option>
+                      <option value="medium">Medium - Requires Attention</option>
+                      <option value="high">High - Urgent Action Needed</option>
+                      <option value="critical">Critical - Immediate Danger</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="location">Location (Optional)</label>
+                  <input type="text" id="location" placeholder="General area or landmark (avoid specific addresses)">
+                </div>
+
+                <div class="form-group">
+                  <label for="description">Description *</label>
+                  <textarea id="description" rows="6" placeholder="Describe what you witnessed or know. Include relevant details like dates, times, people involved, etc." required></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label>Evidence (Optional)</label>
+                  <div class="file-upload-area">
+                    <i class="fas fa-upload"></i>
+                    <p>Upload photos, documents, or audio files</p>
+                    <p class="small">Files are encrypted and metadata is stripped for anonymity</p>
+                    <input type="file" id="evidence-upload" accept="image/*,audio/*,.pdf,.doc,.docx" class="hidden">
+                    <label for="evidence-upload" class="btn btn-outline btn-sm">Choose File</label>
+                    <p id="file-selected" class="file-selected hidden"></p>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="checkbox-group">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">
+                      I understand that this information will be forwarded to appropriate authorities. I confirm that the information provided is truthful to the best of my knowledge. I understand that false reporting may have legal consequences.
+                    </label>
+                  </div>
+                </div>
+
+                <button type="submit" id="submit-tip-btn" class="btn btn-primary btn-lg btn-block">
+                  <i class="fas fa-paper-plane"></i> Submit Anonymous Report
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="tip-form-sidebar">
+          <div class="card">
+            <div class="card-header">
+              <h3>Privacy & Security</h3>
+            </div>
+            <div class="car
+            <div class="card-body">
+              <ul class="privacy-list">
+                <li><i class="fas fa-lock"></i> End-to-end encryption of your submissions.</li>
+                <li><i class="fas fa-user-secret"></i> No personally identifiable information is collected.</li>
+                <li><i class="fas fa-shield-alt"></i> Advanced security protocols to protect your anonymity.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>How It Works</h3>
+            </div>
+            <div class="card-body">
+              <ol class="how-it-works-list">
+                <li>Fill in the form with as much detail as possible.</li>
+                <li>Attach evidence if available (photos, documents, etc.).</li>
+                <li>Submit your anonymous reports securely.</li>
+                <li>Your report is forwarded to relevant authorities for action.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Legalese. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a></p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/anonyms.js"></script>
+</body>
+</html>
