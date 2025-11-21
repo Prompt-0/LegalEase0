@@ -98,6 +98,17 @@ function useCurrentLocation() {
     position => {
       const { latitude, longitude } = position.coords;
 
+      // DELHI SPECIFIC CHECK (Issue #4 Fix)
+      // Delhi Center approx: 28.6139, 77.2090
+      const distFromDelhi = calculateDistance(latitude, longitude, 28.6139, 77.2090);
+
+      if (distFromDelhi > 50) { // 50km radius allowance
+            alert("📍 Location Alert:\n\nYou appear to be outside Delhi.\nCurrently, this service only supports locating Police Stations within Delhi.");
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+            return;
+      }
+
       // Sort all stations by distance to user
       const sortedStations = policeData.police_stations.map(station => {
           const dist = calculateDistance(latitude, longitude, station.lat, station.lng);
@@ -128,19 +139,16 @@ if (findStationsBtn) findStationsBtn.addEventListener('click', findStations);
 const currentLocationBtn = document.getElementById('current-location-btn');
 if (currentLocationBtn) currentLocationBtn.addEventListener('click', useCurrentLocation);
 
-// ✅ Fetch JSON details from external file
-fetch('data/police_stations.json')
+// ✅ UPDATED: Fetch using explicit relative path (Issue #8 Fix)
+fetch('./data/police_stations.json')
   .then(response => {
     if (!response.ok) throw new Error('Failed to load police stations data.');
     return response.json();
   })
   .then(data => {
     // Inject Mock Coordinates for Demo Purposes
-    // Delhi Center approx: 28.6139, 77.2090
-    // We spread stations randomly around this point to simulate geospatial data
     data.police_stations = data.police_stations.map(station => ({
         ...station,
-        // Random offset within ~10km
         lat: 28.6139 + (Math.random() - 0.5) * 0.2,
         lng: 77.2090 + (Math.random() - 0.5) * 0.2
     }));
@@ -148,18 +156,16 @@ fetch('data/police_stations.json')
     policeData = data;
     console.log(`Loaded ${policeData.police_stations.length} police stations.`);
 
-    // Choose a random sample of 10-15 stations
     const shuffled = policeData.police_stations
       .map(value => ({ value, sort: Math.random() }))
       .sort((a, b) => a.sort - b.sort)
       .map(({ value }) => value);
 
-    const randomCount = 20;
-    randomSample = shuffled.slice(0, randomCount);
-
+    randomSample = shuffled.slice(0, 20);
     renderStations(randomSample);
   })
   .catch(err => {
     console.error(err);
-    alert('Could not load police stations data. Please try again later.');
+    const stationsResults = document.getElementById('stations-results');
+    if(stationsResults) stationsResults.innerHTML = "<p style='text-align:center; padding: 2rem;'>Unable to load police station data.</p>";
   });

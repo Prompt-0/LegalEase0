@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   let legalData = null
   let currentSearchResults = []
-  const MAX_RESULTS = 50 // OPTIMIZATION: Hard limit on results to prevent DOM freezing
+  const MAX_RESULTS = 50
 
   const searchInput = document.getElementById("legal-search")
   const searchBtn = document.getElementById("search-btn")
@@ -33,7 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function loadLegalData() {
     try {
-      const response = await fetch("data/legal-acts.json")
+      // ✅ UPDATED: Explicit relative path
+      const response = await fetch("./data/legal-acts.json")
       if (!response.ok) throw new Error("Failed to load legal acts data")
       legalData = await response.json()
     } catch (error) {
@@ -52,8 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
     searchInput.addEventListener("input", () => {
       clearTimeout(searchTimeout)
       searchTimeout = setTimeout(() => {
-        if (searchInput.value.trim().length > 2) performSearch()
-        else if (searchInput.value.trim().length === 0) clearSearch()
+        if (searchInput.value.trim().length > 0) performSearch()
+        else clearSearch()
       }, 300)
     })
 
@@ -73,42 +74,38 @@ document.addEventListener("DOMContentLoaded", () => {
     const actFilterValue = actFilter.value
     const searchTypeValue = searchType.value
 
-    if (!query || query.length < 3) {
-      return // Don't search for very short queries
+    if (!query) {
+      clearSearch()
+      return
     }
 
     currentSearchResults = []
     let resultsFound = 0
 
-    // OPTIMIZED SEARCH LOOP
-    // We use a label to break out of nested loops efficiently once limit is reached
     searchLoop:
     for (const act of legalData.acts) {
       if (actFilterValue !== "all" && act.id !== actFilterValue) continue
 
       for (const chapter of act.chapters) {
         for (const section of chapter.sections) {
-          if (resultsFound >= MAX_RESULTS) break searchLoop // Stop searching if limit reached
+          if (resultsFound >= MAX_RESULTS) break searchLoop
 
-          let matchField = ""
           let isMatch = false
 
           switch (searchTypeValue) {
             case "section":
-              matchField = String(section.number).toLowerCase()
-              if (matchField.includes(query)) isMatch = true
-              break
+              if (section.number == query) {
+                  isMatch = true;
+              }
+              break;
             case "title":
-              matchField = section.title.toLowerCase()
-              if (matchField.includes(query)) isMatch = true
+              if (section.title.toLowerCase().includes(query)) isMatch = true
               break
             case "content":
-              matchField = section.content.toLowerCase()
-              if (matchField.includes(query)) isMatch = true
+              if (section.content.toLowerCase().includes(query)) isMatch = true
               break
             default:
-              // For 'all', check all fields but break early if match found
-              if (String(section.number).includes(query) ||
+              if (section.number == query ||
                   section.title.toLowerCase().includes(query) ||
                   section.content.toLowerCase().includes(query)) {
                 isMatch = true
@@ -132,7 +129,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function highlightMatch(text, query) {
     if (!query) return text
-    // Simple highlight to avoid complex regex performance hit on large text
     const lowerText = text.toLowerCase()
     const index = lowerText.indexOf(query.toLowerCase())
     if (index >= 0) {
@@ -151,25 +147,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let countText = `Search Results (${currentSearchResults.length} found)`
     if (limitReached) {
-      countText += ` - Showing top ${MAX_RESULTS} matches. Please refine your search.`
+      countText += ` - Showing top ${MAX_RESULTS} matches.`
     }
     resultsCount.textContent = countText
 
     resultsList.innerHTML = ""
 
     const query = searchInput.value.trim()
-
-    // Use a document fragment for better performance when appending multiple items
     const fragment = document.createDocumentFragment()
 
     currentSearchResults.forEach((result) => {
       const resultItem = document.createElement("div")
       resultItem.className = "search-result-item"
 
-      // Only highlight title for performance; highlighting massive content blocks is heavy
       const highlightedTitle = highlightMatch(result.section.title, query)
 
-      // For content, just show a snippet if it's long
       let contentDisplay = result.section.content
       if (contentDisplay.length > 300) {
          const matchIndex = contentDisplay.toLowerCase().indexOf(query.toLowerCase())
@@ -246,8 +238,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const chapterContent = document.createElement("div")
         chapterContent.className = "chapter-content"
 
-        // Lazy rendering for sections could be added here, but for now we render all
-        // since the main issue was the search loop, not initial render.
         chapter.sections.forEach((section) => {
           const sectionItem = document.createElement("div")
           sectionItem.className = "section-item"
@@ -318,8 +308,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function navigateToSection(actId, sectionId) {
     switchTab(actId)
-    // Don't clear search immediately so user can go back to results if needed
-    // But hide the results pane to show the content
     searchResults.classList.add("hidden")
 
     setTimeout(() => {

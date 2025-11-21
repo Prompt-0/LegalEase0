@@ -20,14 +20,13 @@ class LegalNoticeGenerator {
   }
 
   init() {
-    // CRITICAL FIX: Stop execution if we are not on the legal-notice page
     if (!this.form) return;
 
     this.loadSavedData()
     this.bindEvents()
     this.setDefaultDate()
     this.setupRealTimePreview()
-    this.showPreview() // Show preview immediately
+    this.showPreview()
   }
 
   bindEvents() {
@@ -40,7 +39,6 @@ class LegalNoticeGenerator {
     this.downloadEditedPDF.addEventListener("click", () => this.downloadEditedPDF())
     this.realTimePreview.addEventListener("change", (e) => this.toggleRealTimePreview(e))
 
-    // Auto-save on input changes
     this.form.addEventListener("input", () => {
       this.saveData()
       if (this.realTimeEnabled) {
@@ -48,17 +46,14 @@ class LegalNoticeGenerator {
       }
     })
 
-    // PDF Editor toolbar events
     this.setupEditorToolbar()
 
-    // Close modal when clicking outside
     this.pdfEditorModal.addEventListener("click", (e) => {
       if (e.target === this.pdfEditorModal) {
         this.closePdfEditorModal()
       }
     })
 
-    // Keyboard shortcuts
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && this.pdfEditorModal.classList.contains("show")) {
         this.closePdfEditorModal()
@@ -66,12 +61,7 @@ class LegalNoticeGenerator {
     })
   }
 
-  // ... [The rest of the methods remain exactly the same as the original file] ...
-  // For brevity, assume the rest of the class methods (setupRealTimePreview to loadSavedData) are copied here from the original file.
-  // You must copy the full content of the class methods here when pasting.
-
   setupRealTimePreview() {
-    // Add visual indicators for form fields with content
     const formInputs = this.form.querySelectorAll("input, textarea, select")
     formInputs.forEach((input) => {
       input.addEventListener("input", () => {
@@ -141,7 +131,6 @@ class LegalNoticeGenerator {
     const formData = this.getFormData()
     this.generateNotice(formData, true)
 
-    // Add highlight animation to updated content
     this.noticeContent.classList.add("updated-field")
     setTimeout(() => {
       this.noticeContent.classList.remove("updated-field")
@@ -149,7 +138,6 @@ class LegalNoticeGenerator {
   }
 
   openPdfEditor() {
-    // Populate editor with current notice content
     const currentContent = this.noticeContent.innerHTML
     this.editableContent.innerHTML = currentContent
     this.pdfEditorModal.classList.add("show")
@@ -165,7 +153,6 @@ class LegalNoticeGenerator {
     this.editedContent = this.editableContent.innerHTML
     this.noticeContent.innerHTML = this.editedContent
 
-    // Show success message
     const originalText = this.saveEdits.textContent
     this.saveEdits.textContent = "Saved!"
     this.saveEdits.style.background = "#10b981"
@@ -249,10 +236,12 @@ class LegalNoticeGenerator {
       : ""
 
     const getFieldValue = (value, placeholder) => {
+      // Wrap placeholders in a specific class we can target for removal
       if (isRealTime && !value) {
         return `<span class="placeholder-text">[${placeholder}]</span>`
       }
-      return value || `[${placeholder}]`
+      // For generating content, if value exists use it, else use placeholder
+      return value || `<span class="placeholder-text">[${placeholder}]</span>`
     }
 
     const noticeTemplate = `
@@ -267,9 +256,7 @@ class LegalNoticeGenerator {
                 ${
                   data.opponentAddress
                     ? `<p class="no-indent">${data.opponentAddress.replace(/\n/g, "<br>")}</p>`
-                    : isRealTime
-                      ? `<p class="no-indent placeholder-text">[Opponent's Address]</p>`
-                      : ""
+                    : `<p class="no-indent placeholder-text">[Opponent's Address]</p>`
                 }
 
                 <p class="no-indent" style="margin-top: 25px;"><strong>THROUGH:</strong></p>
@@ -278,9 +265,7 @@ class LegalNoticeGenerator {
                 ${
                   data.advocateAddress
                     ? `<p class="no-indent">${data.advocateAddress.replace(/\n/g, "<br>")}</p>`
-                    : isRealTime
-                      ? `<p class="no-indent placeholder-text">[Advocate's Address]</p>`
-                      : ""
+                    : `<p class="no-indent placeholder-text">[Advocate's Address]</p>`
                 }
 
                 <p class="no-indent" style="margin-top: 25px;"><strong>ON BEHALF OF:</strong></p>
@@ -288,9 +273,7 @@ class LegalNoticeGenerator {
                 ${
                   data.clientAddress
                     ? `<p class="no-indent">${data.clientAddress.replace(/\n/g, "<br>")}</p>`
-                    : isRealTime
-                      ? `<p class="no-indent placeholder-text">[Client's Address]</p>`
-                      : ""
+                    : `<p class="no-indent placeholder-text">[Client's Address]</p>`
                 }
 
                 <p class="section-title">SUBJECT: ${getFieldValue(data.noticeSubject, "Subject of Notice")}</p>
@@ -304,9 +287,7 @@ class LegalNoticeGenerator {
                 ${
                   data.noticeBody
                     ? this.formatNoticeBody(data.noticeBody)
-                    : isRealTime
-                      ? `<p class="placeholder-text">[Detailed notice body will appear here as you type...]</p>`
-                      : `<p>[Notice Body]</p>`
+                    : `<p class="placeholder-text">[Detailed notice body will appear here as you type...]</p>`
                 }
 
                 ${demandSection}
@@ -398,11 +379,15 @@ class LegalNoticeGenerator {
       const { jsPDF } = window.jspdf
       const pdf = new jsPDF("p", "mm", "a4")
 
-      // Parse the HTML content and extract text for PDF generation
+      // Create a temporary container
       const tempDiv = document.createElement("div")
       tempDiv.innerHTML = htmlContent
 
-      // Get form data for PDF generation
+      // CRITICAL FIX: Remove any placeholder elements before generating PDF
+      // This prevents "[Opponent's Name]" from appearing in the final file if empty
+      const placeholders = tempDiv.querySelectorAll(".placeholder-text")
+      placeholders.forEach(el => el.remove())
+
       const formData = this.getFormData()
       const formattedDate = formData.noticeDate
         ? new Date(formData.noticeDate).toLocaleDateString("en-IN", {
@@ -416,14 +401,12 @@ class LegalNoticeGenerator {
             day: "numeric",
           })
 
-      // PDF styling constants
       const pageWidth = pdf.internal.pageSize.getWidth()
       const pageHeight = pdf.internal.pageSize.getHeight()
       const margin = 20
       const lineHeight = 6
       let yPosition = margin
 
-      // Helper function to add text with proper wrapping
       const addText = (text, x, y, options = {}) => {
         const fontSize = options.fontSize || 11
         const fontStyle = options.fontStyle || "normal"
@@ -433,10 +416,8 @@ class LegalNoticeGenerator {
         pdf.setFontSize(fontSize)
         pdf.setFont("times", fontStyle)
 
-        // Clean text from HTML tags and placeholders
         const cleanText = text
           .replace(/<[^>]*>/g, "")
-          .replace(/\[.*?\]/g, "")
           .trim()
 
         if (!cleanText) return y
@@ -458,12 +439,10 @@ class LegalNoticeGenerator {
         return y + lines.length * lineHeight
       }
 
-      // Extract and format content from edited HTML
       const titleElement = tempDiv.querySelector(".notice-title")
       const subtitleElement = tempDiv.querySelector(".notice-subtitle")
       const bodyElement = tempDiv.querySelector(".notice-body")
 
-      // Header
       if (titleElement) {
         yPosition = addText(titleElement.textContent, pageWidth / 2, yPosition, {
           fontSize: 16,
@@ -480,13 +459,11 @@ class LegalNoticeGenerator {
         })
       }
 
-      // Add line under header
       yPosition += 5
       pdf.setLineWidth(0.5)
       pdf.line(margin, yPosition, pageWidth - margin, yPosition)
       yPosition += 10
 
-      // Process body content
       if (bodyElement) {
         const paragraphs = bodyElement.querySelectorAll("p")
         paragraphs.forEach((p) => {
@@ -501,7 +478,6 @@ class LegalNoticeGenerator {
         })
       }
 
-      // Signature section
       const signatureSection = tempDiv.querySelector(".signature-section")
       if (signatureSection) {
         yPosition = Math.max(yPosition + 20, pageHeight - 80)
@@ -526,52 +502,46 @@ class LegalNoticeGenerator {
         }
       }
 
-      // Save the PDF
-            const fileName = `Legal_Notice_${formData.opponentName ? formData.opponentName.replace(/\s+/g, "_") : "Draft"}_${formattedDate.replace(/\s+/g, "_")}.pdf`
-            pdf.save(fileName)
+        const fileName = `Legal_Notice_${formData.opponentName ? formData.opponentName.replace(/\s+/g, "_") : "Draft"}_${formattedDate.replace(/\s+/g, "_")}.pdf`
+        pdf.save(fileName)
+        this.closePdfEditorModal()
+      } catch (error) {
+        console.error("Error generating PDF:", error)
+        alert("Error generating PDF. Please try again or use the print option.")
+      }
+    }
 
-            // Close modal after successful download
-            this.closePdfEditorModal()
-          } catch (error) {
-            console.error("Error generating PDF:", error)
-            alert("Error generating PDF. Please try again or use the print option.")
-          }
-        }
+    printNotice() {
+      window.print()
+    }
 
-        printNotice() {
-          window.print()
-        }
+    saveData() {
+      const formData = this.getFormData()
+      localStorage.setItem("legalNoticeData", JSON.stringify(formData))
+    }
 
-        saveData() {
-          const formData = this.getFormData()
-          localStorage.setItem("legalNoticeData", JSON.stringify(formData))
-        }
-
-        loadSavedData() {
-          const savedData = localStorage.getItem("legalNoticeData")
-          if (savedData) {
-            try {
-              const data = JSON.parse(savedData)
-
-              Object.keys(data).forEach((key) => {
-                const element = document.getElementById(key)
-                if (element && data[key]) {
-                  element.value = data[key]
-                  // Trigger has-content class for visual feedback
-                  const formGroup = element.closest(".form-group")
-                  if (formGroup) {
-                    formGroup.classList.add("has-content")
-                  }
-                }
-              })
-            } catch (error) {
-              console.error("Error loading saved data:", error)
+    loadSavedData() {
+      const savedData = localStorage.getItem("legalNoticeData")
+      if (savedData) {
+        try {
+          const data = JSON.parse(savedData)
+          Object.keys(data).forEach((key) => {
+            const element = document.getElementById(key)
+            if (element && data[key]) {
+              element.value = data[key]
+              const formGroup = element.closest(".form-group")
+              if (formGroup) {
+                formGroup.classList.add("has-content")
+              }
             }
-          }
+          })
+        } catch (error) {
+          console.error("Error loading saved data:", error)
         }
       }
+    }
+  }
 
-      // Initialize the application when DOM is loaded
-      document.addEventListener("DOMContentLoaded", () => {
-        new LegalNoticeGenerator()
-      })
+  document.addEventListener("DOMContentLoaded", () => {
+    new LegalNoticeGenerator()
+  })

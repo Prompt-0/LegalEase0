@@ -1,8 +1,13 @@
-/* Base Styles */
+/* =========================================
+   1. GLOBAL VARIABLES & RESET
+   ========================================= */
 :root {
+  /* Core Theme Colors */
   --primary-color: #1a56db;
   --primary-hover: #1e429f;
   --secondary-color: #e5edff;
+
+  /* Functional Colors */
   --green-color: #10b981;
   --red-color: #ef4444;
   --purple-color: #8b5cf6;
@@ -10,17 +15,43 @@
   --indigo-color: #4f46e5;
   --teal-color: #14b8a6;
   --gray-color: #6b7280;
+
+  /* Text & Backgrounds */
   --text-color: #111827;
+  --text-primary: #1f2937; /* Alias for text-color in some modules */
+  --text-secondary: #6b7280; /* Alias for text-muted */
   --text-muted: #6b7280;
+  --text-light: #9ca3af;
+
   --bg-color: #f9fafb;
+  --bg-primary: #ffffff; /* Alias for card-bg */
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
   --card-bg: #ffffff;
+
+  /* Borders & Shadows */
   --border-color: #e5e7eb;
+  --border-light: #f3f4f6;
+
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+
+  /* Layout */
   --radius: 0.375rem;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
   --transition: all 0.2s ease;
+
+  /* Specific Colors from FIR module */
+  --primary-dark: #1e3a8a;
+  --accent-color: #f59e0b;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --danger-color: #ef4444;
 }
 
 * {
@@ -30,10 +61,10 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   color: var(--text-color);
   background-color: var(--bg-color);
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .container {
@@ -52,36 +83,24 @@ body {
   display: none !important;
 }
 
-/* Typography */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+/* =========================================
+   2. TYPOGRAPHY
+   ========================================= */
+h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.25;
   margin-bottom: 0.5rem;
+  color: var(--text-primary);
 }
 
-h1 {
-  font-size: 2.25rem;
-}
-
-h2 {
-  font-size: 1.75rem;
-}
-
-h3 {
-  font-size: 1.5rem;
-}
-
-h4 {
-  font-size: 1.25rem;
-}
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
 
 p {
   margin-bottom: 1rem;
+  color: var(--text-secondary);
 }
 
 a {
@@ -94,7 +113,9 @@ a:hover {
   color: var(--primary-hover);
 }
 
-/* Buttons */
+/* =========================================
+   3. BUTTONS
+   ========================================= */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -152,7 +173,9 @@ a:hover {
   font-size: 1rem;
 }
 
-/* Navigation */
+/* =========================================
+   4. NAVIGATION
+   ========================================= */
 .navbar {
   background-color: white;
   box-shadow: var(--shadow-sm);
@@ -175,11 +198,11 @@ a:hover {
   font-weight: 700;
   font-size: 1.25rem;
   color: var(--text-color);
+  gap: 0.5rem;
 }
 
 .logo i {
   color: var(--primary-color);
-  margin-right: 0.5rem;
   font-size: 1.5rem;
 }
 
@@ -195,6 +218,7 @@ a:hover {
   font-weight: 500;
   font-size: 0.875rem;
   border-radius: var(--radius);
+  text-decoration: none;
 }
 
 .nav-link i {
@@ -243,7 +267,9 @@ a:hover {
   display: block;
 }
 
-/* Hero Section */
+/* =========================================
+   5. HERO & SECTIONS
+   ========================================= */
 .hero {
   background: linear-gradient(to bottom right, var(--primary-color), #3b82f6);
   color: white;
@@ -254,12 +280,14 @@ a:hover {
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
+  color: white;
 }
 
 .hero p {
   font-size: 1.25rem;
   opacity: 0.9;
   margin-bottom: 2rem;
+  color: white;
 }
 
 .hero-buttons {
@@ -311,6 +339,7 @@ a:hover {
   transition: var(--transition);
   color: var(--text-color);
   display: block;
+  text-decoration: none;
 }
 
 .feature-card:hover {
@@ -333,49 +362,17 @@ a:hover {
   color: white;
 }
 
-.feature-card h3 {
-  margin-bottom: 0.5rem;
-}
+/* Icon Colors */
+.blue { background-color: var(--primary-color); }
+.green { background-color: var(--green-color); }
+.red { background-color: var(--red-color); }
+.purple { background-color: var(--purple-color); }
+.orange { background-color: var(--orange-color); }
+.indigo { background-color: var(--indigo-color); }
+.teal { background-color: var(--teal-color); }
+.gray { background-color: var(--gray-color); }
 
-.feature-card p {
-  color: var(--text-muted);
-  font-size: 0.875rem;
-  margin-bottom: 0;
-}
-
-.blue {
-  background-color: var(--primary-color);
-}
-
-.green {
-  background-color: var(--green-color);
-}
-
-.red {
-  background-color: var(--red-color);
-}
-
-.purple {
-  background-color: var(--purple-color);
-}
-
-.orange {
-  background-color: var(--orange-color);
-}
-
-.indigo {
-  background-color: var(--indigo-color);
-}
-
-.teal {
-  background-color: var(--teal-color);
-}
-
-.gray {
-  background-color: var(--gray-color);
-}
-
-/* Quick Access Section */
+/* Quick Access */
 .quick-access {
   background-color: white;
   padding: 4rem 0;
@@ -393,7 +390,9 @@ a:hover {
   gap: 1.5rem;
 }
 
-/* Cards */
+/* =========================================
+   6. CARDS & FORMS
+   ========================================= */
 .card {
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
@@ -410,218 +409,6 @@ a:hover {
   padding: 1.5rem;
 }
 
-.text-center {
-  text-align: center;
-}
-
-.text-blue {
-  color: var(--primary-color);
-}
-
-.text-green {
-  color: var(--green-color);
-}
-
-.text-red {
-  color: var(--red-color);
-}
-
-.text-purple {
-  color: var(--purple-color);
-}
-
-.text-yellow {
-  color: #f59e0b;
-}
-
-.text-yellow-dark {
-  color: #b45309;
-}
-
-.text-gray {
-  color: var(--gray-color);
-}
-
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
-.mt-2 {
-  margin-top: 0.5rem;
-}
-
-.mt-3 {
-  margin-top: 0.75rem;
-}
-
-.mt-4 {
-  margin-top: 1rem;
-}
-
-.py-12 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-.icon-xl {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-  opacity: 0.4;
-}
-
-/* Page Header */
-.page-header {
-  margin-bottom: 2rem;
-}
-
-.page-header h1 {
-  margin-bottom: 0.5rem;
-}
-
-.page-header p {
-  color: var(--text-muted);
-}
-
-/* Chat Card */
-.chat-card {
-  height: calc(100vh - 10rem);
-  display: flex;
-  flex-direction: column;
-}
-
-.chat-header-left {
-  display: flex;
-  align-items: center;
-}
-
-.chat-header-left i {
-  font-size: 1.5rem;
-  margin-right: 0.75rem;
-  color: var(--primary-color);
-}
-
-.chat-header-right {
-  display: flex;
-  align-items: center;
-}
-
-.chat-header-right i {
-  margin-right: 0.5rem;
-  color: var(--text-muted);
-}
-
-.chat-messages {
-  flex: 1;
-  overflow-y: auto;
-  padding: 1rem;
-}
-
-.message {
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: flex-start;
-}
-
-.message-user {
-  justify-content: flex-end;
-}
-
-.message-content {
-  max-width: 80%;
-  padding: 0.75rem 1rem;
-  border-radius: 1rem;
-  position: relative;
-}
-
-.message-bot .message-content {
-  background-color: var(--bg-color);
-  border: 1px solid var(--border-color);
-  border-top-left-radius: 0;
-  margin-left: 2.5rem;
-}
-
-.message-user .message-content {
-  background-color: var(--primary-color);
-  color: white;
-  border-top-right-radius: 0;
-}
-
-.message-avatar {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 0;
-  left: -2.5rem;
-}
-
-.message-bot .message-avatar {
-  background-color: var(--bg-color);
-  border: 1px solid var(--border-color);
-}
-
-.message-user .message-avatar {
-  background-color: var(--primary-color);
-  color: white;
-}
-
-.message-time {
-  font-size: 0.75rem;
-  opacity: 0.7;
-  margin-top: 0.25rem;
-}
-
-.chat-input {
-  display: flex;
-  padding: 1rem;
-  border-top: 1px solid var(--border-color);
-}
-
-.chat-input input {
-  flex: 1;
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius);
-  margin-right: 0.5rem;
-}
-
-.quick-questions {
-  padding: 1rem;
-  background-color: var(--bg-color);
-  border-top: 1px solid var(--border-color);
-}
-
-.quick-questions p {
-  font-size: 0.875rem;
-  color: var(--text-muted);
-  margin-bottom: 0.75rem;
-}
-
-.quick-questions-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.5rem;
-}
-
-.quick-question-btn {
-  background-color: white;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius);
-  padding: 0.5rem;
-  font-size: 0.75rem;
-  text-align: left;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.quick-question-btn:hover {
-  background-color: var(--bg-color);
-}
-
-/* Form Elements */
 .form-group {
   margin-bottom: 1.5rem;
 }
@@ -631,22 +418,21 @@ label {
   margin-bottom: 0.5rem;
   font-weight: 500;
   font-size: 0.875rem;
+  color: var(--text-primary);
 }
 
-input,
-select,
-textarea {
+input, select, textarea {
   width: 100%;
   padding: 0.75rem;
   border: 1px solid var(--border-color);
   border-radius: var(--radius);
   font-size: 0.875rem;
   transition: var(--transition);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
 }
 
-input:focus,
-select:focus,
-textarea:focus {
+input:focus, select:focus, textarea:focus {
   outline: none;
   border-color: var(--primary-color);
   box-shadow: 0 0 0 3px var(--secondary-color);
@@ -657,86 +443,130 @@ textarea {
   min-height: 6rem;
 }
 
-.search-form {
-  margin-bottom: 1rem;
-}
-
-.search-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-
-.search-input-group {
-  display: flex;
-}
-
-.search-input-group input {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-right: none;
-}
-
-.search-input-group .btn {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-.location-input {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.checkbox-group {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-}
-
-.checkbox-group input[type="checkbox"] {
-  width: auto;
-  margin-top: 0.25rem;
-}
-
-/* Tabs */
-.tabs {
-  margin-bottom: 2rem;
-}
-
-.tabs-header {
-  display: flex;
-  border-bottom: 1px solid var(--border-color);
-  margin-bottom: 1.5rem;
-}
-
-.tab-btn {
-  padding: 0.75rem 1rem;
-  font-weight: 500;
-  font-size: 0.875rem;
-  color: var(--text-muted);
-  background: none;
-  border: none;
-  border-bottom: 2px solid transparent;
-  cursor: pointer;
-  transition: var(--transition);
-  flex: 1;
+/* =========================================
+   7. MODULE: FIR (Online FIR)
+   ========================================= */
+.fir-hero-section {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  padding: 4rem 0;
   text-align: center;
 }
 
-.tab-btn.active {
-  color: var(--primary-color);
-  border-bottom-color: var(--primary-color);
+.fir-hero-content h1 { color: white; font-size: 2.5rem; }
+.fir-hero-content p { color: white; font-size: 1.1rem; opacity: 0.9; }
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
 }
 
-.tab-content {
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.search-section {
+  background: var(--bg-primary);
+  padding: 3rem 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.search-container {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.search-input-wrapper { position: relative; display: flex; align-items: center; }
+.search-icon { position: absolute; left: 1rem; color: var(--text-light); z-index: 1; }
+.search-input { padding-left: 3rem; }
+
+.clear-search {
+  position: absolute;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--text-light);
+  cursor: pointer;
   display: none;
 }
 
-.tab-content.active {
-  display: block;
+.filter-buttons { display: flex; gap: 0.5rem; }
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border-color);
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  border-radius: var(--radius-md);
+  cursor: pointer;
 }
 
-/* Document Generator */
+.filter-btn.active {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+.states-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.state-card {
+  background: var(--bg-primary);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.state-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-xl); }
+
+.state-status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.status-active { background: #dcfce7; color: #166534; }
+
+.fir-button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+/* =========================================
+   8. MODULE: DOCUMENTS (Legal Notice)
+   ========================================= */
 .document-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -752,52 +582,108 @@ textarea {
   transition: var(--transition);
 }
 
-.document-card:hover {
-  box-shadow: var(--shadow-md);
+.document-icon { font-size: 3rem; margin-bottom: 1rem; }
+
+/* Notice Preview Styles */
+.notice-content {
+  background: #fefefe;
+  padding: 50px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-family: "Times New Roman", serif;
+  line-height: 1.9;
+  color: #1f2937;
+  margin-bottom: 25px;
 }
 
-.document-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+.notice-header {
+  text-align: center;
+  margin-bottom: 40px;
+  border-bottom: 3px solid #1e3a8a;
+  padding-bottom: 25px;
 }
 
-.document-meta {
-  margin: 1rem 0;
-  font-size: 0.875rem;
-  color: var(--text-muted);
+.notice-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #1e3a8a;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
 }
 
-.document-form-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
-
-.document-form-header {
+/* =========================================
+   9. MODULE: CONTACTS (Helplines)
+   ========================================= */
+.accordion-header {
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 10px;
+  padding: 1.5rem;
+  cursor: pointer;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-}
-
-.document-icon-sm {
-  font-size: 1.5rem;
-  margin-right: 0.5rem;
-}
-
-.tips-list {
-  list-style: none;
-  font-size: 0.875rem;
-  color: var(--text-muted);
-}
-
-.tips-list li {
+  align-items: center;
+  transition: var(--transition);
   margin-bottom: 0.5rem;
 }
 
-/* Police Stations */
+.accordion-header.active {
+  background: var(--primary-color);
+  color: white;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: white;
+  border: 1px solid #e9ecef;
+  border-top: none;
+  margin-bottom: 1rem;
+}
+
+.accordion-content.active { max-height: 2000px; }
+
+.helpline-card {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--primary-color);
+}
+
+.helpline-number {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+/* Emergency Floating Button */
+.emergency-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--red-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================================
+   10. MODULE: POLICE STATIONS
+   ========================================= */
 .stations-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
   margin-bottom: 2rem;
 }
@@ -806,818 +692,75 @@ textarea {
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: var(--radius);
-  overflow: hidden;
+  padding: 1.5rem;
   transition: var(--transition);
 }
 
-.station-card:hover {
-  box-shadow: var(--shadow-md);
+.station-card:hover { box-shadow: var(--shadow-md); }
+
+/* =========================================
+   11. MODULE: LEGAL BOT
+   ========================================= */
+.chatbase {
+    flex: 1;
+    min-height: 500px;
+    background: #f9fafb;
 }
 
-.station-header {
-  padding: 1rem 1.5rem;
-  border-bottom: 1px solid var(--border-color);
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.station-type {
-  display: inline-block;
-  padding: 0.25rem 0.5rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  margin-top: 0.25rem;
-}
-
-.station-type.police {
-  background-color: #e0f2fe;
-  color: #0369a1;
-}
-
-.station-type.traffic {
-  background-color: #ffedd5;
-  color: #9a3412;
-}
-
-.station-type.post {
-  background-color: #f3e8ff;
-  color: #6b21a8;
-}
-
-.station-distance {
-  text-align: right;
-  font-size: 0.875rem;
-}
-
-.station-distance .value {
-  color: var(--green-color);
-  font-weight: 600;
-}
-
-.station-content {
-  padding: 1.5rem;
-}
-
-.station-info {
-  margin-bottom: 1.5rem;
-}
-
-.station-info-item {
-  display: flex;
-  margin-bottom: 0.5rem;
-  font-size: 0.875rem;
-  color: var(--text-muted);
-}
-
-.station-info-item i {
-  margin-right: 0.5rem;
-  margin-top: 0.25rem;
-  flex-shrink: 0;
-}
-
-.station-actions {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.emergency-card {
-  background-color: #fef2f2;
-  border-color: #fee2e2;
-}
-
-.emergency-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1rem;
-}
-
-.emergency-contact {
-  background-color: white;
-  border: 1px solid #fee2e2;
-  border-radius: var(--radius);
-  padding: 1rem;
-  text-align: center;
-}
-
-.emergency-contact h3 {
-  font-size: 0.875rem;
-  color: var(--red-color);
-  margin-bottom: 0.5rem;
-}
-
-.emergency-number {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--red-color);
-  margin-bottom: 0.5rem;
-}
-
-/* Lawyers */
-.lawyers-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.results-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.5rem;
-}
-
-.lawyer-card {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius);
-  overflow: hidden;
-  transition: var(--transition);
-}
-
-.lawyer-card:hover {
-  box-shadow: var(--shadow-md);
-}
-
-.lawyer-header {
-  padding: 1rem 1.5rem;
-  border-bottom: 1px solid var(--border-color);
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.lawyer-rating {
-  display: flex;
-  align-items: center;
-  margin-top: 0.25rem;
-}
-
-.lawyer-rating i {
-  color: #f59e0b;
-  font-size: 0.875rem;
-}
-
-.lawyer-rating span {
-  margin-left: 0.25rem;
-  font-size: 0.75rem;
-  color: var(--text-muted);
-}
-
-.lawyer-fee {
-  text-align: right;
-}
-
-.lawyer-fee .amount {
-  color: var(--green-color);
-  font-weight: 600;
-  font-size: 1.125rem;
-}
-
-.lawyer-fee .label {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-}
-
-.lawyer-content {
-  padding: 1.5rem;
-}
-
-.lawyer-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.lawyer-tag {
-  background-color: var(--bg-color);
-  border: 1px solid var(--border-color);
-  border-radius: 9999px;
-  padding: 0.25rem 0.75rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-
-.lawyer-info {
-  display: flex;
-  align-items: center;
-  font-size: 0.875rem;
-  color: var(--text-muted);
-  margin-bottom: 1rem;
-}
-
-.lawyer-info span {
-  margin: 0 0.5rem;
-}
-
-.lawyer-description {
-  font-size: 0.875rem;
-  color: var(--text-muted);
-  margin-bottom: 1rem;
-}
-
-.lawyer-languages {
-  display: flex;
-  align-items: center;
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  margin-bottom: 1.5rem;
-}
-
-.lawyer-languages span {
-  font-weight: 500;
-  margin-right: 0.5rem;
-}
-
-.legal-aid-card {
-  background-color: #eff6ff;
-  border-color: #dbeafe;
-}
-
-.legal-aid-info {
-  font-size: 0.875rem;
-  color: #1e40af;
-}
-
-/* Legal Books */
-.chapters-list {
-  margin-bottom: 2rem;
-}
-
-.chapter-card {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius);
-  overflow: hidden;
-  margin-bottom: 1rem;
-}
-
-.chapter-header {
-  padding: 1rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.chapter-header:hover {
-  background-color: var(--bg-color);
-}
-
-.chapter-header h3 {
-  margin-bottom: 0;
-  font-size: 1rem;
-}
-
-.chapter-content {
-  display: none;
-  padding: 1.5rem;
-  border-top: 1px solid var(--border-color);
-  background-color: var(--bg-color);
-}
-
-.chapter-content.show {
-  display: block;
-}
-
-.section-item {
-  border-left: 4px solid #dbeafe;
-  padding-left: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.section-item:last-child {
-  margin-bottom: 0;
-}
-
-.section-item h4 {
-  font-size: 0.875rem;
-  margin-bottom: 0.5rem;
-}
-
-.section-item p {
-  font-size: 0.875rem;
-  color: var(--text-muted);
-  margin-bottom: 0;
-}
-
-.quick-reference-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-
-.quick-reference-item {
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius);
-  padding: 1rem;
-}
-
-.quick-reference-item h4 {
-  font-size: 0.875rem;
-  margin-bottom: 0.5rem;
-}
-
-.quick-reference-item ul {
-  list-style: none;
-  font-size: 0.75rem;
-  color: var(--text-muted);
-}
-
-.quick-reference-item li {
-  margin-bottom: 0.25rem;
-}
-
-/* Case Finder */
-.cases-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
+/* =========================================
+   12. MODULE: CASE FINDER
+   ========================================= */
 .case-card {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius);
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #bfdbfe;
+  position: relative;
   overflow: hidden;
-  transition: var(--transition);
 }
 
-.case-card:hover {
-  box-shadow: var(--shadow-md);
+.case-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #16a34a, #eab308);
 }
 
 .case-header {
-  padding: 1rem 1.5rem;
-  border-bottom: 1px solid var(--border-color);
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-}
-
-.case-meta {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 0.5rem;
-  font-size: 0.75rem;
-  color: var(--text-muted);
-}
-
-.case-meta-item {
-  display: flex;
-  align-items: center;
-}
-
-.case-meta-item i {
-  margin-right: 0.25rem;
-}
-
-.case-citation {
-  font-family: monospace;
-  background-color: var(--bg-color);
-  padding: 0.25rem 0.5rem;
-  border-radius: var(--radius);
-  font-size: 0.75rem;
-}
-
-.case-similarity {
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-
-.similarity-high {
-  background-color: #d1fae5;
-  color: #065f46;
-}
-
-.similarity-medium {
-  background-color: #fef3c7;
-  color: #92400e;
-}
-
-.similarity-low {
-  background-color: #fee2e2;
-  color: #b91c1c;
-}
-
-.case-content {
-  padding: 1.5rem;
-}
-
-.case-summary {
-  font-size: 0.875rem;
-  color: var(--text-color);
-  margin-bottom: 1.5rem;
-}
-
-.case-sections {
-  margin-bottom: 1.5rem;
-}
-
-.case-sections h4 {
-  font-size: 0.875rem;
-  margin-bottom: 0.5rem;
-}
-
-.case-sections-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.case-section {
-  background-color: var(--bg-color);
-  border: 1px solid var(--border-color);
-  border-radius: 9999px;
-  padding: 0.25rem 0.75rem;
-  font-size: 0.75rem;
-}
-
-.case-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 1rem;
-  border-top: 1px solid var(--border-color);
-  font-size: 0.875rem;
-}
-
-.case-footer-text {
-  color: var(--text-muted);
-}
-
-.file-upload-area {
-  border: 2px dashed var(--border-color);
-  border-radius: var(--radius);
-  padding: 2rem 1rem;
-  text-align: center;
-}
-
-.file-upload-area i {
-  font-size: 2rem;
-  color: var(--text-muted);
-  margin-bottom: 0.5rem;
-}
-
-.file-upload-area p {
-  font-size: 0.875rem;
-  color: var(--text-muted);
-  margin-bottom: 0.5rem;
-}
-
-.file-upload-area .small {
-  font-size: 0.75rem;
-}
-
-.file-upload-area input[type="file"] {
-  display: none;
-}
-
-.file-selected {
-  margin-top: 0.5rem;
-  font-size: 0.875rem;
-  color: var(--green-color);
-}
-
-/* Anonymous Tips */
-.alert {
-  border: 1px solid;
-  border-radius: var(--radius);
-  padding: 1rem;
-  margin-bottom: 1.5rem;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-
-.alert-warning {
-  background-color: #fffbeb;
-  border-color: #fef3c7;
-  color: #92400e;
-}
-
-.alert-content {
-  display: flex;
-  align-items: flex-start;
-}
-
-.alert-content i {
-  margin-right: 0.75rem;
-  margin-top: 0.25rem;
-}
-
-.btn-close {
-  background: none;
-  border: none;
-  color: inherit;
-  cursor: pointer;
-  font-size: 0.875rem;
-}
-
-.tip-form-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
-
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-
-.header-with-icon {
-  display: flex;
-  align-items: center;
-}
-
-.header-with-icon i {
-  margin-right: 0.75rem;
-  font-size: 1.25rem;
-}
-
-/* Success Page */
-.success-card {
-  text-align: center;
-  padding: 3rem 1.5rem;
-}
-
-.success-icon {
-  font-size: 4rem;
-  color: var(--green-color);
-  margin-bottom: 1.5rem;
-}
-
-.reference-id {
-  background-color: var(--bg-color);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  margin: 1.5rem 0;
-}
-
-.reference-id p:first-child {
-  font-size: 0.875rem;
-  color: var(--text-muted);
-  margin-bottom: 0.5rem;
-}
-
-.reference-id .id {
-  font-family: monospace;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--green-color);
-}
-
-.reference-id .note {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  margin-top: 0.5rem;
-}
-
-/* Contacts */
-.contacts-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.contact-card {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius);
-  overflow: hidden;
-  transition: var(--transition);
-}
-
-.contact-card:hover {
-  box-shadow: var(--shadow-md);
-}
-
-.contact-header {
-  padding: 1rem 1.5rem;
-  border-bottom: 1px solid var(--border-color);
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.contact-title {
-  display: flex;
-  align-items: flex-start;
-}
-
-.contact-icon {
-  font-size: 1.5rem;
-  margin-right: 0.75rem;
-}
-
-.contact-category {
-  display: inline-block;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  text-transform: capitalize;
-}
-
-.category-police {
-  background-color: #e0f2fe;
-  color: #0369a1;
-}
-
-.category-court {
-  background-color: #f3e8ff;
-  color: #6b21a8;
-}
-
-.category-government {
-  background-color: #d1fae5;
-  color: #065f46;
-}
-
-.category-legal-aid {
-  background-color: #ffedd5;
-  color: #9a3412;
-}
-
-.contact-content {
-  padding: 1.5rem;
-}
-
-.contact-info {
-  margin-bottom: 1.5rem;
-}
-
-.contact-info-item {
-  display: flex;
-  margin-bottom: 0.5rem;
-  font-size: 0.875rem;
-  color: var(--text-muted);
-}
-
-.contact-info-item i {
-  margin-right: 0.5rem;
-  margin-top: 0.25rem;
-  flex-shrink: 0;
-}
-
-.contact-info-item a {
-  color: var(--primary-color);
-  text-decoration: none;
-}
-
-.contact-info-item a:hover {
-  text-decoration: underline;
-}
-
-.contact-actions {
-  display: flex;
-  gap: 0.5rem;
-}
-
-/* Responsive Styles */
-@media (min-width: 640px) {
-  .hero-buttons {
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  .features-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .quick-access-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .document-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .stations-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .emergency-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .search-grid {
-    grid-template-columns: 2fr 1fr 1fr;
-  }
-
-  .form-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .quick-reference-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 768px) {
-  .desktop-nav {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-  }
-
-  .mobile-menu-btn {
-    display: none;
-  }
-
-  .features-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .document-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .document-form-grid {
-    grid-template-columns: 2fr 1fr;
-  }
-
-  .lawyers-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .cases-list {
-    grid-template-columns: 1fr;
-  }
-
-  .tip-form-grid {
-    grid-template-columns: 2fr 1fr;
-  }
-
-  .contacts-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .quick-reference-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .features-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-/* Legal Books Additional Styles */
-.search-filters {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.filter-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.filter-group label {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  margin-bottom: 0.25rem;
-}
-
-.filter-group select {
-  padding: 0.5rem;
-  font-size: 0.875rem;
-}
-
-.search-results {
-  margin-bottom: 2rem;
-}
-
-.results-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--border-color);
 }
 
-.results-list {
-  display: grid;
-  gap: 1rem;
+.relevance-score {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
 }
 
+.case-meta span {
+  display: inline-block;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+/* =========================================
+   13. MODULE: LEGAL BOOKS
+   ========================================= */
 .search-result-item {
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
@@ -1625,64 +768,12 @@ textarea {
   padding: 1.5rem;
   cursor: pointer;
   transition: var(--transition);
+  margin-bottom: 1rem;
 }
 
 .search-result-item:hover {
   box-shadow: var(--shadow-md);
   border-color: var(--primary-color);
-}
-
-.result-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 1rem;
-}
-
-.result-act-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.result-act {
-  font-weight: 600;
-  color: var(--primary-color);
-  font-size: 0.875rem;
-}
-
-.result-chapter {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-}
-
-.result-match-type {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
-  padding: 0.25rem 0.5rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-
-.result-section h4 {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-}
-
-.result-content {
-  font-size: 0.875rem;
-  color: var(--text-muted);
-  margin-bottom: 1rem;
-  line-height: 1.5;
-}
-
-.result-match {
-  margin-bottom: 0.5rem;
-  font-size: 0.875rem;
-}
-
-.match-text {
-  color: var(--primary-color);
 }
 
 .match-text mark {
@@ -1692,97 +783,36 @@ textarea {
   border-radius: 0.25rem;
 }
 
-.result-keywords {
-  font-size: 0.75rem;
-  color: var(--text-muted);
+/* =========================================
+   14. UTILITIES & RESPONSIVE
+   ========================================= */
+.text-center { text-align: center; }
+.text-blue { color: var(--primary-color); }
+.text-green { color: var(--green-color); }
+.text-red { color: var(--red-color); }
+
+@media (min-width: 640px) {
+  .hero-buttons { flex-direction: row; justify-content: center; }
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+  .quick-access-grid { grid-template-columns: repeat(3, 1fr); }
+  .document-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-.section-keywords {
-  margin-top: 0.5rem;
-  font-size: 0.75rem;
-  color: var(--text-muted);
+@media (min-width: 768px) {
+  .desktop-nav { display: flex; align-items: center; gap: 0.25rem; }
+  .mobile-menu-btn { display: none; }
+  .features-grid { grid-template-columns: repeat(3, 1fr); }
+  .document-grid { grid-template-columns: repeat(3, 1fr); }
+  .lawyers-grid { grid-template-columns: repeat(2, 1fr); }
+  .contacts-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-.section-item.highlighted {
-  background-color: #fef3c7;
-  border-left-color: #f59e0b;
-  animation: highlight-fade 3s ease-out;
+@media (min-width: 1024px) {
+  .features-grid { grid-template-columns: repeat(4, 1fr); }
+  .search-grid { grid-template-columns: 2fr 1fr 1fr; }
 }
 
-@keyframes highlight-fade {
-  0% {
-    background-color: #fef3c7;
-  }
-  100% {
-    background-color: transparent;
-  }
-}
-
-.loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 3rem;
-}
-
-.loading-spinner {
-  text-align: center;
-}
-
-.loading-spinner i {
-  font-size: 2rem;
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-}
-
-.loading-spinner p {
-  color: var(--text-muted);
-}
-
-.error {
-  text-align: center;
-  color: var(--red-color);
-  padding: 2rem;
-}
-
-.quick-reference-item {
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.quick-reference-item:hover {
-  background-color: var(--bg-color);
-  border-color: var(--primary-color);
-}
-
-.quick-reference-item li {
-  cursor: pointer;
-  padding: 0.125rem 0;
-  border-radius: 0.25rem;
-  transition: var(--transition);
-}
-
-.quick-reference-item li:hover {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
-  padding-left: 0.5rem;
-}
-
-/* Responsive adjustments for legal books */
-@media (max-width: 640px) {
-  .search-filters {
-    grid-template-columns: 1fr;
-  }
-
-  .results-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  .result-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
+@media print {
+  .header, .navbar, .action-buttons { display: none; }
+  .notice-content { border: none; box-shadow: none; }
 }

@@ -31,14 +31,12 @@ const outcomeFilter = document.getElementById("outcome-filter")
 const applyFiltersBtn = document.getElementById("apply-filters-btn")
 const sortSelect = document.getElementById("sort-select")
 
-// Suggestion chips
 const suggestionChips = document.querySelectorAll(".suggestion-chip")
 
-// Fetch JSON data from external file
 async function fetchLegalCasesData() {
   try {
-    // FIXED: Corrected filename from 'legal-casses.json' to 'legal-cases.json'
-    const response = await fetch("data/legal-cases.json")
+    // ✅ UPDATED: Explicit relative path
+    const response = await fetch("./data/legal-cases.json")
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`)
@@ -46,7 +44,6 @@ async function fetchLegalCasesData() {
 
     const data = await response.json()
 
-    // Validate the JSON structure
     if (!data.cases || !Array.isArray(data.cases)) {
       throw new Error("Invalid JSON structure: cases array not found")
     }
@@ -56,13 +53,10 @@ async function fetchLegalCasesData() {
   } catch (error) {
     console.error("Error fetching legal cases data:", error)
     showNotification(`Error loading legal cases database: ${error.message}. Using fallback data.`, "error")
-
-    // Fallback to embedded data if fetch fails
     return getFallbackData()
   }
 }
 
-// Fallback data in case JSON fetch fails
 function getFallbackData() {
   return {
     metadata: {
@@ -85,55 +79,20 @@ function getFallbackData() {
         caseNumber: "Sample/2023",
         judge: "Sample Judge",
       },
-      {
-        id: 2,
-        title: "Sample Employment Law Case",
-        year: 2023,
-        summary: "Sample employment termination case for demonstration purposes.",
-        keywords: ["employment", "termination", "labour", "sample"],
-        category: "Employment Law",
-        jurisdiction: "Labour Court",
-        outcome: "Employee Victory",
-        legalProvisions: ["Industrial Disputes Act, 1947"],
-        caseNumber: "Sample/2023",
-        judge: "Sample Judge",
-      },
-      {
-        id: 3,
-        title: "Sample Consumer Rights Case",
-        year: 2023,
-        summary: "Sample consumer complaint case for demonstration purposes.",
-        keywords: ["consumer", "complaint", "rights", "sample"],
-        category: "Consumer Law",
-        jurisdiction: "Consumer Commission",
-        outcome: "Consumer Victory",
-        legalProvisions: ["Consumer Protection Act, 2019"],
-        caseNumber: "Sample/2023",
-        judge: "Sample Judge",
-      },
     ],
     categories: ["Property Law", "Employment Law", "Consumer Law"],
     jurisdictions: ["Delhi High Court", "Labour Court", "Consumer Commission"],
   }
 }
 
-// Initialize the application
 async function initializeApp() {
   try {
-    // Show loading state
     showLoadingState(true)
-
-    // Fetch the legal cases data
     await fetchLegalCasesData()
-
-    // Initialize UI components
     populateFilterOptions()
     updateStats()
     setupEventListeners()
-
-    // Hide loading state
     showLoadingState(false)
-
     console.log("LegalEase India initialized successfully with", legalCasesDatabase.cases.length, "cases")
   } catch (error) {
     console.error("Error initializing app:", error)
@@ -142,10 +101,8 @@ async function initializeApp() {
   }
 }
 
-// Show/hide loading state
 function showLoadingState(isLoading) {
   const mainContent = document.querySelector(".main")
-
   if (isLoading) {
     mainContent.style.opacity = "0.5"
     mainContent.style.pointerEvents = "none"
@@ -155,7 +112,6 @@ function showLoadingState(isLoading) {
   }
 }
 
-// Populate filter dropdown options from JSON data
 function populateFilterOptions() {
   if (!legalCasesDatabase || !legalCasesDatabase.cases) {
     console.error("Legal cases database not loaded")
@@ -164,19 +120,16 @@ function populateFilterOptions() {
 
   const cases = legalCasesDatabase.cases
 
-  // Use predefined categories and jurisdictions from JSON if available, otherwise extract from cases
   const categories = legalCasesDatabase.categories || [...new Set(cases.map((c) => c.category))].sort()
   const years = [...new Set(cases.map((c) => c.year))].sort((a, b) => b - a)
   const jurisdictions = legalCasesDatabase.jurisdictions || [...new Set(cases.map((c) => c.jurisdiction))].sort()
   const outcomes = [...new Set(cases.map((c) => c.outcome))].sort()
 
-  // Clear existing options (except the default "All" option)
   categoryFilter.innerHTML = '<option value="">All Categories</option>'
   yearFilter.innerHTML = '<option value="">All Years</option>'
   jurisdictionFilter.innerHTML = '<option value="">All Courts</option>'
   outcomeFilter.innerHTML = '<option value="">All Outcomes</option>'
 
-  // Populate category filter
   categories.forEach((category) => {
     const option = document.createElement("option")
     option.value = category
@@ -184,7 +137,6 @@ function populateFilterOptions() {
     categoryFilter.appendChild(option)
   })
 
-  // Populate year filter
   years.forEach((year) => {
     const option = document.createElement("option")
     option.value = year
@@ -192,7 +144,6 @@ function populateFilterOptions() {
     yearFilter.appendChild(option)
   })
 
-  // Populate jurisdiction filter
   jurisdictions.forEach((jurisdiction) => {
     const option = document.createElement("option")
     option.value = jurisdiction
@@ -200,23 +151,14 @@ function populateFilterOptions() {
     jurisdictionFilter.appendChild(option)
   })
 
-  // Populate outcome filter
   outcomes.forEach((outcome) => {
     const option = document.createElement("option")
     option.value = outcome
     option.textContent = outcome
     outcomeFilter.appendChild(option)
   })
-
-  console.log("Filter options populated:", {
-    categories: categories.length,
-    years: years.length,
-    jurisdictions: jurisdictions.length,
-    outcomes: outcomes.length,
-  })
 }
 
-// Update header statistics
 function updateStats() {
   if (!legalCasesDatabase || !legalCasesDatabase.cases) {
     return
@@ -229,7 +171,6 @@ function updateStats() {
   document.getElementById("categories-count").textContent = categories.length
 }
 
-// Enhanced search algorithm with scoring
 function searchSimilarCases(query) {
   if (!query.trim() || !legalCasesDatabase || !legalCasesDatabase.cases) {
     return []
@@ -247,7 +188,6 @@ function searchSimilarCases(query) {
     let score = 0
 
     searchTerms.forEach((term) => {
-      // Count occurrences in different fields with different weights
       const titleMatches = (case_.title.toLowerCase().match(new RegExp(term, "g")) || []).length
       const summaryMatches = (case_.summary.toLowerCase().match(new RegExp(term, "g")) || []).length
       const keywordMatches = case_.keywords.filter((keyword) => keyword.toLowerCase().includes(term)).length
@@ -257,33 +197,19 @@ function searchSimilarCases(query) {
         ? case_.legalProvisions.filter((provision) => provision.toLowerCase().includes(term)).length
         : 0
 
-      // Weighted scoring for Indian legal context
-      score += titleMatches * 6 // Title matches are most important
-      score += keywordMatches * 4 // Keyword matches are very important
-      score += categoryMatches * 5 // Category matches are crucial for legal cases
-      score += jurisdictionMatches * 3 // Jurisdiction matches are important
-      score += summaryMatches * 2 // Summary matches are moderately important
-      score += legalProvisionMatches * 4 // Legal provisions are very important
+      score += titleMatches * 6
+      score += keywordMatches * 4
+      score += categoryMatches * 5
+      score += jurisdictionMatches * 3
+      score += summaryMatches * 2
+      score += legalProvisionMatches * 4
 
-      // Bonus for exact matches and Indian legal terms
       if (case_.title.toLowerCase().includes(term)) score += 3
       if (case_.category.toLowerCase().includes(term)) score += 4
 
-      // Special bonus for Indian legal terms
       const indianLegalTerms = [
-        "ipc",
-        "crpc",
-        "cpc",
-        "constitution",
-        "supreme court",
-        "high court",
-        "tribunal",
-        "act",
-        "section",
-        "article",
-        "pil",
-        "writ",
-        "petition",
+        "ipc", "crpc", "cpc", "constitution", "supreme court",
+        "high court", "tribunal", "act", "section", "article", "pil", "writ", "petition"
       ]
       if (indianLegalTerms.some((legalTerm) => term.includes(legalTerm))) {
         score += 2
@@ -299,11 +225,9 @@ function searchSimilarCases(query) {
     }
   })
 
-  // Sort by relevance score (descending)
   return results.sort((a, b) => b.score - a.score)
 }
 
-// Apply filters to results
 function applyFilters(results) {
   return results.filter((case_) => {
     return (
@@ -315,7 +239,6 @@ function applyFilters(results) {
   })
 }
 
-// Sort results based on selected criteria
 function sortResults(results, sortBy) {
   const sortedResults = [...results]
 
@@ -332,7 +255,6 @@ function sortResults(results, sortBy) {
   }
 }
 
-// Display search results
 function displayResults(cases) {
   resultsContainer.innerHTML = ""
 
@@ -347,7 +269,6 @@ function displayResults(cases) {
   resultsSection.style.display = "block"
   resultsSummary.style.display = "flex"
 
-  // Update results summary
   updateResultsSummary(cases)
 
   cases.forEach((case_, index) => {
@@ -355,12 +276,10 @@ function displayResults(cases) {
     caseCard.className = "case-card"
     caseCard.style.animationDelay = `${index * 0.1}s`
 
-    // Format Indian currency
     const formatIndianCurrency = (text) => {
       return text.replace(/₹(\d+)/g, "<strong>₹$1</strong>")
     }
 
-    // Format legal provisions
     const formatLegalProvisions = (provisions) => {
       if (!provisions || provisions.length === 0) return ""
       return `<div class="legal-provisions">
@@ -396,11 +315,9 @@ function displayResults(cases) {
     resultsContainer.appendChild(caseCard)
   })
 
-  // Smooth scroll to results
   resultsSummary.scrollIntoView({ behavior: "smooth", block: "start" })
 }
 
-// Update results summary section
 function updateResultsSummary(cases) {
   const resultsCount = document.getElementById("results-count")
   const avgRelevance = document.getElementById("avg-relevance")
@@ -408,11 +325,9 @@ function updateResultsSummary(cases) {
 
   resultsCount.textContent = `${cases.length} Similar Case${cases.length !== 1 ? "s" : ""} Found`
 
-  // Calculate average relevance
   const avgRel = Math.round(cases.reduce((sum, case_) => sum + case_.relevance, 0) / cases.length)
   avgRelevance.textContent = `${avgRel}%`
 
-  // Find most common category
   const categoryCount = {}
   cases.forEach((case_) => {
     categoryCount[case_.category] = (categoryCount[case_.category] || 0) + 1
@@ -422,7 +337,6 @@ function updateResultsSummary(cases) {
   commonCategory.textContent = mostCommon
 }
 
-// Handle search functionality
 function handleSearch() {
   const query = caseInput.value.trim()
 
@@ -436,12 +350,10 @@ function handleSearch() {
     return
   }
 
-  // Show loading state
   searchBtn.disabled = true
   buttonText.style.display = "none"
   loadingSpinner.style.display = "block"
 
-  // Simulate search delay for better UX
   setTimeout(() => {
     try {
       let results = searchSimilarCases(query)
@@ -450,14 +362,11 @@ function handleSearch() {
 
       currentResults = results
       displayResults(results)
-
-      // Add to search history
       addToSearchHistory(query, results.length)
     } catch (error) {
       console.error("Search error:", error)
       showNotification("Error performing search. Please try again.", "error")
     } finally {
-      // Reset button state
       searchBtn.disabled = false
       buttonText.style.display = "block"
       loadingSpinner.style.display = "none"
@@ -465,14 +374,12 @@ function handleSearch() {
   }, 1800)
 }
 
-// Handle clear functionality
 function handleClear() {
   caseInput.value = ""
   resultsSection.style.display = "none"
   resultsSummary.style.display = "none"
   noResultsSection.style.display = "none"
 
-  // Reset filters
   categoryFilter.value = ""
   yearFilter.value = ""
   jurisdictionFilter.value = ""
@@ -483,7 +390,6 @@ function handleClear() {
   showNotification("Search cleared successfully!", "info")
 }
 
-// Handle filter toggle
 function toggleFilters() {
   const isVisible = filtersSection.style.display !== "none"
 
@@ -498,7 +404,6 @@ function toggleFilters() {
   }
 }
 
-// Apply filters and re-search
 function applyFiltersToResults() {
   currentFilters = {
     category: categoryFilter.value,
@@ -516,13 +421,11 @@ function applyFiltersToResults() {
   showNotification("Filters applied successfully!", "success")
 }
 
-// Handle suggestion chip clicks
 function handleSuggestionClick(query) {
   caseInput.value = query
   handleSearch()
 }
 
-// Handle read more functionality with Indian legal context
 function handleReadMore(caseId) {
   if (!legalCasesDatabase || !legalCasesDatabase.cases) {
     showNotification("Case details not available.", "error")
@@ -535,7 +438,6 @@ function handleReadMore(caseId) {
   }
 }
 
-// Handle bookmark functionality
 function handleBookmark(caseId) {
   const bookmarks = JSON.parse(localStorage.getItem("indian-legal-bookmarks") || "[]")
   const case_ = legalCasesDatabase.cases.find((c) => c.id === caseId)
@@ -549,7 +451,6 @@ function handleBookmark(caseId) {
   }
 }
 
-// Show case details in a modal with Indian legal formatting
 function showCaseModal(case_) {
   const legalProvisions = case_.legalProvisions ? case_.legalProvisions.join("\n• ") : "Not specified"
 
@@ -578,13 +479,11 @@ ${case_.summary}
   alert(modalContent)
 }
 
-// Enhanced notification system with bilingual support
 function showNotification(message, type = "info") {
   const notification = document.createElement("div")
   notification.className = `notification notification-${type}`
   notification.innerHTML = message
 
-  // Style the notification
   Object.assign(notification.style, {
     position: "fixed",
     top: "20px",
@@ -602,7 +501,6 @@ function showNotification(message, type = "info") {
     boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.2)",
   })
 
-  // Set background color based on type with Indian theme
   const colors = {
     success: "#16a34a",
     warning: "#f59e0b",
@@ -613,12 +511,10 @@ function showNotification(message, type = "info") {
 
   document.body.appendChild(notification)
 
-  // Animate in
   setTimeout(() => {
     notification.style.transform = "translateX(0)"
   }, 100)
 
-  // Remove after 4 seconds (longer for bilingual text)
   setTimeout(() => {
     notification.style.transform = "translateX(100%)"
     setTimeout(() => {
@@ -629,7 +525,6 @@ function showNotification(message, type = "info") {
   }, 4000)
 }
 
-// Add to search history with Indian legal context
 function addToSearchHistory(query, resultCount) {
   const history = JSON.parse(localStorage.getItem("indian-legalease-search-history") || "[]")
   const searchEntry = {
@@ -640,36 +535,29 @@ function addToSearchHistory(query, resultCount) {
   }
 
   history.unshift(searchEntry)
-  // Keep only last 15 searches for Indian context
   history.splice(15)
 
   localStorage.setItem("indian-legalease-search-history", JSON.stringify(history))
 }
 
-// Setup all event listeners
 function setupEventListeners() {
-  // Search functionality
   searchBtn.addEventListener("click", handleSearch)
   clearBtn.addEventListener("click", handleClear)
 
-  // Enter key support
   caseInput.addEventListener("keypress", (e) => {
     if (e.key === "Enter" && e.ctrlKey) {
       handleSearch()
     }
   })
 
-  // Auto-resize textarea
   caseInput.addEventListener("input", function () {
     this.style.height = "auto"
     this.style.height = this.scrollHeight + "px"
   })
 
-  // Filter functionality
   toggleFiltersBtn.addEventListener("click", toggleFilters)
   applyFiltersBtn.addEventListener("click", applyFiltersToResults)
 
-  // Sort functionality
   sortSelect.addEventListener("change", () => {
     if (currentResults.length > 0) {
       const sortedResults = sortResults(currentResults, sortSelect.value)
@@ -677,7 +565,6 @@ function setupEventListeners() {
     }
   })
 
-  // Suggestion chips
   suggestionChips.forEach((chip) => {
     chip.addEventListener("click", () => {
       const query = chip.getAttribute("data-query")
@@ -686,10 +573,8 @@ function setupEventListeners() {
   })
 }
 
-// Initialize the application when DOM is loaded
 document.addEventListener("DOMContentLoaded", initializeApp)
 
-// Handle page visibility change to refresh data if needed
 document.addEventListener("visibilitychange", () => {
   if (!document.hidden && !legalCasesDatabase) {
     console.log("Page became visible and data not loaded, reinitializing...")

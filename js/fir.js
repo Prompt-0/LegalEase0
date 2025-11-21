@@ -44,7 +44,7 @@ async function initializeApp() {
 // Load FIR portals data from JSON file
 async function loadFIRPortalsData() {
   try {
-    const response = await fetch("data/fir.json")
+    const response = await fetch("./data/fir.json")
     if (!response.ok) {
       throw new Error("Failed to fetch data")
     }

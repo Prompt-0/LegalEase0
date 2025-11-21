@@ -1,4 +1,4 @@
-    // Reference DOM elements
+// Reference DOM elements
     const searchInput = document.getElementById("search");
     const specializationSelect = document.getElementById("specialization");
     const locationSelect = document.getElementById("location");
@@ -9,11 +9,10 @@
     const lawyersCount = document.getElementById("lawyers-count");
     const showAllBtn = document.getElementById("show-all-lawyers-btn");
 
-    let lawyersData = []; // Will hold the fetched data
+    let lawyersData = [];
 
-    // Render lawyer cards to grid
     function renderLawyers(lawyers) {
-    lawyersGrid.innerHTML = ""; // clear previous results
+    lawyersGrid.innerHTML = "";
     lawyers.forEach(lawyer => {
         const card = document.createElement("div");
         card.classList.add("lawyer-card");
@@ -32,11 +31,10 @@
     });
     }
 
-    // Perform search/filter
     function searchLawyers() {
     const query = searchInput.value.trim().toLowerCase();
-    const specialization = specializationSelect.value;
-    const location = locationSelect.value;
+    const specialization = specializationSelect.value.toLowerCase();
+    const location = locationSelect.value.toLowerCase();
 
     const filtered = lawyersData.filter(lawyer => {
         const matchesQuery =
@@ -45,10 +43,10 @@
         lawyer.specialization.toLowerCase().includes(query);
 
         const matchesSpecialization =
-        specialization === "all" || lawyer.specialization === specialization;
+        specialization === "all" || lawyer.specialization.toLowerCase() === specialization;
 
         const matchesLocation =
-        location === "all" || lawyer.location === location;
+        location === "all" || lawyer.location.toLowerCase() === location;
 
         return matchesQuery && matchesSpecialization && matchesLocation;
     });
@@ -64,7 +62,6 @@
     }
     }
 
-    // Show all lawyers when "Show All Lawyers" is clicked
     function showAllLawyers() {
     searchInput.value = "";
     specializationSelect.value = "all";
@@ -75,12 +72,11 @@
     noResultsSection.classList.add("hidden");
     }
 
-    // Event listeners
     searchBtn.addEventListener("click", searchLawyers);
     showAllBtn.addEventListener("click", showAllLawyers);
 
-    // Load data from lawyers.json on page load
-    fetch("data/lawyers.json")
+    // ✅ UPDATED: Explicit relative path
+    fetch("./data/lawyers.json")
     .then(response => {
         if (!response.ok) {
         throw new Error("Failed to load lawyers.json");

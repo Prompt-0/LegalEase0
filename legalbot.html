@@ -6,10 +6,8 @@
   <title>LegalBot - Legalese</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="css/legal_bot.css">
 </head>
 <body>
-  <!-- Navigation -->
   <nav class="navbar">
     <div class="container">
       <div class="navbar-content">
@@ -32,7 +30,6 @@
     </div>
   </nav>
 
-  <!-- Mobile Navigation -->
   <div class="mobile-nav">
     <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
     <a href="legalbot.html" class="nav-link active"><i class="fas fa-comment-dots"></i> LegalBot</a>
@@ -57,22 +54,15 @@
           <i class="fas fa-robot"></i>
           <h2>LegalBot - AI Legal Assistant</h2>
         </div>
-        <div class="chat-header-right">
-          <i class="fas fa-globe"></i>
-          <select id="language-selector">
-            <option value="english">English</option>
-            <option value="hindi">हिंदी</option>
-            <option value="bengali">বাংলা</option>
-          </select>
-        </div>
       </div>
-      <!--here div and i frame has the same size-->
-      <div class="chatbase"><iframe 
+      <div class="chatbase"><iframe
         src="https://www.chatbase.co/chatbot-iframe/v7J8xuJ2duPY7ScvZ2NvO"
         width="100%"
-        style="height:100%;"
-        frameborder="0"
+        style="height:100%; border:none;"
         ></iframe>
+      </div>
+      <div style="padding: 10px; background: #fff3cd; color: #856404; text-align: center; font-size: 0.9rem; border-top: 1px solid #ffeeba;">
+          <i class="fas fa-exclamation-triangle"></i> <strong>Disclaimer:</strong> I am an AI assistant. Information provided here is for educational purposes only and does not constitute professional legal advice. Please consult a qualified lawyer for your specific situation.
       </div>
     </div>
   </div>
@@ -88,8 +78,6 @@
         </div>
   </div>
 
-
   <script src="js/main.js"></script>
-  <!-- <script src="js/legalbot.js"></script> -->
 </body>
 </html>
