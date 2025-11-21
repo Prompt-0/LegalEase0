@@ -20,6 +20,9 @@ class LegalNoticeGenerator {
   }
 
   init() {
+    // CRITICAL FIX: Stop execution if we are not on the legal-notice page
+    if (!this.form) return;
+
     this.loadSavedData()
     this.bindEvents()
     this.setDefaultDate()
@@ -62,6 +65,10 @@ class LegalNoticeGenerator {
       }
     })
   }
+
+  // ... [The rest of the methods remain exactly the same as the original file] ...
+  // For brevity, assume the rest of the class methods (setupRealTimePreview to loadSavedData) are copied here from the original file.
+  // You must copy the full content of the class methods here when pasting.
 
   setupRealTimePreview() {
     // Add visual indicators for form fields with content
@@ -171,7 +178,9 @@ class LegalNoticeGenerator {
 
   setDefaultDate() {
     const today = new Date().toISOString().split("T")[0]
-    document.getElementById("noticeDate").value = today
+    if(document.getElementById("noticeDate")) {
+        document.getElementById("noticeDate").value = today
+    }
   }
 
   handleSubmit(e) {
@@ -239,7 +248,6 @@ class LegalNoticeGenerator {
              <p>You are hereby called upon to pay the sum of Rs. <span class="highlight">${this.formatCurrency(data.demandAmount)}</span> (Rupees ${this.numberToWords(data.demandAmount)} only) along with interest and costs.</p>`
       : ""
 
-    // Use placeholder text for empty fields in real-time mode
     const getFieldValue = (value, placeholder) => {
       if (isRealTime && !value) {
         return `<span class="placeholder-text">[${placeholder}]</span>`
@@ -252,7 +260,7 @@ class LegalNoticeGenerator {
                 <div class="notice-title">LEGAL NOTICE</div>
                 <div class="notice-subtitle">Under Section 80 of the Code of Civil Procedure, 1908</div>
             </div>
-            
+
             <div class="notice-body">
                 <p class="no-indent"><strong>TO:</strong></p>
                 <p class="no-indent"><span class="highlight">${getFieldValue(data.opponentName, "Opponent's Name")}</span></p>
@@ -263,7 +271,7 @@ class LegalNoticeGenerator {
                       ? `<p class="no-indent placeholder-text">[Opponent's Address]</p>`
                       : ""
                 }
-                
+
                 <p class="no-indent" style="margin-top: 25px;"><strong>THROUGH:</strong></p>
                 <p class="no-indent"><span class="highlight">${getFieldValue(data.advocateName, "Advocate's Name")}</span></p>
                 <p class="no-indent">Advocate (Enrollment No. <span class="highlight">${getFieldValue(data.enrollmentNumber, "Enrollment Number")}</span>)</p>
@@ -274,7 +282,7 @@ class LegalNoticeGenerator {
                       ? `<p class="no-indent placeholder-text">[Advocate's Address]</p>`
                       : ""
                 }
-                
+
                 <p class="no-indent" style="margin-top: 25px;"><strong>ON BEHALF OF:</strong></p>
                 <p class="no-indent"><span class="highlight">${getFieldValue(data.clientName, "Client's Name")}</span></p>
                 ${
@@ -284,15 +292,15 @@ class LegalNoticeGenerator {
                       ? `<p class="no-indent placeholder-text">[Client's Address]</p>`
                       : ""
                 }
-                
+
                 <p class="section-title">SUBJECT: ${getFieldValue(data.noticeSubject, "Subject of Notice")}</p>
-                
+
                 <p class="no-indent">Sir/Madam,</p>
-                
+
                 <p>I, <span class="highlight">${getFieldValue(data.advocateName, "Advocate's Name")}</span>, Advocate (Enrollment No. <span class="highlight">${getFieldValue(data.enrollmentNumber, "Enrollment Number")}</span>), acting on behalf of my client <span class="highlight">${getFieldValue(data.clientName, "Client's Name")}</span>, hereby serve upon you this Legal Notice under Section 80 of the Code of Civil Procedure, 1908.</p>
-                
+
                 <p class="section-title">FACTS AND CIRCUMSTANCES:</p>
-                
+
                 ${
                   data.noticeBody
                     ? this.formatNoticeBody(data.noticeBody)
@@ -300,20 +308,20 @@ class LegalNoticeGenerator {
                       ? `<p class="placeholder-text">[Detailed notice body will appear here as you type...]</p>`
                       : `<p>[Notice Body]</p>`
                 }
-                
+
                 ${demandSection}
-                
+
                 <p class="section-title">LEGAL NOTICE:</p>
-                
+
                 <p>You are hereby called upon to remedy the aforesaid grievances and comply with the demands mentioned herein within <span class="highlight">${data.compliancePeriod} (${this.numberToWords(data.compliancePeriod)}) days</span> from the receipt of this notice.</p>
-                
+
                 <p>Please take notice that if you fail to comply with the demands mentioned in this notice within the stipulated time, my client shall be constrained to initiate appropriate legal proceedings against you for recovery of damages, compensation, interest, and costs, without any further reference to you.</p>
-                
+
                 <p>You are further put to notice that this legal notice is issued without prejudice to any other rights and remedies available to my client under law, equity, and justice.</p>
-                
+
                 <p class="no-indent" style="margin-top: 30px;">Yours faithfully,</p>
             </div>
-            
+
             <div class="signature-section">
                 <div class="signature-left">
                     <p><strong>Date:</strong> ${formattedDate}</p>
@@ -331,12 +339,58 @@ class LegalNoticeGenerator {
     this.noticeContent.innerHTML = noticeTemplate
   }
 
-  // ... (keep all other existing methods like formatNoticeBody, formatCurrency, numberToWords, etc.)
+  formatNoticeBody(body) {
+    return body
+      .split("\n")
+      .map((paragraph) => (paragraph.trim() ? `<p>${paragraph.trim()}</p>` : ""))
+      .join("")
+  }
 
-  async downloadEditedPDF() {
-    // Use edited content if available, otherwise use current content
-    const contentToDownload = this.editedContent || this.noticeContent.innerHTML
-    await this.generatePDFFromContent(contentToDownload)
+  formatCurrency(amount) {
+    return new Intl.NumberFormat("en-IN", {
+      style: "currency",
+      currency: "INR",
+      minimumFractionDigits: 0,
+    })
+      .format(amount)
+      .replace("₹", "")
+  }
+
+  numberToWords(num) {
+    const ones = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"]
+    const teens = [
+      "Ten",
+      "Eleven",
+      "Twelve",
+      "Thirteen",
+      "Fourteen",
+      "Fifteen",
+      "Sixteen",
+      "Seventeen",
+      "Eighteen",
+      "Nineteen",
+    ]
+    const tens = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"]
+
+    if (num === 0) return "Zero"
+    if (num < 10) return ones[num]
+    if (num < 20) return teens[num - 10]
+    if (num < 100) return tens[Math.floor(num / 10)] + (num % 10 !== 0 ? " " + ones[num % 10] : "")
+    if (num < 1000)
+      return ones[Math.floor(num / 100)] + " Hundred" + (num % 100 !== 0 ? " " + this.numberToWords(num % 100) : "")
+
+    return num.toString()
+  }
+
+  showPreview() {
+    this.previewSection.classList.add("show")
+    if (this.realTimeEnabled) {
+      this.updateRealTimePreview()
+    }
+  }
+
+  async downloadPDF() {
+    await this.generatePDFFromContent(this.noticeContent.innerHTML)
   }
 
   async generatePDFFromContent(htmlContent) {
@@ -473,106 +527,51 @@ class LegalNoticeGenerator {
       }
 
       // Save the PDF
-      const fileName = `Legal_Notice_${formData.opponentName ? formData.opponentName.replace(/\s+/g, "_") : "Draft"}_${formattedDate.replace(/\s+/g, "_")}.pdf`
-      pdf.save(fileName)
+            const fileName = `Legal_Notice_${formData.opponentName ? formData.opponentName.replace(/\s+/g, "_") : "Draft"}_${formattedDate.replace(/\s+/g, "_")}.pdf`
+            pdf.save(fileName)
 
-      // Close modal after successful download
-      this.closePdfEditorModal()
-    } catch (error) {
-      console.error("Error generating PDF:", error)
-      alert("Error generating PDF. Please try again or use the print option.")
-    }
-  }
+            // Close modal after successful download
+            this.closePdfEditorModal()
+          } catch (error) {
+            console.error("Error generating PDF:", error)
+            alert("Error generating PDF. Please try again or use the print option.")
+          }
+        }
 
-  // Keep all existing methods (formatNoticeBody, formatCurrency, numberToWords, etc.)
-  formatNoticeBody(body) {
-    return body
-      .split("\n")
-      .map((paragraph) => (paragraph.trim() ? `<p>${paragraph.trim()}</p>` : ""))
-      .join("")
-  }
+        printNotice() {
+          window.print()
+        }
 
-  formatCurrency(amount) {
-    return new Intl.NumberFormat("en-IN", {
-      style: "currency",
-      currency: "INR",
-      minimumFractionDigits: 0,
-    })
-      .format(amount)
-      .replace("₹", "")
-  }
+        saveData() {
+          const formData = this.getFormData()
+          localStorage.setItem("legalNoticeData", JSON.stringify(formData))
+        }
 
-  numberToWords(num) {
-    const ones = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"]
-    const teens = [
-      "Ten",
-      "Eleven",
-      "Twelve",
-      "Thirteen",
-      "Fourteen",
-      "Fifteen",
-      "Sixteen",
-      "Seventeen",
-      "Eighteen",
-      "Nineteen",
-    ]
-    const tens = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"]
+        loadSavedData() {
+          const savedData = localStorage.getItem("legalNoticeData")
+          if (savedData) {
+            try {
+              const data = JSON.parse(savedData)
 
-    if (num === 0) return "Zero"
-    if (num < 10) return ones[num]
-    if (num < 20) return teens[num - 10]
-    if (num < 100) return tens[Math.floor(num / 10)] + (num % 10 !== 0 ? " " + ones[num % 10] : "")
-    if (num < 1000)
-      return ones[Math.floor(num / 100)] + " Hundred" + (num % 100 !== 0 ? " " + this.numberToWords(num % 100) : "")
-
-    return num.toString()
-  }
-
-  showPreview() {
-    this.previewSection.classList.add("show")
-    if (this.realTimeEnabled) {
-      this.updateRealTimePreview()
-    }
-  }
-
-  async downloadPDF() {
-    await this.generatePDFFromContent(this.noticeContent.innerHTML)
-  }
-
-  printNotice() {
-    window.print()
-  }
-
-  saveData() {
-    const formData = this.getFormData()
-    localStorage.setItem("legalNoticeData", JSON.stringify(formData))
-  }
-
-  loadSavedData() {
-    const savedData = localStorage.getItem("legalNoticeData")
-    if (savedData) {
-      try {
-        const data = JSON.parse(savedData)
-
-        Object.keys(data).forEach((key) => {
-          const element = document.getElementById(key)
-          if (element && data[key]) {
-            element.value = data[key]
-            // Trigger has-content class for visual feedback
-            const formGroup = element.closest(".form-group")
-            if (formGroup) {
-              formGroup.classList.add("has-content")
+              Object.keys(data).forEach((key) => {
+                const element = document.getElementById(key)
+                if (element && data[key]) {
+                  element.value = data[key]
+                  // Trigger has-content class for visual feedback
+                  const formGroup = element.closest(".form-group")
+                  if (formGroup) {
+                    formGroup.classList.add("has-content")
+                  }
+                }
+              })
+            } catch (error) {
+              console.error("Error loading saved data:", error)
             }
           }
-        })
-      } catch (error) {
-        console.error("Error loading saved data:", error)
+        }
       }
-    }
-  }
-}
 
-// Initialize the application when DOM is loaded
-document.addEventListener("DOMContentLoaded", () => {
-  new LegalNoticeGenerator()
-})
+      // Initialize the application when DOM is loaded
+      document.addEventListener("DOMContentLoaded", () => {
+        new LegalNoticeGenerator()
+      })

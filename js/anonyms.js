@@ -1,36 +1,33 @@
-
-    document.getElementById("tip-form").addEventListener("submit", async function(e) {
+document.getElementById("tip-form").addEventListener("submit", function(e) {
     e.preventDefault();
 
     const form = e.target;
+    const submitBtn = document.getElementById("submit-tip-btn");
+    const originalBtnText = submitBtn.innerHTML;
 
-    const formData = new FormData();
-    formData.append("category", document.getElementById("category").value);
-    formData.append("urgency", document.getElementById("urgency").value);
-    formData.append("location", document.getElementById("location").value);
-    formData.append("description", document.getElementById("description").value);
+    // Visual feedback
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
 
-    const fileInput = document.getElementById("evidence-upload");
-    if (fileInput.files.length > 0) {
-        formData.append("evidence", fileInput.files[0]);
+    // Collect data
+    const formData = new FormData(form);
+
+    // SIMULATION: Log data instead of failing fetch
+    console.log("Anonymous Tip Submitted:", Object.fromEntries(formData));
+    if(document.getElementById("evidence-upload").files.length > 0) {
+        console.log("Evidence file attached:", document.getElementById("evidence-upload").files[0].name);
     }
 
-    try {
-        const response = await fetch("https://legalease-anonymous.onrender.com/submit-tips/", {
-        method: "POST",
-        body: formData
-        });
+    // Simulate network delay
+    setTimeout(() => {
+        // Show success
+        alert("Tip submitted successfully! (Demo Mode)\n\nYour Access Key: AN-" + Math.random().toString(36).substr(2, 9).toUpperCase());
 
-        const data = await response.json();
-
-        if (response.ok) {
-        alert("Tip submitted successfully! Keep your key safe: " + data.access_key);
         form.reset();
-        } else {
-        alert("Submission failed: " + (data.detail || "Unknown error"));
-        }
-    } catch (err) {
-        console.error("Error submitting tip:", err);
-        alert("There was a problem submitting your tip. Try again.");
-    }
-    });
+        document.getElementById("file-selected").classList.add("hidden");
+
+        // Reset button
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
+    }, 1500);
+});

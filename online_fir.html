@@ -5,14 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>India Online FIR Portals Directory - Legalese</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <link rel="stylesheet" href="css/styles.css"><!--Just Applies to the Navigation Styles-->
-    <link rel="stylesheet" href="css/fir.css"><!--Applies to whole body of the page-->
-
-
-</head>
+    <link rel="stylesheet" href="css/styles.css"><link rel="stylesheet" href="css/fir.css"></head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="navbar-content">
@@ -32,19 +26,17 @@
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
-            <!-- Mobile Navigation -->
             <div class="mobile-nav" id="mobileNav">
                 <a href="index.html" class="mobile-nav-link"><i class="fas fa-home"></i> Home</a>
                 <a href="legalbot.html" class="mobile-nav-link"><i class="fas fa-comment-dots"></i> LegalBot</a>
                 <a href="documents.html" class="mobile-nav-link"><i class="fas fa-file-alt"></i> Documents</a>
-                <a href="police-stations.html" class="mobile-nav-link active"><i class="fas fa-map-marker-alt"></i> Police Help</a>
+                <a href="police-stations.html" class="mobile-nav-link"><i class="fas fa-map-marker-alt"></i> Police Help</a>
                 <a href="contacts.html" class="mobile-nav-link"><i class="fas fa-phone"></i> Contacts</a>
                 <a href="legal-books.html" class="mobile-nav-link"><i class="fas fa-book"></i> Legal Books</a>
             </div>
         </div>
     </nav>
 
-    <!-- Header -->
     <header class="hero-section">
         <div class="container">
             <div class="hero-content">
@@ -71,7 +63,6 @@
         </div>
     </header>
 
-    <!-- Search and Filter Section -->
     <section class="search-section">
         <div class="container">
             <div class="search-header">
@@ -115,10 +106,8 @@
         </div>
     </section>
 
-    <!-- Main Content -->
     <main class="main-content">
         <div class="container">
-            <!-- Important Notice -->
             <div class="notice-card">
                 <div class="notice-icon">
                     <i class="fas fa-exclamation-triangle"></i>
@@ -129,7 +118,6 @@
                 </div>
             </div>
 
-            <!-- Loading State -->
             <div class="loading-container" id="loadingContainer">
                 <div class="loading-spinner">
                     <div class="spinner"></div>
@@ -137,7 +125,6 @@
                 </div>
             </div>
 
-            <!-- Results Info -->
             <div class="results-info" id="resultsInfo">
                 <span class="results-count" id="resultsCount">0 results found</span>
                 <button class="reset-filters" id="resetFilters">
@@ -145,12 +132,9 @@
                 </button>
             </div>
 
-            <!-- States Grid -->
             <div class="states-grid" id="statesGrid">
-                <!-- States will be populated by JavaScript -->
-            </div>
+                </div>
 
-            <!-- No Results -->
             <div class="no-results" id="noResults">
                 <div class="no-results-icon">
                     <i class="fas fa-search"></i>
@@ -164,7 +148,6 @@
         </div>
     </main>
 
-    <!-- Help Section -->
     <section class="help-section">
         <div class="container">
             <div class="help-content">
@@ -196,6 +179,7 @@
         </div>
     </section>
 
+    <script src="js/main.js"></script>
     <script src="js/fir.js"></script>
 </body>
 </html>

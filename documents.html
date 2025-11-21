@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document Generator - Legalese</title>
+  <link rel="stylesheet" href="css/documents.css">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- Navigation -->
   <nav class="navbar">
     <div class="container">
       <div class="navbar-content">
@@ -31,7 +31,6 @@
     </div>
   </nav>
 
-  <!-- Mobile Navigation -->
   <div class="mobile-nav">
     <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
     <a href="legalbot.html" class="nav-link"><i class="fas fa-comment-dots"></i> LegalBot</a>
@@ -59,13 +58,9 @@
       <div class="tab-content active" id="create-tab">
         <div id="document-selection" class="document-selection">
           <div class="document-grid">
-            
-
-
             <div class="document-card">
               <div class="document-icon">⚖️</div>
               <h3>Legal Notice</h3>
-              <!-- <p>Send formal legal notice for disputes</p> -->
               <p>for Indian Advocates - Draft legally valid notices in minutes</p>
               <a href="legal-notice.html"><button class="btn btn-primary btn-block" data-document="legal-notice">
                 <i class="fas fa-plus"></i> Start Creating
@@ -74,69 +69,10 @@
             </div>
           </div>
         </div>
-
-        <div id="document-form-container" class="document-form-container hidden">
-          <div class="document-form-grid">
-            <div class="document-form-main">
-              <div class="card">
-                <div class="card-header">
-                  <div class="document-form-header">
-                    <div>
-                      <span id="document-icon" class="document-icon-sm"></span>
-                      <h2 id="document-title"></h2>
-                      <p id="document-description"></p>
-                    </div>
-                    <button id="back-to-templates" class="btn btn-outline">
-                      Back to Templates
-                    </button>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <form id="document-form" class="document-form">
-                    <!-- Form fields will be added here by JavaScript -->
-                  </form>
-                </div>
-              </div>
-            </div>
-
-            <div class="document-form-sidebar">
-              <div class="card">
-                <div class="card-header">
-                  <h3>Document Actions</h3>
-                </div>
-                <div class="card-body">
-                  <button id="preview-btn" class="btn btn-block">
-                    <i class="fas fa-eye"></i> Preview Document
-                  </button>
-                  <button id="generate-btn" class="btn btn-primary btn-block mt-3">
-                    <i class="fas fa-download"></i> Generate PDF
-                  </button>
-                </div>
-              </div>
-
-              <div class="card mt-4">
-                <div class="card-header">
-                  <h3>Tips</h3>
-                </div>
-                <div class="card-body">
-                  <ul class="tips-list">
-                    <li>• Fill all required fields marked with *</li>
-                    <li>• Provide accurate and complete information</li>
-                    <li>• Review the document before downloading</li>
-                    <li>• Keep copies for your records</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
 
       <div class="tab-content" id="templates-tab">
         <div class="document-grid">
-
-          
-
           <div class="document-card">
             <div class="document-icon">⚖️</div>
             <h3>Legal Notice</h3>

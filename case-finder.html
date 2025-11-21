@@ -7,12 +7,11 @@
     <link rel="stylesheet" href="css/finder.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 </head>
 <body>
-    <!-- Navigation -->
-  <nav class="navbar">
+    <nav class="navbar">
     <div class="container">
       <div class="navbar-content">
         <a href="index.html" class="logo">
@@ -34,7 +33,6 @@
     </div>
   </nav>
 
-  <!-- Mobile Navigation -->
   <div class="mobile-nav">
     <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
     <a href="legalbot.html" class="nav-link"><i class="fas fa-comment-dots"></i> LegalBot</a>
@@ -43,7 +41,7 @@
     <a href="contacts.html" class="nav-link"><i class="fas fa-phone"></i> Contacts</a>
     <a href="legal-books.html" class="nav-link"><i class="fas fa-book"></i> Legal Books</a>
     <a href="lawyer-connect.html" class="nav-link"><i class="fas fa-scale-balanced"></i> Lawyers</a>
-    <a href="case-finder.html" class="nav-link"><i class="fas fa-search"></i> Case Finder</a>
+    <a href="case-finder.html" class="nav-link active"><i class="fas fa-search"></i> Case Finder</a>
     <a href="anonymous-report.html" class="nav-link"><i class="fas fa-shield-alt"></i> Tips</a>
   </div>
     <header class="header">
@@ -72,13 +70,13 @@
                     <label for="case-description" class="input-label">
                         Describe your legal issue or case details:
                     </label>
-                    <textarea 
-                        id="case-description" 
-                        class="case-input" 
+                    <textarea
+                        id="case-description"
+                        class="case-input"
                         placeholder="Enter a brief description of your legal case, including key details, circumstances, or legal issues involved. E.g., 'Property dispute between neighbors', 'Employment termination without notice', 'Consumer complaint against service provider'..."
                         rows="6"
                     ></textarea>
-                    
+
                     <div class="search-controls">
                         <button id="search-btn" class="search-button">
                             <span class="button-text">🔍 Find Similar Cases</span>
@@ -87,7 +85,6 @@
                         <button id="clear-btn" class="clear-button">Clear</button>
                     </div>
 
-                    <!-- Advanced Filters -->
                     <div class="filters-section" id="filters-section" style="display: none;">
                         <h3 class="filters-title">🔧 Advanced Filters</h3>
                         <div class="filters-grid">
@@ -126,7 +123,6 @@
                 </div>
             </section>
 
-            <!-- Quick Search Suggestions -->
             <section class="suggestions-section">
                 <h3 class="suggestions-title">💡 Quick Search Examples</h3>
                 <div class="suggestions-container">
@@ -141,7 +137,6 @@
                 </div>
             </section>
 
-            <!-- Results Summary -->
             <section id="results-summary" class="results-summary" style="display: none;">
                 <div class="summary-content">
                     <h3 id="results-count">0 Similar Cases Found</h3>
@@ -169,8 +164,7 @@
 
             <section id="results-section" class="results-section" style="display: none;">
                 <div id="results-container" class="results-container">
-                    <!-- Results will be populated here -->
-                </div>
+                    </div>
             </section>
 
             <section id="no-results" class="no-results" style="display: none;">
