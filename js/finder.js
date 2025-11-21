@@ -37,8 +37,8 @@ const suggestionChips = document.querySelectorAll(".suggestion-chip")
 // Fetch JSON data from external file
 async function fetchLegalCasesData() {
   try {
-
-    const response = await fetch("data/legal-casses.json")
+    // FIXED: Corrected filename from 'legal-casses.json' to 'legal-cases.json'
+    const response = await fetch("data/legal-cases.json")
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`)
@@ -52,9 +52,6 @@ async function fetchLegalCasesData() {
     }
 
     legalCasesDatabase = data
-
-    
-
     return data
   } catch (error) {
     console.error("Error fetching legal cases data:", error)
@@ -230,7 +227,6 @@ function updateStats() {
 
   document.getElementById("total-cases").textContent = cases.length
   document.getElementById("categories-count").textContent = categories.length
-  // document.getElementById("footer-case-count").textContent = cases.length
 }
 
 // Enhanced search algorithm with scoring
@@ -249,19 +245,6 @@ function searchSimilarCases(query) {
 
   cases.forEach((case_) => {
     let score = 0
-    const caseText = (
-      case_.title +
-      " " +
-      case_.summary +
-      " " +
-      case_.keywords.join(" ") +
-      " " +
-      (case_.legalProvisions ? case_.legalProvisions.join(" ") : "") +
-      " " +
-      (case_.caseNumber || "") +
-      " " +
-      (case_.judge || "")
-    ).toLowerCase()
 
     searchTerms.forEach((term) => {
       // Count occurrences in different fields with different weights

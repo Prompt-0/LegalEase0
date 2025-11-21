@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   let legalData = null
   let currentSearchResults = []
+  const MAX_RESULTS = 50 // OPTIMIZATION: Hard limit on results to prevent DOM freezing
 
   const searchInput = document.getElementById("legal-search")
   const searchBtn = document.getElementById("search-btn")
@@ -72,75 +73,113 @@ document.addEventListener("DOMContentLoaded", () => {
     const actFilterValue = actFilter.value
     const searchTypeValue = searchType.value
 
-    if (!query) {
-      clearSearch()
-      return
+    if (!query || query.length < 3) {
+      return // Don't search for very short queries
     }
 
     currentSearchResults = []
+    let resultsFound = 0
 
-    legalData.acts.forEach((act) => {
-      if (actFilterValue !== "all" && act.id !== actFilterValue) return
+    // OPTIMIZED SEARCH LOOP
+    // We use a label to break out of nested loops efficiently once limit is reached
+    searchLoop:
+    for (const act of legalData.acts) {
+      if (actFilterValue !== "all" && act.id !== actFilterValue) continue
 
-      act.chapters.forEach((chapter) => {
-        chapter.sections.forEach((section) => {
+      for (const chapter of act.chapters) {
+        for (const section of chapter.sections) {
+          if (resultsFound >= MAX_RESULTS) break searchLoop // Stop searching if limit reached
+
           let matchField = ""
+          let isMatch = false
 
           switch (searchTypeValue) {
             case "section":
               matchField = String(section.number).toLowerCase()
+              if (matchField.includes(query)) isMatch = true
               break
             case "title":
               matchField = section.title.toLowerCase()
+              if (matchField.includes(query)) isMatch = true
               break
             case "content":
               matchField = section.content.toLowerCase()
+              if (matchField.includes(query)) isMatch = true
               break
             default:
-              matchField = `${section.number} ${section.title} ${section.content}`.toLowerCase()
+              // For 'all', check all fields but break early if match found
+              if (String(section.number).includes(query) ||
+                  section.title.toLowerCase().includes(query) ||
+                  section.content.toLowerCase().includes(query)) {
+                isMatch = true
+              }
           }
 
-          if (matchField.includes(query)) {
+          if (isMatch) {
             currentSearchResults.push({
               act,
               chapter,
               section
             })
+            resultsFound++
           }
-        })
-      })
-    })
+        }
+      }
+    }
 
-    displaySearchResults()
+    displaySearchResults(resultsFound >= MAX_RESULTS)
   }
 
   function highlightMatch(text, query) {
-    const terms = query.split(/\s+/).filter(Boolean)
-    const regex = new RegExp(`(${terms.map(escapeRegExp).join("|")})`, "gi")
-    return text.replace(regex, "<mark>$1</mark>")
+    if (!query) return text
+    // Simple highlight to avoid complex regex performance hit on large text
+    const lowerText = text.toLowerCase()
+    const index = lowerText.indexOf(query.toLowerCase())
+    if (index >= 0) {
+      return text.substring(0, index) +
+             `<mark>${text.substring(index, index + query.length)}</mark>` +
+             text.substring(index + query.length)
+    }
+    return text
   }
 
-  function escapeRegExp(string) {
-    return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
-  }
-
-  function displaySearchResults() {
+  function displaySearchResults(limitReached = false) {
     if (currentSearchResults.length === 0) {
       searchResults.classList.add("hidden")
       return
     }
 
-    resultsCount.textContent = `Search Results (${currentSearchResults.length} found)`
+    let countText = `Search Results (${currentSearchResults.length} found)`
+    if (limitReached) {
+      countText += ` - Showing top ${MAX_RESULTS} matches. Please refine your search.`
+    }
+    resultsCount.textContent = countText
+
     resultsList.innerHTML = ""
 
     const query = searchInput.value.trim()
+
+    // Use a document fragment for better performance when appending multiple items
+    const fragment = document.createDocumentFragment()
 
     currentSearchResults.forEach((result) => {
       const resultItem = document.createElement("div")
       resultItem.className = "search-result-item"
 
+      // Only highlight title for performance; highlighting massive content blocks is heavy
       const highlightedTitle = highlightMatch(result.section.title, query)
-      const highlightedContent = highlightMatch(result.section.content, query)
+
+      // For content, just show a snippet if it's long
+      let contentDisplay = result.section.content
+      if (contentDisplay.length > 300) {
+         const matchIndex = contentDisplay.toLowerCase().indexOf(query.toLowerCase())
+         if (matchIndex > 50) {
+            contentDisplay = "..." + contentDisplay.substring(matchIndex - 50, matchIndex + 250) + "..."
+         } else {
+            contentDisplay = contentDisplay.substring(0, 300) + "..."
+         }
+      }
+      const highlightedContent = highlightMatch(contentDisplay, query)
 
       resultItem.innerHTML = `
         <div class="result-header">
@@ -159,9 +198,10 @@ document.addEventListener("DOMContentLoaded", () => {
         navigateToSection(result.act.id, result.section.id)
       })
 
-      resultsList.appendChild(resultItem)
+      fragment.appendChild(resultItem)
     })
 
+    resultsList.appendChild(fragment)
     searchResults.classList.remove("hidden")
   }
 
@@ -206,6 +246,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const chapterContent = document.createElement("div")
         chapterContent.className = "chapter-content"
 
+        // Lazy rendering for sections could be added here, but for now we render all
+        // since the main issue was the search loop, not initial render.
         chapter.sections.forEach((section) => {
           const sectionItem = document.createElement("div")
           sectionItem.className = "section-item"
@@ -255,8 +297,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       refItem.addEventListener("click", (e) => {
         if (e.target.tagName === "LI") {
-          const sectionNumber = e.target.textContent.match(/Section (\d+)/)[1]
-          searchForSection(sectionNumber, actId)
+          const sectionMatch = e.target.textContent.match(/Section\s+(\d+)/)
+          if (sectionMatch) {
+             const sectionNumber = sectionMatch[1]
+             searchForSection(sectionNumber, actId)
+          }
         }
       })
 
@@ -273,7 +318,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function navigateToSection(actId, sectionId) {
     switchTab(actId)
-    clearSearch()
+    // Don't clear search immediately so user can go back to results if needed
+    // But hide the results pane to show the content
+    searchResults.classList.add("hidden")
 
     setTimeout(() => {
       const sectionElement = document.querySelector(`[data-section-id="${sectionId}"]`)
@@ -303,7 +350,10 @@ document.addEventListener("DOMContentLoaded", () => {
       content.classList.remove("active")
     })
 
-    document.querySelector(`[data-tab="${tabId}"]`).classList.add("active")
-    document.getElementById(`${tabId}-tab`).classList.add("active")
+    const tabBtn = document.querySelector(`[data-tab="${tabId}"]`)
+    if (tabBtn) tabBtn.classList.add("active")
+
+    const tabContent = document.getElementById(`${tabId}-tab`)
+    if (tabContent) tabContent.classList.add("active")
   }
 })

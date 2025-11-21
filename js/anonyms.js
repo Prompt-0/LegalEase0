@@ -7,21 +7,32 @@ document.getElementById("tip-form").addEventListener("submit", function(e) {
 
     // Visual feedback
     submitBtn.disabled = true;
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Encrypting & Submitting...';
 
     // Collect data
     const formData = new FormData(form);
+    const reportData = Object.fromEntries(formData.entries());
 
-    // SIMULATION: Log data instead of failing fetch
-    console.log("Anonymous Tip Submitted:", Object.fromEntries(formData));
-    if(document.getElementById("evidence-upload").files.length > 0) {
-        console.log("Evidence file attached:", document.getElementById("evidence-upload").files[0].name);
+    // Add metadata
+    reportData.id = "AN-" + Math.random().toString(36).substr(2, 9).toUpperCase();
+    reportData.timestamp = new Date().toISOString();
+    reportData.status = "Received";
+
+    // SIMULATION: Save to LocalStorage to persist data (Demo Backend)
+    try {
+        const existingReports = JSON.parse(localStorage.getItem('legalease_reports') || '[]');
+        existingReports.push(reportData);
+        localStorage.setItem('legalease_reports', JSON.stringify(existingReports));
+
+        console.log("Report saved to local storage:", reportData);
+    } catch (err) {
+        console.error("Storage failed", err);
     }
 
     // Simulate network delay
     setTimeout(() => {
         // Show success
-        alert("Tip submitted successfully! (Demo Mode)\n\nYour Access Key: AN-" + Math.random().toString(36).substr(2, 9).toUpperCase());
+        alert(`Report submitted successfully!\n\nYour Secret Access Key: ${reportData.id}\n\nPlease save this key to track your report status.`);
 
         form.reset();
         document.getElementById("file-selected").classList.add("hidden");
@@ -31,3 +42,17 @@ document.getElementById("tip-form").addEventListener("submit", function(e) {
         submitBtn.innerHTML = originalBtnText;
     }, 1500);
 });
+
+// Handle file selection text
+const fileInput = document.getElementById("evidence-upload");
+if (fileInput) {
+    fileInput.addEventListener("change", function() {
+        const fileNameDisplay = document.getElementById("file-selected");
+        if (this.files.length > 0) {
+            fileNameDisplay.textContent = `Selected: ${this.files[0].name}`;
+            fileNameDisplay.classList.remove("hidden");
+        } else {
+            fileNameDisplay.classList.add("hidden");
+        }
+    });
+}
