@@ -1,32 +1,44 @@
-/* ==========================================================================
-   1. GLOBAL VARIABLES & RESET (Base Theme)
-   ========================================================================== */
+/* =========================================
+   1. GLOBAL VARIABLES & RESET
+   ========================================= */
 :root {
   /* Core Colors */
   --primary-color: #1a56db;
   --primary-hover: #1e429f;
   --secondary-color: #e5edff;
+
+  /* Functional Colors */
+  --green-color: #10b981;
+  --red-color: #ef4444;
+  --purple-color: #8b5cf6;
+  --orange-color: #f97316;
+  --indigo-color: #4f46e5;
+  --teal-color: #14b8a6;
+  --gray-color: #6b7280;
+
+  /* UI Elements */
   --text-color: #111827;
+  --text-muted: #6b7280;
   --bg-color: #f9fafb;
+  --card-bg: #ffffff;
   --border-color: #e5e7eb;
-
-  /* Functional */
-  --success-color: #10b981;
-  --danger-color: #ef4444;
-  --warning-color: #f59e0b;
-
-  /* Spacing & Layout */
   --radius: 0.375rem;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
   --transition: all 0.2s ease;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* DEFAULT BODY (Home Page) */
 body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   color: var(--text-color);
   background-color: var(--bg-color);
   line-height: 1.6;
@@ -40,10 +52,14 @@ body {
 }
 
 .hidden { display: none !important; }
+a { text-decoration: none; color: var(--primary-color); transition: var(--transition); }
+a:hover { color: var(--primary-hover); }
+ul { list-style: none; }
 
-/* ==========================================================================
-   2. SHARED NAVIGATION (Applies to all pages)
-   ========================================================================== */
+/* =========================================
+   2. SHARED COMPONENTS (Navbar, Footer, Buttons)
+   ========================================= */
+/* Navbar */
 .navbar {
   background-color: white;
   box-shadow: var(--shadow-sm);
@@ -67,7 +83,6 @@ body {
   font-size: 1.25rem;
   color: var(--text-color);
   gap: 0.5rem;
-  text-decoration: none;
 }
 
 .logo i { color: var(--primary-color); font-size: 1.5rem; }
@@ -80,9 +95,9 @@ body {
 
 .nav-link {
   padding: 0.5rem 0.75rem;
-  color: #6b7280;
+  color: var(--text-muted);
   font-weight: 500;
-  text-decoration: none;
+  font-size: 0.9rem;
   border-radius: var(--radius);
   display: inline-flex;
   align-items: center;
@@ -94,9 +109,9 @@ body {
   background-color: var(--secondary-color);
 }
 
-.mobile-menu-btn { background: none; border: none; font-size: 1.25rem; cursor: pointer; }
+.mobile-menu-btn { background: none; border: none; font-size: 1.25rem; cursor: pointer; color: var(--text-muted); }
 
-/* Mobile Nav Shared */
+/* Mobile Nav */
 .mobile-nav {
   display: none;
   position: fixed;
@@ -104,68 +119,16 @@ body {
   right: 0;
   width: 16rem;
   background: white;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-lg);
   border-left: 1px solid var(--border-color);
   z-index: 999;
-  padding: 1rem;
+  padding: 0.5rem;
+  flex-direction: column;
 }
-.mobile-nav.show { display: block; }
-.mobile-nav .nav-link { display: flex; width: 100%; margin-bottom: 0.5rem; }
+.mobile-nav.show { display: flex; }
+.mobile-nav .nav-link { width: 100%; margin-bottom: 0.25rem; padding: 0.75rem 1rem; }
 
-
-/* ==========================================================================
-   3. HOME PAGE (.page-home or default)
-   ========================================================================== */
-/* Only apply these generic styles if NOT one of the specific pages */
-body:not(.page-fir):not(.page-documents):not(.page-finder):not(.page-contacts):not(.page-books) .hero {
-  background: linear-gradient(to bottom right, var(--primary-color), #3b82f6);
-  color: white;
-  padding: 4rem 0;
-  text-align: center;
-}
-
-body:not(.page-fir):not(.page-documents):not(.page-finder):not(.page-contacts):not(.page-books) .hero h1 { color: white; }
-body:not(.page-fir):not(.page-documents):not(.page-finder):not(.page-contacts):not(.page-books) .hero p { color: rgba(255,255,255,0.9); font-size: 1.25rem; }
-
-.hero-buttons { display: flex; justify-content: center; gap: 1rem; margin-top: 2rem; }
-
-/* Feature Cards (Home) */
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  padding: 2rem 0;
-}
-
-.feature-card {
-  background: white;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  text-align: center;
-  transition: var(--transition);
-  text-decoration: none;
-  color: var(--text-color);
-  display: block;
-}
-.feature-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
-.feature-icon {
-  width: 3rem; height: 3rem; margin: 0 auto 1rem;
-  display: flex; align-items: center; justify-content: center;
-  border-radius: 0.5rem; color: white;
-}
-
-/* Utility Classes for Home Icons */
-.blue { background: var(--primary-color); }
-.green { background: var(--success-color); }
-.red { background: var(--danger-color); }
-.purple { background: #8b5cf6; }
-.orange { background: #f97316; }
-.indigo { background: #4f46e5; }
-.teal { background: #14b8a6; }
-.gray { background: #6b7280; }
-
-/* Buttons (Shared) */
+/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -174,20 +137,81 @@ body:not(.page-fir):not(.page-documents):not(.page-finder):not(.page-contacts):n
   border-radius: var(--radius);
   font-weight: 500;
   cursor: pointer;
-  text-decoration: none;
+  border: 1px solid transparent;
+  transition: var(--transition);
 }
-.btn-primary { background: var(--primary-color); color: white; border: none; }
-.btn-outline { background: transparent; border: 1px solid var(--border-color); color: var(--text-color); }
-.hero .btn-outline { border-color: white; color: white; }
 
+.btn-primary { background: var(--primary-color); color: white; }
+.btn-primary:hover { background: var(--primary-hover); transform: translateY(-1px); }
+.btn-outline { background: transparent; border-color: var(--border-color); color: var(--text-color); }
+.btn-outline:hover { background: var(--bg-color); }
+.btn-block { width: 100%; display: flex; }
 
-/* ==========================================================================
-   4. MODULE: ONLINE FIR (.page-fir)
-   ========================================================================== */
+/* Footer */
+.footer {
+  background: #1f2937; /* Dark footer from styles.css */
+  color: #9ca3af;
+  padding: 3rem 0 1rem;
+  margin-top: 4rem;
+}
+
+/* =========================================
+   3. PAGE: HOME (.page-home)
+   ========================================= */
+.page-home .hero {
+  background: linear-gradient(to bottom right, var(--primary-color), #3b82f6);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+.page-home .hero h1 { font-size: 3rem; margin-bottom: 1rem; color: white; }
+.page-home .hero p { font-size: 1.25rem; opacity: 0.9; margin-bottom: 2rem; color: white; }
+.page-home .hero .btn-outline { color: white; border-color: white; }
+.page-home .hero .btn-outline:hover { background: rgba(255,255,255,0.1); }
+
+.page-home .features { padding: 4rem 0; }
+.page-home .features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.page-home .feature-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-align: center;
+  transition: var(--transition);
+  display: block;
+}
+.page-home .feature-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+.page-home .feature-icon {
+  width: 3rem; height: 3rem; border-radius: 0.5rem; margin: 0 auto 1rem;
+  display: flex; align-items: center; justify-content: center; color: white;
+}
+.page-home .feature-icon i { font-size: 1.5rem; }
+
+/* Home Icon Colors */
+.blue { background-color: var(--primary-color); }
+.green { background-color: var(--green-color); }
+.red { background-color: var(--red-color); }
+.purple { background-color: var(--purple-color); }
+.orange { background-color: var(--orange-color); }
+.indigo { background-color: var(--indigo-color); }
+.teal { background-color: var(--teal-color); }
+.gray { background-color: var(--gray-color); }
+
+/* Quick Access */
+.page-home .quick-access { background: white; padding: 4rem 0; border-top: 1px solid var(--border-color); }
+.page-home .quick-access-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+
+/* =========================================
+   4. PAGE: ONLINE FIR (.page-fir)
+   ========================================= */
+/* Override Global Vars for FIR Theme */
 .page-fir {
   --primary-color: #1e40af;
   --secondary-color: #3b82f6;
-  background-color: #f8fafc;
 }
 
 .page-fir .fir-hero-section {
@@ -196,76 +220,74 @@ body:not(.page-fir):not(.page-documents):not(.page-finder):not(.page-contacts):n
   padding: 4rem 0;
   text-align: center;
 }
-.page-fir .fir-hero-content h1 { color: white; font-size: 3rem; font-weight: 800; }
-.page-fir .fir-hero-content p { color: white; opacity: 0.9; font-size: 1.25rem; margin-bottom: 2rem; }
+.page-fir .fir-hero-content h1 { font-size: 3rem; font-weight: 800; margin-bottom: 1rem; color: white; }
+.page-fir .fir-hero-content p { font-size: 1.1rem; opacity: 0.9; color: white; }
+.page-fir .hero-icon { font-size: 4rem; margin-bottom: 1.5rem; opacity: 0.9; color: white; }
 
-.page-fir .hero-stats { display: flex; justify-content: center; gap: 3rem; }
-.page-fir .stat-number { font-size: 2rem; font-weight: 700; display: block; }
+.page-fir .hero-stats { display: flex; justify-content: center; gap: 3rem; margin-top: 2rem; }
+.page-fir .stat-number { display: block; font-size: 2rem; font-weight: 700; margin-bottom: 0.25rem; }
 
-.page-fir .search-section { background: white; padding: 3rem 0; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+.page-fir .search-section { background: white; padding: 3rem 0; }
 .page-fir .search-container {
   display: grid;
   grid-template-columns: 1fr auto auto;
   gap: 1rem;
   max-width: 800px;
   margin: 0 auto;
-}
-
-.page-fir .search-input {
-  width: 100%; padding: 1rem 1rem 1rem 3rem;
-  border: 2px solid #e5e7eb; border-radius: 12px; font-size: 1rem;
+  align-items: center;
 }
 .page-fir .search-input-wrapper { position: relative; width: 100%; }
 .page-fir .search-icon { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: #9ca3af; }
-
-.page-fir .states-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+.page-fir .search-input {
+  width: 100%; padding: 1rem 1rem 1rem 3rem;
+  border: 2px solid var(--border-color); border-radius: 12px; font-size: 1rem;
+}
+.page-fir .dropdown-select {
+  padding: 1rem 3rem 1rem 1rem; border: 2px solid var(--border-color);
+  border-radius: 12px; background: white; cursor: pointer;
 }
 
+.page-fir .states-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 2rem; margin-top: 2rem; }
 .page-fir .state-card {
   background: white; border-radius: 16px; padding: 2rem;
-  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-  border: 1px solid #f3f4f6; position: relative; overflow: hidden;
+  box-shadow: var(--shadow-md); border: 1px solid var(--border-color);
+  position: relative; overflow: hidden; transition: var(--transition);
 }
+.page-fir .state-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
 .page-fir .state-card::before {
   content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px;
   background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
 }
-.page-fir .state-header { display: flex; justify-content: space-between; margin-bottom: 1rem; }
+.page-fir .state-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
 .page-fir .state-name { font-size: 1.5rem; font-weight: 700; color: #1f2937; }
-.page-fir .state-status { padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; }
+.page-fir .state-status { padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
 .page-fir .status-active { background: #dcfce7; color: #166534; }
 
+.page-fir .state-actions { display: flex; gap: 1rem; margin-top: 1.5rem; }
 .page-fir .fir-button {
-  display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+  flex: 1; display: flex; align-items: center; justify-content: center; gap: 0.5rem;
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
   color: white; padding: 1rem; border-radius: 8px; font-weight: 600;
-  width: 100%; margin-top: 1.5rem;
 }
+.page-fir .info-button { padding: 1rem; border: 1px solid var(--border-color); background: #f1f5f9; border-radius: 8px; cursor: pointer; }
 
-
-/* ==========================================================================
-   5. MODULE: DOCUMENTS (.page-documents)
-   ========================================================================== */
+/* =========================================
+   5. PAGE: DOCUMENTS (.page-documents)
+   ========================================= */
 .page-documents {
   font-family: "Georgia", "Times New Roman", serif;
   background-color: #f8f9fa;
 }
-
 .page-documents .container1 { max-width: 1400px; margin: 0 auto; padding: 20px; }
 
-/* Override generic header for Documents */
 .page-documents .header {
   text-align: center; margin-bottom: 40px; padding: 40px 0;
   background: linear-gradient(135deg, #1e3a8a, #3b82f6);
   color: white; border-radius: 12px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
-.page-documents .header h1 { font-size: 2.8rem; color: white; font-family: "Georgia", serif; }
-.page-documents .header p { color: white; opacity: 0.9; font-style: italic; }
+.page-documents .header h1 { font-size: 2.8rem; font-family: "Georgia", serif; color: white; margin-bottom: 0.5rem; }
+.page-documents .header p { font-size: 1.2rem; font-style: italic; opacity: 0.9; color: white; }
 
 .page-documents .main-content { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
 
@@ -273,138 +295,161 @@ body:not(.page-fir):not(.page-documents):not(.page-finder):not(.page-contacts):n
   background: white; padding: 35px; border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e5e7eb;
 }
-
 .page-documents .form-group label {
-  display: block; margin-bottom: 8px; font-weight: bold;
-  font-size: 14px; text-transform: uppercase; color: #374151;
+  display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px;
+  text-transform: uppercase; font-family: "Inter", sans-serif;
 }
-
-.page-documents input,
-.page-documents textarea,
-.page-documents select {
+.page-documents input, .page-documents textarea, .page-documents select {
   width: 100%; padding: 14px; border: 2px solid #e5e7eb;
   border-radius: 8px; background: #fafafa; font-family: inherit;
 }
+.page-documents input:focus, .page-documents textarea:focus {
+  border-color: #3b82f6; outline: none; background: white;
+}
 
-.page-documents .btn {
-  background: #1e3a8a; color: white; padding: 16px 32px;
-  border-radius: 8px; font-weight: 600; text-transform: uppercase;
-  width: 100%; margin-bottom: 10px;
+.page-documents .preview-section {
+  background: white; padding: 35px; border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e5e7eb;
 }
 
 .page-documents .notice-content {
   background: #fefefe; padding: 50px; border: 2px solid #e5e7eb;
   border-radius: 10px; font-family: "Times New Roman", serif; line-height: 1.9;
-  color: #1f2937;
+  color: #1f2937; margin-bottom: 25px;
 }
+.page-documents .notice-header { text-align: center; margin-bottom: 40px; border-bottom: 3px solid #1e3a8a; padding-bottom: 25px; }
+.page-documents .notice-title { font-size: 1.8rem; font-weight: bold; color: #1e3a8a; letter-spacing: 2px; text-transform: uppercase; }
 
-.page-documents .notice-title {
-  font-size: 1.8rem; font-weight: bold; color: #1e3a8a;
-  text-align: center; text-transform: uppercase;
-  border-bottom: 3px solid #1e3a8a; padding-bottom: 10px; margin-bottom: 20px;
-}
+.page-documents .action-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
+.page-documents .btn { background: #1e3a8a; color: white; padding: 16px 32px; width: auto; }
+.page-documents .btn-secondary { background: #059669; }
+.page-documents .btn-tertiary { background: #7c3aed; }
+.page-documents .btn-edit { background: #f59e0b; }
 
-/* Modal for Documents */
+/* Documents Toggle */
+.page-documents .toggle-switch { display: flex; align-items: center; cursor: pointer; margin: 20px 0; font-family: "Inter", sans-serif; }
+.page-documents .slider { position: relative; width: 50px; height: 24px; background: #ccc; border-radius: 24px; margin-right: 10px; transition: 0.4s; }
+.page-documents .slider:before { content: ""; position: absolute; height: 18px; width: 18px; left: 3px; bottom: 3px; background: white; border-radius: 50%; transition: 0.4s; }
+.page-documents input:checked + .slider { background: #3b82f6; }
+.page-documents input:checked + .slider:before { transform: translateX(26px); }
+.page-documents input { display: none; }
+
+/* PDF Modal */
 .page-documents .pdf-editor-modal {
-  display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.5); justify-content: center; align-items: center;
+  display: none; position: fixed; z-index: 2000; left: 0; top: 0;
+  width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);
+  justify-content: center; align-items: center;
 }
 .page-documents .pdf-editor-modal.show { display: flex; }
 .page-documents .modal-content {
   background: white; width: 90%; max-width: 900px; height: 80vh;
   border-radius: 12px; display: flex; flex-direction: column;
 }
-.page-documents .editor-toolbar { padding: 10px; background: #f8f9fa; border-bottom: 1px solid #ddd; }
-.page-documents .editor-content { flex: 1; padding: 20px; overflow-y: auto; font-family: "Times New Roman", serif; }
+.page-documents .editor-toolbar { padding: 10px; background: #f8f9fa; border-bottom: 1px solid #e5e7eb; display: flex; gap: 10px; }
+.page-documents .editor-content { flex: 1; padding: 30px; overflow-y: auto; font-family: "Times New Roman", serif; outline: none; }
+.page-documents .modal-footer { padding: 20px; border-top: 1px solid #e5e7eb; display: flex; justify-content: flex-end; gap: 10px; }
 
-
-/* ==========================================================================
-   6. MODULE: CASE FINDER (.page-finder)
-   ========================================================================== */
+/* =========================================
+   6. PAGE: CASE FINDER (.page-finder)
+   ========================================= */
 .page-finder {
   background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   min-height: 100vh;
 }
 
-/* Specific Header for Finder */
 .page-finder .header {
   background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-  color: white; padding: 2rem 0; margin-bottom: 0;
-  box-shadow: 0 10px 25px -5px rgba(59,130,246,0.3);
+  color: white; padding: 2rem 0; position: relative;
+  box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.3);
 }
-.page-finder .title { font-size: 2.25rem; font-weight: 700; color: white; }
-.page-finder .subtitle { color: white; opacity: 0.9; }
+.page-finder .title { font-size: 2.25rem; font-weight: 700; letter-spacing: -0.025em; color: white; }
+.page-finder .subtitle { font-size: 1.125rem; opacity: 0.9; color: white; }
 
-.page-finder .stats { display: flex; gap: 2rem; }
 .page-finder .stat-item {
-  background: rgba(255,255,255,0.15); padding: 1rem; border-radius: 12px; text-align: center;
+  background: rgba(255, 255, 255, 0.15); padding: 1rem;
+  border-radius: 12px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white; text-align: center; min-width: 100px;
 }
-.page-finder .stat-number { color: white; font-weight: bold; font-size: 1.5rem; }
-.page-finder .stat-label { color: rgba(255,255,255,0.8); font-size: 0.875rem; }
+.page-finder .stat-number { font-size: 1.5rem; font-weight: 700; display: block; }
 
-/* Finder Search Box */
 .page-finder .search-container {
   background: white; border-radius: 20px; padding: 2.5rem;
-  box-shadow: 0 20px 25px -5px rgba(59,130,246,0.1);
-  max-width: 900px; margin: 2rem auto; border: 1px solid rgba(255,255,255,0.8);
+  box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.1);
+  max-width: 900px; margin: 2rem auto; border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
 .page-finder .case-input {
   width: 100%; padding: 1.25rem; border: 2px solid #bfdbfe;
   border-radius: 16px; font-size: 1rem; background: #f8fafc;
-  min-height: 100px;
+  min-height: 120px; margin-bottom: 1.5rem; font-family: inherit;
 }
+.page-finder .case-input:focus { outline: none; border-color: #3b82f6; background: white; box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1); }
 
 .page-finder .search-button {
   background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-  color: white; padding: 1.25rem; border-radius: 16px;
-  font-weight: 600; width: 100%; margin-top: 1rem; border: none;
+  color: white; padding: 1.25rem 2rem; border-radius: 16px; font-size: 1.125rem;
+  font-weight: 600; border: none; cursor: pointer; width: 100%;
 }
 
+.page-finder .filters-section {
+  margin-top: 2rem; padding: 1.5rem; background: #f1f5f9;
+  border-radius: 16px; border: 2px solid #bfdbfe;
+}
+.page-finder .filters-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+.page-finder .filter-select { padding: 0.75rem; border-radius: 8px; border: 1px solid #bfdbfe; width: 100%; }
+
+.page-finder .suggestion-chip {
+  background: white; border: 2px solid #bfdbfe; padding: 0.75rem 1.25rem;
+  border-radius: 25px; color: #3b82f6; cursor: pointer; font-weight: 500;
+  display: inline-block; margin: 0.25rem; transition: var(--transition);
+}
+.page-finder .suggestion-chip:hover { background: #3b82f6; color: white; }
+
 /* Finder Results */
+.page-finder .results-summary {
+  background: white; border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem;
+  border-left: 4px solid #3b82f6; display: flex; justify-content: space-between;
+}
 .page-finder .case-card {
   background: white; border-radius: 20px; padding: 2rem;
-  box-shadow: 0 10px 15px -3px rgba(59,130,246,0.1);
-  border: 1px solid #bfdbfe; margin-bottom: 1.5rem; position: relative; overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.1); margin-bottom: 1.5rem;
+  border: 1px solid #bfdbfe; position: relative; overflow: hidden;
 }
 .page-finder .case-card::before {
   content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px;
   background: linear-gradient(90deg, #3b82f6, #16a34a, #eab308);
 }
-
+.page-finder .case-title { font-size: 1.25rem; font-weight: 700; color: #1f2937; margin-bottom: 0.5rem; }
 .page-finder .relevance-score {
-  background: #16a34a; color: white; padding: 0.25rem 0.75rem;
-  border-radius: 20px; font-size: 0.75rem; font-weight: bold;
+  background: linear-gradient(135deg, #16a34a, #15803d); color: white;
+  padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;
+}
+.page-finder .case-meta span {
+  display: inline-block; margin-right: 0.5rem; margin-bottom: 0.5rem;
+  padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.75rem; background: #f3f4f6;
 }
 
-.page-finder .suggestion-chip {
-  background: white; border: 2px solid #bfdbfe; padding: 0.5rem 1rem;
-  border-radius: 25px; color: #3b82f6; display: inline-block; margin: 5px; cursor: pointer;
-}
-.page-finder .suggestion-chip:hover { background: #3b82f6; color: white; }
-
-
-/* ==========================================================================
-   7. MODULE: CONTACTS (.page-contacts)
-   ========================================================================== */
-.page-contacts {
+/* =========================================
+   7. PAGE: CONTACTS (.page-contacts)
+   ========================================= */
+.page-contacts body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f8f9fa;
 }
 
 .page-contacts .header {
-  background: linear-gradient(to bottom right, #1a56db, #3b82f6);
+  background: linear-gradient(to bottom right, var(--primary-color), #3b82f6);
   color: white; padding: 4rem 0; text-align: center;
 }
-.page-contacts .header h1 { color: white; font-size: 3rem; }
-.page-contacts .header p { color: white; opacity: 0.9; font-size: 1.25rem; }
+.page-contacts .header h1 { font-size: 3rem; color: white; }
+.page-contacts .header p { font-size: 1.25rem; opacity: 0.9; color: white; }
 
 .page-contacts .nav {
-  background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  position: sticky; top: 0; z-index: 100;
+  background: white; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky; top: 0; z-index: 100; padding: 1rem 0;
 }
-
-.page-contacts .nav-links { display: flex; justify-content: center; gap: 2rem; list-style: none; padding: 1rem; }
+.page-contacts .nav-container { display: flex; justify-content: center; overflow-x: auto; }
+.page-contacts .nav-links { display: flex; gap: 2rem; list-style: none; }
 .page-contacts .nav-links a {
   color: #667eea; padding: 0.5rem 1rem; border-radius: 25px; font-weight: 500;
 }
@@ -413,11 +458,9 @@ body:not(.page-fir):not(.page-documents):not(.page-finder):not(.page-contacts):n
 .page-contacts .accordion-header {
   background: white; border: 1px solid #e9ecef; border-radius: 10px;
   padding: 1.5rem; cursor: pointer; display: flex; justify-content: space-between;
-  align-items: center; margin-bottom: 0.5rem;
+  align-items: center; margin-bottom: 0.5rem; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
-.page-contacts .accordion-header.active {
-  background: #667eea; color: white; border-color: #667eea;
-}
+.page-contacts .accordion-header.active { background: #667eea; color: white; border-color: #667eea; }
 .page-contacts .accordion-content {
   max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
   background: white; border: 1px solid #e9ecef; border-top: none; margin-bottom: 1rem;
@@ -432,30 +475,93 @@ body:not(.page-fir):not(.page-documents):not(.page-finder):not(.page-contacts):n
 
 .page-contacts .emergency-btn {
   position: fixed; bottom: 20px; right: 20px; background: #dc3545;
-  color: white; border-radius: 50%; width: 60px; height: 60px;
-  border: none; font-size: 1.5rem; cursor: pointer; display: flex;
-  align-items: center; justify-content: center; z-index: 1000;
+  color: white; border: none; border-radius: 50%; width: 60px; height: 60px;
+  font-size: 1.5rem; cursor: pointer; box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+  display: flex; align-items: center; justify-content: center; z-index: 1000;
 }
 
+/* =========================================
+   8. PAGE: LEGAL BOOKS (.page-books)
+   ========================================= */
+.page-books .card { margin-bottom: 1.5rem; border: 1px solid var(--border-color); background: white; border-radius: var(--radius); }
+.page-books .card-header { padding: 1.5rem; border-bottom: 1px solid var(--border-color); }
+.page-books .card-body { padding: 1.5rem; }
 
-/* ==========================================================================
-   8. MODULE: LEGAL BOOKS (.page-books)
-   ========================================================================== */
 .page-books .search-filters { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+.page-books .filter-group { display: flex; flex-direction: column; }
+.page-books .filter-group label { font-size: 0.75rem; color: var(--text-muted); }
+.page-books .filter-group select { padding: 0.5rem; border: 1px solid var(--border-color); border-radius: var(--radius); }
+
 .page-books .search-result-item {
-  background: white; padding: 1.5rem; border: 1px solid #e5e7eb;
-  border-radius: 8px; margin-bottom: 1rem; cursor: pointer;
+  background-color: white; border: 1px solid var(--border-color);
+  border-radius: var(--radius); padding: 1.5rem; cursor: pointer;
+  transition: var(--transition); margin-bottom: 1rem;
 }
 .page-books .search-result-item:hover { border-color: var(--primary-color); box-shadow: var(--shadow-md); }
 .page-books mark { background: #fef3c7; color: #92400e; padding: 0 0.25rem; }
 
+.page-books .tabs-header { display: flex; border-bottom: 1px solid var(--border-color); margin-bottom: 1rem; }
+.page-books .tab-btn {
+  padding: 0.75rem 1rem; background: none; border: none; border-bottom: 2px solid transparent;
+  cursor: pointer; color: var(--text-muted); font-weight: 500;
+}
+.page-books .tab-btn.active { color: var(--primary-color); border-bottom-color: var(--primary-color); }
+.page-books .tab-content { display: none; }
+.page-books .tab-content.active { display: block; }
 
-/* ==========================================================================
-   9. RESPONSIVE UTILITIES
-   ========================================================================== */
+.page-books .chapter-header {
+  display: flex; justify-content: space-between; padding: 1rem;
+  background: #f9fafb; border: 1px solid var(--border-color);
+  cursor: pointer; margin-bottom: 0.5rem; border-radius: var(--radius);
+}
+.page-books .chapter-content { display: none; padding: 1rem; border-left: 2px solid var(--border-color); }
+.page-books .chapter-content.show { display: block; }
+
+.page-books .quick-reference-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
+.page-books .quick-reference-item {
+  border: 1px solid var(--border-color); padding: 1rem; border-radius: var(--radius);
+  cursor: pointer; transition: var(--transition);
+}
+.page-books .quick-reference-item:hover { border-color: var(--primary-color); background: #f9fafb; }
+
+/* =========================================
+   9. PAGE: POLICE STATIONS (.page-stations)
+   ========================================= */
+.page-stations .station-card {
+  background: white; border: 1px solid var(--border-color); border-radius: var(--radius);
+  padding: 1.5rem; margin-bottom: 1rem; transition: var(--transition);
+}
+.page-stations .station-card:hover { box-shadow: var(--shadow-md); }
+.page-stations .station-card h3 { margin-bottom: 0.5rem; color: var(--primary-color); }
+.page-stations .stations-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+
+.page-stations .emergency-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
+.page-stations .emergency-contact {
+  text-align: center; padding: 1rem; border: 1px solid #fee2e2;
+  background: #fef2f2; border-radius: var(--radius);
+}
+.page-stations .emergency-number { font-size: 1.5rem; font-weight: bold; color: var(--red-color); }
+
+/* =========================================
+   10. PAGE: LEGAL BOT (.page-bot)
+   ========================================= */
+.page-bot .chat-card { height: 80vh; display: flex; flex-direction: column; }
+.page-bot .chatbase { flex: 1; background: #f9fafb; border-bottom: 1px solid var(--border-color); }
+.page-bot .quick-questions { padding: 1rem; }
+.page-bot .quick-questions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem; }
+.page-bot .quick-question-btn {
+  padding: 0.5rem; border: 1px solid var(--border-color); background: white;
+  border-radius: var(--radius); cursor: pointer; text-align: left; font-size: 0.875rem;
+}
+.page-bot .quick-question-btn:hover { background: #f3f4f6; }
+
+/* =========================================
+   11. RESPONSIVE ADJUSTMENTS
+   ========================================= */
 @media (max-width: 768px) {
+  .navbar-content { height: 3.5rem; }
   .page-documents .main-content { grid-template-columns: 1fr; }
-  .page-finder .search-container { padding: 1.5rem; margin: 1rem; }
-  .page-finder .header .container { flex-direction: column; text-align: center; }
-  .page-fir .states-grid { grid-template-columns: 1fr; }
+  .page-fir .search-container { grid-template-columns: 1fr; }
+  .page-finder .header .container { flex-direction: column; text-align: center; gap: 1rem; }
+  .page-finder .stats { justify-content: center; }
 }
