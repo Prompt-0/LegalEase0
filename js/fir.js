@@ -44,15 +44,19 @@ async function initializeApp() {
 // Load FIR portals data from JSON file
 async function loadFIRPortalsData() {
   try {
-    const response = await fetch("./data/fir.json")
-    if (!response.ok) {
-      throw new Error("Failed to fetch data")
+    const response = await fetch("./data/fir.json");
+    if (!response.ok) throw new Error("Failed to fetch data");
+
+    const data = await response.json();
+
+    // VALIDATION FIX
+    if (!data || !Array.isArray(data.firPortals)) {
+        throw new Error("Invalid JSON format: 'firPortals' array missing");
     }
-    const data = await response.json()
-    firPortalsData = data.firPortals
-    filteredData = [...firPortalsData]
+
+    firPortalsData = data.firPortals;
+    filteredData = [...firPortalsData];
   } catch (error) {
-    // Fallback data if JSON file is not available or error occurs
     console.warn("Using fallback data due to error:", error);
     firPortalsData = [] // Or provide fallback array here
     filteredData = []

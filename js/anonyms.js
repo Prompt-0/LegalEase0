@@ -14,7 +14,9 @@ document.getElementById("tip-form").addEventListener("submit", function(e) {
     const reportData = Object.fromEntries(formData.entries());
 
     // Add metadata
-    reportData.id = "AN-" + Math.random().toString(36).substr(2, 9).toUpperCase();
+    const array = new Uint32Array(1);
+    window.crypto.getRandomValues(array);
+    reportData.id = "AN-" + array[0].toString(36).toUpperCase();
     reportData.timestamp = new Date().toISOString();
     reportData.status = "Received";
 

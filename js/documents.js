@@ -98,22 +98,22 @@ class LegalNoticeGenerator {
   }
 
   executeEditorCommand(action, btn) {
-    switch (action) {
-      case "bold":
-        document.execCommand("bold")
-        btn.classList.toggle("active")
-        break
-      case "italic":
-        document.execCommand("italic")
-        btn.classList.toggle("active")
-        break
-      case "underline":
-        document.execCommand("underline")
-        btn.classList.toggle("active")
-        break
-    }
-    this.editableContent.focus()
+      try {
+        // 'styleWithCSS' is often needed for better compatibility
+        document.execCommand('styleWithCSS', false, true);
+        const success = document.execCommand(action, false, null);
+        if (!success) {
+            console.warn("Command execution returned false");
+        }
+        btn.classList.toggle("active");
+      } catch (err) {
+        console.error("Rich text editor error:", err);
+        alert("Your browser may not support this editing feature.");
+      }
+      this.editableContent.focus();
   }
+
+
 
   toggleRealTimePreview(e) {
     this.realTimeEnabled = e.target.checked

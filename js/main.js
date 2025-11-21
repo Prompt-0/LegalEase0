@@ -1,3 +1,17 @@
+/**
+ * Security Helper: Escape HTML to prevent XSS
+ * Use this function whenever inserting dynamic text into innerHTML.
+ */
+function escapeHTML(str) {
+  if (!str) return '';
+  return str.toString()
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   // Mobile menu toggle
   const mobileMenuBtn = document.querySelector(".mobile-menu-btn")

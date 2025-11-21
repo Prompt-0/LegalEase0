@@ -1,3 +1,5 @@
+// js/finder.js
+
 // Global variables
 let legalCasesDatabase = null
 let currentResults = []
@@ -35,7 +37,6 @@ const suggestionChips = document.querySelectorAll(".suggestion-chip")
 
 async function fetchLegalCasesData() {
   try {
-    // ✅ UPDATED: Explicit relative path
     const response = await fetch("./data/legal-cases.json")
 
     if (!response.ok) {
@@ -276,30 +277,36 @@ function displayResults(cases) {
     caseCard.className = "case-card"
     caseCard.style.animationDelay = `${index * 0.1}s`
 
+    // Helper to format currency safely
     const formatIndianCurrency = (text) => {
-      return text.replace(/₹(\d+)/g, "<strong>₹$1</strong>")
+      // Security: Escape text first, then add the bold tag
+      return escapeHTML(text).replace(/₹(\d+)/g, "<strong>₹$1</strong>")
     }
 
+    // Helper to format provisions safely
     const formatLegalProvisions = (provisions) => {
       if (!provisions || provisions.length === 0) return ""
+      // Security: Escape each provision before joining
+      const safeProvisions = provisions.map(p => escapeHTML(p)).join(", ")
       return `<div class="legal-provisions">
-        <strong>Legal Provisions:</strong> ${provisions.join(", ")}
+        <strong>Legal Provisions:</strong> ${safeProvisions}
       </div>`
     }
 
+    // Security: Use escapeHTML on all dynamic values injected into innerHTML
     caseCard.innerHTML = `
       <div class="case-header">
-        <h3 class="case-title">${case_.title}</h3>
-        <div class="relevance-score">${case_.relevance}% Match</div>
+        <h3 class="case-title">${escapeHTML(case_.title)}</h3>
+        <div class="relevance-score">${escapeHTML(case_.relevance)}% Match</div>
       </div>
       <div class="case-meta">
-        <span class="case-year">${case_.year}</span>
-        <span class="case-category">${case_.category}</span>
-        <span class="case-jurisdiction">${case_.jurisdiction}</span>
-        <span class="case-outcome">${case_.outcome}</span>
+        <span class="case-year">${escapeHTML(case_.year)}</span>
+        <span class="case-category">${escapeHTML(case_.category)}</span>
+        <span class="case-jurisdiction">${escapeHTML(case_.jurisdiction)}</span>
+        <span class="case-outcome">${escapeHTML(case_.outcome)}</span>
       </div>
-      ${case_.caseNumber ? `<div class="case-number"><strong>Case No:</strong> ${case_.caseNumber}</div>` : ""}
-      ${case_.judge ? `<div class="case-judge"><strong>Judge:</strong> ${case_.judge}</div>` : ""}
+      ${case_.caseNumber ? `<div class="case-number"><strong>Case No:</strong> ${escapeHTML(case_.caseNumber)}</div>` : ""}
+      ${case_.judge ? `<div class="case-judge"><strong>Judge:</strong> ${escapeHTML(case_.judge)}</div>` : ""}
       <p class="case-summary">${formatIndianCurrency(case_.summary)}</p>
       ${formatLegalProvisions(case_.legalProvisions)}
       <div class="case-actions">
@@ -354,24 +361,23 @@ function handleSearch() {
   buttonText.style.display = "none"
   loadingSpinner.style.display = "block"
 
-  setTimeout(() => {
-    try {
-      let results = searchSimilarCases(query)
-      results = applyFilters(results)
-      results = sortResults(results, sortSelect.value)
+  // PERFORMANCE FIX: Removed unnecessary setTimeout (1800ms delay)
+  try {
+    let results = searchSimilarCases(query)
+    results = applyFilters(results)
+    results = sortResults(results, sortSelect.value)
 
-      currentResults = results
-      displayResults(results)
-      addToSearchHistory(query, results.length)
-    } catch (error) {
-      console.error("Search error:", error)
-      showNotification("Error performing search. Please try again.", "error")
-    } finally {
-      searchBtn.disabled = false
-      buttonText.style.display = "block"
-      loadingSpinner.style.display = "none"
-    }
-  }, 1800)
+    currentResults = results
+    displayResults(results)
+    addToSearchHistory(query, results.length)
+  } catch (error) {
+    console.error("Search error:", error)
+    showNotification("Error performing search. Please try again.", "error")
+  } finally {
+    searchBtn.disabled = false
+    buttonText.style.display = "block"
+    loadingSpinner.style.display = "none"
+  }
 }
 
 function handleClear() {

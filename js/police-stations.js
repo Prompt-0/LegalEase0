@@ -102,12 +102,7 @@ function useCurrentLocation() {
       // Delhi Center approx: 28.6139, 77.2090
       const distFromDelhi = calculateDistance(latitude, longitude, 28.6139, 77.2090);
 
-      if (distFromDelhi > 50) { // 50km radius allowance
-            alert("📍 Location Alert:\n\nYou appear to be outside Delhi.\nCurrently, this service only supports locating Police Stations within Delhi.");
-            btn.innerHTML = originalText;
-            btn.disabled = false;
-            return;
-      }
+
 
       // Sort all stations by distance to user
       const sortedStations = policeData.police_stations.map(station => {
